@@ -2,323 +2,685 @@
 
 @section('content')
 
+<style>
+ .collapsible {
+  background-color: #f5f3f3;
+  color: rgb(56, 56, 56);
+  cursor: pointer;
+  padding: 13px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 4px 4px 0 0;
+
+}
+
+.active, .collapsible:hover {
+  background-color:rgb(240, 240, 240);
+}
+
+.content {
+  border-top: none;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+</style>
 
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-<div class="subnav" style="border: 1px solid rgb(148, 148, 148);
-margin-bottom: 2%; background-color: white; border-radius: 10px">
+<div class="subnav">
 
 
 @foreach($horses as $key => $value)
-<br>
-<h4 style="margin: 0.5%; margin-left: 2%; margin-right: 2%; color: rgb(163, 163, 163)">Naam Paard: {{ $value->name_horse }}
+<h2 style="margin-bottom: 2%; color: rgb(46, 114, 187, 0.8)">
+    Sessie - {{ $value->name_horse }}
+    ({{ $value->datum }})
+    &nbsp; &nbsp;
+    &nbsp; &nbsp;
+    &nbsp; &nbsp;
     &nbsp; &nbsp;
 
-    Datum invoer: {{ $value->datum }}
     &nbsp; &nbsp;
-    <a class="btn btn-small btn-info" href="{{ URL::to('horses/' . $value->id . '/edit') }}" style="margin-top: -5px; float: right">Aanpassen</a>
+<button class="btn btn-success btn-large" style="margin-bottom: 5px; margin-right: 2px"><i class="fas fa-check"></i> Opslaan</button>
+<button class="btn btn-primary btn-large" style="margin-bottom: 5px; margin-right: 2px"><i class="fas fa-plus"></i> Toevoegen</button>
+<button class="btn btn-ligth btn-large" style="margin-bottom: 5px; border: 1px solid rgb(204, 204, 204); color: gray; margin-right: 2px"><i class="fas fa-info" style="color: gray"></i> Info</button>
+<button class="btn btn-danger btn-large" style="margin-bottom: 5px; margin-right: 2px"><i class="fas fa-minus-circle"></i> Verwijderen</button>
+
 </h2>
-<br>
-
 
 @endforeach
-
 </div>
-
 
 
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Administratief')" id="defaultOpen">Administratief</button>
-  <button class="tablinks" onclick="openTab(event, 'Algemeen')">Algemene Historie</button>
+  <button class="tablinks" onclick="openTab(event, 'Algemeen')" id="defaultOpen">Algemeen</button>
+  <button class="tablinks" onclick="openTab(event, 'Historie')">Historie</button>
+  <button class="tablinks" onclick="openTab(event, 'Fotos')">Foto's</button>
+
   <button class="tablinks" onclick="openTab(event, 'Onderzoek')">Onderzoek</button>
-  <button class="tablinks" onclick="openTab(event, 'Behandeling_laser')">Behandeling Laser</button>
-  <button class="tablinks" onclick="openTab(event, 'Behandeling_fysio')">Behandeling Fysio</button>
+  <button class="tablinks" onclick="openTab(event, 'Behandeling_laser')">Laser</button>
+  <button class="tablinks" onclick="openTab(event, 'Behandeling_fysio')">Fysio</button>
 
-</div>
+  <button class="tab_1" style="height: 53.9px; width: 542px; hover: none; background-color: inherit"></button>
 
-
-<div id="Administratief" class="tabcontent">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <td style="font-weight: bold">Naam Eigenaar</td>
-                <td style="font-weight: bold">Achternaam</td>
-                <td style="font-weight: bold">Telefoonnummer</td>
-                <td style="font-weight: bold">Adres</td>
-                <td style="font-weight: bold">Email</td>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($horses as $key => $value)
-            <tr>
-                <td>{{ $value->name }}</td>
-                <td>{{ $value->name_owner }}</td>
-                <td>{{ $value->phone_number }}</td>
-                <td>{{ $value->address }}</td>
-                <td>{{ $value->email }}</td>
-
-            </td>
-        </tr>
-        </tbody>
-<br>
-<table class="table table-striped table-bordered">
-<thead>
-    <br>
-    <tr>
-        <td style="font-weight: bold">Naam Paard</td>
-        <td style="font-weight: bold">Leeftijd</td>
-        <td style="font-weight: bold">Geslacht</td>
-        <td style="font-weight: bold">Ras</td>
-        <td style="font-weight: bold">Aankoopkeuring</td>
-        <td style="font-weight: bold">Alternatief Adres</td>
-
-    </tr>
-</thead>
-<tbody>
-        <tr>
-            <td>{{ $value->name_horse }}</td>
-            <td>{{ $value->age }}</td>
-            <td>{{ $value->gender }}</td>
-            <td>{{ $value->breed }}</td>
-            <td>{{ $value->aankoopkeuring }}</td>
-            <td>{{ $value->alternatief_adres }}</td>
-
-        </td>
-    </tr>
-    @endforeach
-    </tbody>
-    </table>
 </div>
 
 
 <div id="Algemeen" class="tabcontent">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <td style="font-weight: bold">Bezit eigenaar</td>
-                <td style="font-weight: bold">Huisvesting & ondergrond</td>
-                <td style="font-weight: bold">Medicijnen</td>
+ <br>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($horses as $key => $value)
-            <tr>
-                <td>{{ $value->bezit_eigenaar }}</td>
-                <td>{{ $value->huisvesting }}</td>
-                <td>{{ $value->medicijnen }}</td>
 
-            </td>
-        </tr>
-        </tbody>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="collapsible" style="color: gray">
+                    <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                    Eigenaar  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+
+                </h6>
+                </div>
+        <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
+                    @foreach($horses as $key => $value)
+                    <div class="container" style="border: 1px solid rgb(209, 209, 209); border-radius: 5px">
+                          <h6 style="margin-top: 15px; color: rgb(58, 58, 58)">naam : {{ $value->name }} {{ $value->name_owner }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">adres: {{ $value->address }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">email: {{ $value->email }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">tel: {{ $value->phone_number }}</p>
+                </div>
+            </div>
+
+
+                    @endforeach
+
+                </div>
+                <br>
+
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209); color: gray">
+                    <h6 style="margin: 1px">
+                    Info
+                    <i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                                    <p style="margin-top: 15px; color: rgb(58, 58, 58)">naam: {{ $value->name_horse }}</p>
+
+                                    <p style="color: rgb(58, 58, 58)">geslacht: {{ $value->gender }}</p>
+                                    <p style="color: rgb(58, 58, 58)">aankoopkeuring: {{ $value->aankoopkeuring }}</p>
+                                    <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+
+                        </div>
+                        @endforeach
+                    </div>
+                    </div>
 <br>
-<table class="table table-striped table-bordered">
-<thead>
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209)">
+                   <h6 style="margin: 1px; color: gray">
+                    Situatie<i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                        <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+                        <p style="color: rgb(58, 58, 58)">voeding: {{ $value->voeding }}</p>
+                        <p style="color: rgb(58, 58, 58)">voeten: {{ $value->voeten }}</p>
+                        <p style="color: rgb(58, 58, 58)">huisvesting: {{ $value->huisvesting }}</p>
+                        <div class="collapsible" style="border: 1px solid rgb(209, 209, 209)">
+                            <h6 style="margin: 1px; color: gray">
+                             Situatie<i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                         </h6>
+                        </div>
+
+                        <div class="content">
+                            <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+                            </div>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                        @endforeach
+                    </div>
+                    </div>
+                    <br><br>
+            </div>
+            <br>
+
+
+
+            <div class="col-sm-8">
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209); color: gray">
+                   <h6 style="margin: 1px">
+                    Foto
+                    <i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+                </div>
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+
+                        <img class="zoom" src="{{ $value->featured }}" width="80%" style="margin-left: 12%; border: 1px solid rgb(202, 202, 202)">
+                       <br>
+
+                        @endforeach
+
+                    </div>
+
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="Historie" class="tabcontent">
+        <br>
+
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="collapsible" style="color: gray">
+                        <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                        Eigenaar  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+
+                    </h6>
+                    </div>
+            <div class="content">
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
+                        @foreach($horses as $key => $value)
+                        <div class="container" style="border: 1px solid rgb(209, 209, 209); border-radius: 5px">
+                              <h6 style="margin-top: 15px; color: rgb(58, 58, 58)">naam : {{ $value->name }} {{ $value->name_owner }}</p>
+                              <h6 style="color: rgb(58, 58, 58)">adres: {{ $value->address }}</p>
+                              <h6 style="color: rgb(58, 58, 58)">email: {{ $value->email }}</p>
+                              <h6 style="color: rgb(58, 58, 58)">tel: {{ $value->phone_number }}</p>
+                    </div>
+                </div>
+
+
+                        @endforeach
+
+                    </div>
+                    <br>
+
+                    <div class="collapsible" style="border: 1px solid rgb(209, 209, 209); color: gray">
+                        <h6 style="margin: 1px">
+                        Info
+                        <i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                    </h6>
+                    </div>
+                        <div class="content">
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                            @foreach($horses as $key => $value)
+                            <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                                        <p style="margin-top: 15px; color: rgb(58, 58, 58)">naam: {{ $value->name_horse }}</p>
+
+                                        <p style="color: rgb(58, 58, 58)">geslacht: {{ $value->gender }}</p>
+                                        <p style="color: rgb(58, 58, 58)">aankoopkeuring: {{ $value->aankoopkeuring }}</p>
+                                        <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+
+                            </div>
+                            @endforeach
+                        </div>
+                        </div>
     <br>
-    <tr>
+                    <div class="collapsible" style="border: 1px solid rgb(209, 209, 209)">
+                       <h6 style="margin: 1px; color: gray">
+                        Situatie<i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                    </h6>
 
-        <td style="font-weight: bold">Voorgeschiedenis</td>
-        <td style="font-weight: bold">Voeding/hoeven</td>
-        <td style="font-weight: bold">Overige aandoeningen</td>
+                    </div>
+                        <div class="content">
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
 
-    </tr>
-</thead>
-<tbody>
-        <tr>
-            <td>{{ $value->voorgeschiedenis }}</td>
-            <td>{{ $value->voeding }}</td>
-            <td>{{ $value->overig }}</td>
+                            @foreach($horses as $key => $value)
+                            <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                            <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+                            <p style="color: rgb(58, 58, 58)">voeding: {{ $value->voeding }}</p>
+                            <p style="color: rgb(58, 58, 58)">voeten: {{ $value->voeten }}</p>
+                            <p style="color: rgb(58, 58, 58)">huisvesting: {{ $value->huisvesting }}</p>
+                            </div>
+                            @endforeach
 
-        </td>
-    </tr>
-    @endforeach
-    </tbody>
-    </table>
-</div>
+                        </div>
+                        </div>
+                        <br><br>
+                </div>
+                <br>
 
+
+
+                <div class="col-sm-8">
+                    <div class="card-header" style="border: 1px solid rgb(209, 209, 209); border-bottom:none; color: gray">
+                        Historie
+                    </div>
+                        <div class="card-body" style="border: 1px solid rgb(209, 209, 209)">
+
+                            @foreach($horses as $key => $value)
+                            <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+           <hr>
+                                <p style="margin-top: 15px; color: rgb(58, 58, 58)">Inspectie in stand  :
+<hr>
+                                {{ $value->inspectie_stand }}</p>
+<hr>
+                            </div>
+                            @endforeach
+
+                            <br>
+    <br><br>
+                        </div>
+
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <div id="Onderzoek" class="tabcontent">
-    <table class="table table-striped table-bordered">
-        <thead>
-</div>
+    <br>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="collapsible" style="color: gray">
+                    <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                    Hoofd  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+
+                </h6>
+                </div>
+        <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
+                    @foreach($horses as $key => $value)
+                    <form>
+
+                    <div class="container" style="">
+                        <select class="form-control">
+                            <option value="" placeholder="">Nek</option>
+                            <option value="1" placeholder="1">1</option>
+                            <option value="2" placholder="2">2</option>
+                            <option value="3" placeholder="3">3</option>
+                             </select>
+                        <br>
+                        <select class="form-control">
+                            <br>
+                            <option value="" placeholder="">Kaak</option>
+                            <option value="1" placeholder="1">1</option>
+                            <option value="2" placholder="2">2</option>
+                            <option value="3" placeholder="3">3</option>
+                            <br>
+                        </select>
+
+                    </div>
+            </div>
+
+                    @endforeach
+
+                </div>
+                <br>
+
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209); color: gray">
+                    <h6 style="margin: 1px">
+                    Lichaam
+                    <i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container">
+                            <select class="form-control">
+                                <option value="" placeholder="">Rug</option>
+                                <option value="1" placeholder="1">1</option>
+                                <option value="2" placholder="2">2</option>
+                                <option value="3" placeholder="3">3</option>
+                                 </select>
+                            <br>
+                            <select class="form-control">
+                                <br>
+                                <option value="" placeholder="">Buik</option>
+                                <option value="1" placeholder="1">1</option>
+                                <option value="2" placholder="2">2</option>
+                                <option value="3" placeholder="3">3</option>
+                                <br>
+                            </select>
+
+                        </div>
+                        @endforeach
+                    </div>
+                    </div>
 <br>
-    <tr>
-        <td style="font-weight: bold">Klachten</td>
-        <td style="font-weight: bold">Stoornissen</td>
-        <td style="font-weight: bold">Voorgeschiedenis</td>
-        <td style="font-weight: bold">BAR</td>
-    </tr>
-</thead>
-<tbody>
-    @foreach($horses as $key => $value)
-    <tr>
-        <td>{{ $value->klacht }}</td>
-        <td>{{ $value->stoornissen }}</td>
-        <td>{{ $value->voorgeschiedenis }}</td>
-        <td>{{ $value->huisvesting }}</td>
-    </td>
-</tr>
-</tbody>
-</tr>
-@endforeach
-</tbody>
-<table class="table table-striped table-bordered">
-    <thead>
-</div>
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209)">
+                   <h6 style="margin: 1px; color: gray">
+                    Benen<i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container">
+                            <select class="form-control">
+                                <option value="" placeholder="">Knie</option>
+                                <option value="1" placeholder="1">1</option>
+                                <option value="2" placholder="2">2</option>
+                                <option value="3" placeholder="3">3</option>
+                                 </select>
+                            <br>
+                            <select class="form-control">
+                                <br>
+                                <option value="" placeholder="">Heup</option>
+                                <option value="1" placeholder="1">1</option>
+                                <option value="2" placholder="2">2</option>
+                                <option value="3" placeholder="3">3</option>
+                                <br>
+                            </select>
+                            </div>
+                        @endforeach
+                    </div>
+                    </div>
+                    <br><br>
+            </div>
+            <br>
+
+
+
+            <div class="col-sm-8">
+                <div class="card-header" style="border: 1px solid rgb(209, 209, 209); border-bottom:none; color: gray">
+                    Content
+                </div>
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209)">
 <br>
-<tr>
-    <td style="font-weight: bold">Inspectie in stand</td>
+                        <img src="/images/paard1.png" id="horse" alt="" style="width: 70%; margin-left: 15%">
 
-</tr>
-</thead>
-<tbody>
-@foreach($horses as $key => $value)
-<tr>
-    <td>{{ $value->inspectie_stand }}</td>
-    </tr>
-</tbody>
-</tr>
-@endforeach
-</tbody>
+                        <br><br>
+                    </div>
 
-<table class="table table-striped table-bordered">
-    <thead>
-</div>
-<br>
-<tr>
-    <td style="font-weight: bold">Oriënterende palpatie</td>
-
-</tr>
-</thead>
-<tbody>
-@foreach($horses as $key => $value)
-<tr>
-    <td>{{ $value->orienterende_palpatie }}</td>
-</td>
-</tr>
-</tbody>
-</tr>
-@endforeach
-</tbody>
-<table class="table table-striped table-bordered">
-    <thead>
-</div>
-<br>
-<tr>
-    <td style="font-weight: bold">Inspectie in beweging</td>
-
-</tr>
-</thead>
-<tbody>
-@foreach($horses as $key => $value)
-<tr>
-    <td>{{ $value->bewegingsonderzoek}}</td>
-
-</td>
-</tr>
-</tbody>
-</tr>
-@endforeach
-</tbody>
-
-
-
-</table>
-</div>
-
-
-
+                    <button class="btn btn-primary btn-sm" style="float: right; margin-right:5px; margin-top: 10px">Achter</button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-primary btn-sm" style="float: right; margin-right:5px; margin-top: 10px">Links</button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-primary btn-sm" style="float: right; margin-right: 5px; margin-top: 10px">Rechts</button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-primary btn-sm" style="float: right; margin-right: 5px; margin-top: 10px">Voor</button>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <div id="Behandeling_laser" class="tabcontent">
-    <table class="table table-striped table-bordered">
-        <thead>
+    <br>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="collapsible" style="color: gray">
+                    <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                    Behandeling  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+
+                </h6>
+                </div>
+        <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
+                    @foreach($horses as $key => $value)
+                    <div class="container" style="border: 1px solid rgb(209, 209, 209); border-radius: 5px">
+                          <h6 style="margin-top: 15px; color: rgb(58, 58, 58)">naam : {{ $value->name }} {{ $value->name_owner }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">adres: {{ $value->address }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">email: {{ $value->email }}</p>
+                          <h6 style="color: rgb(58, 58, 58)">tel: {{ $value->phone_number }}</p>
+                </div>
+            </div>
+
+
+                    @endforeach
+
+                </div>
+                <br>
+
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209); color: gray">
+                    <h6 style="margin: 1px">
+                    Info
+                    <i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                                    <p style="margin-top: 15px; color: rgb(58, 58, 58)">naam: {{ $value->name_horse }}</p>
+
+                                    <p style="color: rgb(58, 58, 58)">geslacht: {{ $value->gender }}</p>
+                                    <p style="color: rgb(58, 58, 58)">aankoopkeuring: {{ $value->aankoopkeuring }}</p>
+                                    <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+
+                        </div>
+                        @endforeach
+                    </div>
+                    </div>
+<br>
+                <div class="collapsible" style="border: 1px solid rgb(209, 209, 209)">
+                   <h6 style="margin: 1px; color: gray">
+                    Voorgaande<i class="fas fa-angle-down" style="float: right; margin-top:4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+
+                </div>
+                    <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none">
+
+                        @foreach($horses as $key => $value)
+                        <div class="container" style="border: 1px solid rgb(214, 214, 214); border-radius: 5px">
+                        <p style="margin-top: 15px; color: rgb(58, 58, 58)">BAR: {{ $value->BAR }}</p>
+                        <p style="color: rgb(58, 58, 58)">voeding: {{ $value->voeding }}</p>
+                        <p style="color: rgb(58, 58, 58)">voeten: {{ $value->voeten }}</p>
+                        <p style="color: rgb(58, 58, 58)">huisvesting: {{ $value->huisvesting }}</p>
+                        </div>
+                        @endforeach
+
+                    </div>
+                    </div>
+                    <br><br>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="card-header" style="border: 1px solid rgb(209, 209, 209); border-bottom:none; color: gray">
+                    Historie
+                </div>
+                    <div class="card-body" style="border: 1px solid rgb(209, 209, 209)">
+<br>
+                        <img src="/images/graph.png" alt="" style="width: 80%; margin-left: 10%">
+                    </div>
+
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="Fotos" class="tabcontent">
 <br>
 
-            <tr>
-                <td style="font-weight: bold">Datum</td>
-                <td style="font-weight: bold">Behandeling Laser</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($horses as $key => $value)
+<div class="container">
+    <div class="row">
 
-            <tr>
-                <td>{{ $value->datum }}</td>
-                <td>{{ $value->behandeling }}</td>
-            </td>
-        </tr>
-        <tr>
-            <td>{{ $value->datum }}</td>
-            <td>{{ $value->behandeling }}</td>
-        </td>
-    </tr>
-    <tr>
-        <td>{{ $value->datum }}</td>
-        <td>{{ $value->behandeling }}</td>
-    </td>
-    </tr>
-    <tr>
-        <td>{{ $value->datum }}</td>
-        <td>{{ $value->behandeling }}</td>
-    </td>
-    </tr>
-    @endforeach
-    </tbody>
-    </table>
-
-</div>
+        <div class="col-sm-4">
+            <div class="collapsible" style="color: gray">
+                <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                Overzicht  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+            </h6>
+        </div>
+    <div class="content">
+            <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
 
 
-
-
-
-    <div id="Behandeling_fysio" class="tabcontent">
-        <table class="table table-striped table-bordered">
-            <thead>
-            <br>
-
-                <tr>
-                    <td style="font-weight: bold">Datum</td>
-                    <td style="font-weight: bold">Behandeling Fysio</td>
-                </tr>
-            </thead>
-            <tbody>
                 @foreach($horses as $key => $value)
 
-                <tr>
-                    <td>{{ $value->datum }}</td>
-                    <td>{{ $value->behandeling }}</td>
-                </td>
-            </tr>
-            <tr>
-                <td>{{ $value->datum }}</td>
-                <td>{{ $value->behandeling }}</td>
-            </td>
-        </tr>
-        <tr>
-            <td>{{ $value->datum }}</td>
-            <td>{{ $value->behandeling }}</td>
-        </td>
-        </tr>
-        <tr>
-            <td>{{ $value->datum }}</td>
-            <td>{{ $value->behandeling }}</td>
-        </td>
-        </tr>
-        @endforeach
-        </tbody>
-        </table>
+                <br>
+                <p style="font-weight: lighter;color: rgb(46, 114, 187, 0.8)">datum: {{ $value->datum }}</p>
+                <p style="font-weight: lighter;color: rgb(46, 114, 187, 0.8)">behandeling: {{ $value->behandeling }}</p>
+                <p style="font-weight: lighter;color: rgb(46, 114, 187, 0.8)">leeftijd: {{ $value->age }}</p>
+                <p style="font-weight: lighter;color: rgb(46, 114, 187, 0.8)">ras: {{ $value->breed }}</p>
+                <p style="font-weight: lighter;color: rgb(46, 114, 187, 0.8)">geslacht: {{ $value->gender }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">aankoopkeuring: {{ $value->aankoopkeuring }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">bezit eigenaar: {{ $value->bezit_eigenaar }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">huisvesting: {{ $value->huisvesting }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">medicijnen: {{ $value->medicijnen }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">klacht: {{ $value->klacht }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">voeten: {{ $value->voeten }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">vacht: {{ $value->vacht }}</p>
+                <p style="font-weight: lighter; color: rgb(46, 114, 187, 0.8)">mesten: {{ $value->mesten }}</p>
 
+            </div>
+            @endforeach
+        </div>
+        <br>
     </div>
 
 
 
 
+
+    <div class="col-sm-8">
+
+        <div class="card-header" style="border: 1px solid rgb(209, 209, 209); border-bottom:none; color: gray">
+
+            Foto's
+        </div>
+
+
+        <div class="card-body" style="border: 1px solid rgb(209, 209, 209)">
+
+            @foreach($horses as $key => $value)
+
+            <a href="#">
+
+                <img class="zoom" src="{{ $value->featured }}" width="30%" style="margin-left: 2%; border: 1px solid rgb(202, 202, 202)">
+
+            </a>
+
+            <a href="#">
+
+                <img class="zoom" src="{{ $value->featured }}" width="30%" style="margin-left: 2%; border: 1px solid rgb(202, 202, 202)">
+
+            </a>
+
+            <a href="#">
+
+                <img class="zoom" src="{{ $value->featured }}" width="30%" style="margin-left: 2%; border: 1px solid rgb(202, 202, 202)">
+            </a>
+
+            @endforeach
+
+
+
+        </div>
+
+                <br>
+                <button class="btn btn-sm btn-primary" style="float: right" >Foto's Toevoegen</button>
+<br><br>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="Behandeling_fysio" class="tabcontent">
+    <br>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="collapsible" style="color: gray">
+                    <h6 style="margin-bottom: 2px; color:color: rgb(153, 153, 153)">
+                    Overzicht  <i class="fas fa-angle-down" style="float: right; margin-top: 4px; color: rgb(148, 148, 148)"></i>
+                </h6>
+            </div>
+        <div class="content">
+                <div class="card-body" style="border: 1px solid rgb(209, 209, 209); border-top: none"">
+
+
+                    @foreach($horses as $key => $value)
+
+                    <br>
+                </div>
+                @endforeach
+            </div>
+            <br>
+        </div>
+
+
+
+
+
+        <div class="col-sm-8">
+            <div class="card-header" style="border: 1px solid rgb(209, 209, 209); border-bottom:none; color: gray">
+            Fysio
+        </div>
+
+
+            <div class="card-body" style="border: 1px solid rgb(209, 209, 209)">
+
+                @foreach($horses as $key => $value)
+
+<div style="width: 90%; border: 1px solid gray; margin-left: 5%">
+    <br><br>
+                <div style="margin-left: 15px; color: rgb(153, 153, 245); background-color: rgb(153, 153, 245); width: 50px">
+                    {{ $value->BAR }}
+                </div>
+                <div style="margin-left: 15px; color: rgb(153, 153, 245); background-color: rgb(153, 153, 245); width: 50px">
+                    {{ $value->BAR }}
+                </div>
+                 @endforeach
+
+                </div>
+<div class="numbers">
+           <h5 style="margin-left: 60px">1
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  4
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      5</h5>
+
+            </div>
+
+            </div>
+
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 {{-- SCRIPT SCRIPT SCRIPT --}}
 
@@ -337,8 +699,26 @@ margin-bottom: 2%; background-color: white; border-radius: 10px">
       evt.currentTarget.className += " active";
     }
     document.getElementById("defaultOpen").click();
-    </script>
 
+
+    /// Collapsible
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+</script>
 
 
 

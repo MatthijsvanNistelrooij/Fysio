@@ -31,7 +31,7 @@
             }
 
             img {
-                width: 400px;
+                margin-left: -15%;
             }
 
             .zoom {
@@ -92,7 +92,7 @@
         <div class="container">
                             <div class="zoom">
                                 <a href="/horses/index">
-                                    <img src="/images/horses3.png" alt="" style="width: 400px">
+                                    <img src="/images/horses3.png" alt="" style="width: 550px">
                             </a>
                             </div>
                         </div>

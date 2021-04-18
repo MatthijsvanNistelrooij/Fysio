@@ -87,6 +87,9 @@
                             </div>
                         </div>
                     </div>
+
+
+
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm">
@@ -103,9 +106,20 @@
                                     <input type="text" placeholder="alternatief adres" name="alternatief_adres" class="form-control" value="{{ $horse->alternatief_adres }}">
                                 </div>
                                 <div class="col-sm">
-                                    {{-- <input type="text" placeholder="geslacht" name="gender" class="form-control"> --}}
                                 </div>
                             </div>
+                    </div>
+
+
+                    <label for="title" style="font-weight: bold" class="title">Foto</label>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="file" name="featured" class="form-control">
+                            
+                            </div>
+                        </div>
                     </div>
 
 

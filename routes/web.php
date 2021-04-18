@@ -22,7 +22,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::get('/horses/index', [App\Http\Controllers\HorseController::class, 'index'])->name('horses/index');
+
+Route::get('/horses/twitter', [App\Http\Controllers\HorseController::class, 'twitter'])->name('horses/twitter');
+
+
+Route::get('/animals/index', [App\Http\Controllers\AnimalController::class, 'index'])->name('animals/index');
 
 
 Route::get('/horses/create', [App\Http\Controllers\HorseController::class, 'create'])->name('horses/create');

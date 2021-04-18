@@ -7,6 +7,7 @@ use App\Models\Horse;
 use Session;
 use App\Form;
 use Browser;
+use DB;
 
 class HorseController extends Controller
 {
@@ -19,6 +20,11 @@ class HorseController extends Controller
     {
         return view('horses.index')
         ->with('horses', Horse::all());
+
+    }
+    public function twitter()
+    {
+        return view('horses.twitter');
     }
 
     /**
@@ -58,6 +64,8 @@ class HorseController extends Controller
 'breed' => 'required',
 'gender' => 'required',
 'alternatief_adres' => 'required',
+'featured' => 'required|image',
+
 
 // SITUATIE
 'bezit_eigenaar' => 'required',
@@ -77,10 +85,10 @@ class HorseController extends Controller
 
 // ALGEMENE INDRUK
 
-    'BAR' => 'required',
-    'voedingstoestand' => 'required',
-    'vacht' => 'required',
-    'voeten' => 'required',
+'BAR' => 'required',
+'voedingstoestand' => 'required',
+'vacht' => 'required',
+'voeten' => 'required',
 
 // INSPECTIE INSTAND
 'inspectie_stand' => 'required',
@@ -91,10 +99,71 @@ class HorseController extends Controller
 // BEWEGINGSONDERZOEK
 'bewegingsonderzoek' => 'required'
 
+
+// AFBEELDING BESTANDSNAAM WIJZIGEN EN OPSLAAN
+
         ]);
 
-        $horse = new Horse;
+        $featured = $request->featured;
+        $featured_new_name = time().$featured->getClientOriginalName();
+        $featured->move('uploads/horses/', $featured_new_name);
 
+
+        $horse = Horse::create([
+'featured' => 'uploads/horses/'.$featured_new_name,
+'datum' => 'required',
+
+// ALGEMEEN
+'name' => 'required',
+'name_owner' => 'required',
+'phone_number' => 'required',
+'address' => 'required',
+'email' => 'required',
+
+// INFO PAARD
+'name_horse' => 'required',
+'age' => 'required',
+'breed' => 'required',
+'gender' => 'required',
+'alternatief_adres' => 'required',
+
+// SITUATIE
+'bezit_eigenaar' => 'required',
+'huisvesting' => 'required',
+'voorgeschiedenis' => 'required',
+'voeding' => 'required',
+'medicijnen' => 'required',
+'overig' => 'required',
+'aankoopkeuring' => 'required',
+
+// KLACHTEN
+'stoornissen' => 'required',
+'klacht' => 'required',
+'behandeling' => 'required',
+'veranderingen' => 'required',
+'mesten' => 'required',
+
+// ALGEMENE INDRUK
+
+'BAR' => 'required',
+'voedingstoestand' => 'required',
+'vacht' => 'required',
+'voeten' => 'required',
+
+// INSPECTIE INSTAND
+'inspectie_stand' => 'required',
+
+// ORIENTERENDE PALPATIE
+'orienterende_palpatie' => 'required',
+
+// BEWEGINGSONDERZOEK
+'bewegingsonderzoek' => 'required'
+
+
+]);
+
+
+        // $horse = new Horse;
 
 // DATUM
 $horse->datum = $request->datum;
@@ -147,7 +216,7 @@ $horse->bewegingsonderzoek = $request->bewegingsonderzoek;
 
 
        $horse->save();
-       Session()->flash('success', 'Post created succesfully');
+    //    Session()->flash('success', 'Post created succesfully');
        return redirect()->route('horses/index');
     }
 
@@ -192,6 +261,14 @@ $horse->bewegingsonderzoek = $request->bewegingsonderzoek;
     public function update(Request $request, $id)
     {
         $horse = Horse::find($id);
+
+        if($request->hasFile('featured'))
+        {
+            $featured = $request->featured;
+            $featured_new_name = time().$featured->getClientOriginalName();
+            $featured->move('uploads/horses/', $featured_new_name);
+            $horse->featured = 'uploads/horses/'.$featured_new_name;
+        }
 
 
 // DATUM

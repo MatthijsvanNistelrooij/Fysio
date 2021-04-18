@@ -24,7 +24,6 @@ $table->string('datum', 35);
 //ALGEMEEN
 $table->string('name', 35);
 $table->string('name_owner', 35);
-$table->string('phone_number', 35);
 $table->string('address', 35);
 $table->string('phone_number', 35);
 $table->string('email', 35);
@@ -35,6 +34,7 @@ $table->string('age', 35);
 $table->string('breed', 35);
 $table->string('gender', 35);
 $table->string('alternatief_adres', 35);
+$table->string('featured');
 
 // SITUATIE
 $table->string('bezit_eigenaar', 35);
