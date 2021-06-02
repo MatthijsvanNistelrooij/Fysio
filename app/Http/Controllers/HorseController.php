@@ -22,10 +22,7 @@ class HorseController extends Controller
         ->with('horses', Horse::all());
 
     }
-    public function twitter()
-    {
-        return view('horses.twitter');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,74 +43,17 @@ class HorseController extends Controller
 
      public function store(Request $request)
     {
-        $this->validate($request, [
+
+
+$this->validate($request, [
 
 // DATUM
 'datum' => 'required',
 
-// ALGEMEEN
-'name' => 'required',
-'name_owner' => 'required',
-'phone_number' => 'required',
-'address' => 'required',
-'email' => 'required',
+///IMAGE
+'featured' => 'image|nullable|max:1999',
 
-// INFO PAARD
-'name_horse' => 'required',
-'age' => 'required',
-'breed' => 'required',
-'gender' => 'required',
-'alternatief_adres' => 'required',
-'featured' => 'required|image',
-
-
-// SITUATIE
-'bezit_eigenaar' => 'required',
-'huisvesting' => 'required',
-'voorgeschiedenis' => 'required',
-'voeding' => 'required',
-'medicijnen' => 'required',
-'overig' => 'required',
-'aankoopkeuring' => 'required',
-
-// KLACHTEN
-'stoornissen' => 'required',
-'klacht' => 'required',
-'behandeling' => 'required',
-'veranderingen' => 'required',
-'mesten' => 'required',
-
-// ALGEMENE INDRUK
-
-'BAR' => 'required',
-'voedingstoestand' => 'required',
-'vacht' => 'required',
-'voeten' => 'required',
-
-// INSPECTIE INSTAND
-'inspectie_stand' => 'required',
-
-// ORIENTERENDE PALPATIE
-'orienterende_palpatie' => 'required',
-
-// BEWEGINGSONDERZOEK
-'bewegingsonderzoek' => 'required'
-
-
-// AFBEELDING BESTANDSNAAM WIJZIGEN EN OPSLAAN
-
-        ]);
-
-        $featured = $request->featured;
-        $featured_new_name = time().$featured->getClientOriginalName();
-        $featured->move('uploads/horses/', $featured_new_name);
-
-
-        $horse = Horse::create([
-'featured' => 'uploads/horses/'.$featured_new_name,
-'datum' => 'required',
-
-// ALGEMEEN
+// EIGENAAR
 'name' => 'required',
 'name_owner' => 'required',
 'phone_number' => 'required',
@@ -127,28 +67,21 @@ class HorseController extends Controller
 'gender' => 'required',
 'alternatief_adres' => 'required',
 
-// SITUATIE
-'bezit_eigenaar' => 'required',
-'huisvesting' => 'required',
-'voorgeschiedenis' => 'required',
-'voeding' => 'required',
-'medicijnen' => 'required',
-'overig' => 'required',
-'aankoopkeuring' => 'required',
 
-// KLACHTEN
-'stoornissen' => 'required',
+// SITUATIE
+'situatie' => 'required',
+
+// STOORNISSEN
 'klacht' => 'required',
+
+// BEHANDELING TNT
 'behandeling' => 'required',
-'veranderingen' => 'required',
-'mesten' => 'required',
+
+// VERANDERINGEN
+'verandering' => 'required',
 
 // ALGEMENE INDRUK
-
-'BAR' => 'required',
-'voedingstoestand' => 'required',
-'vacht' => 'required',
-'voeten' => 'required',
+'algemeen' => 'required',
 
 // INSPECTIE INSTAND
 'inspectie_stand' => 'required',
@@ -157,18 +90,58 @@ class HorseController extends Controller
 'orienterende_palpatie' => 'required',
 
 // BEWEGINGSONDERZOEK
-'bewegingsonderzoek' => 'required'
-
+'bewegingsonderzoek' => 'required',
 
 ]);
 
 
-        // $horse = new Horse;
+  // Handle File Upload
+
+  if($request->hasFile('featured')){
+
+    //Get Filename with extension
+
+    $filenameWithExt = $request->file('featured')->getClientOriginalName();
+
+    // Get Just Filename
+
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+    // Get Just Ext
+
+    $extension = $request->file('featured')->getClientOriginalExtension();
+
+    // Filename to store
+
+    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+    // Upload image
+
+    $path = $request->file('featured')->storeAs('public/storage/uploads/horses', $fileNameToStore);
+
+    } else {
+
+    $fileNameToStore = 'no_image.jpg';
+
+    }
+
+
+
+
+     // Create Horse
+
+     $horse = new Horse;
+
+//IMAGE
+
+$horse->featured = $fileNameToStore;
 
 // DATUM
+
+
 $horse->datum = $request->datum;
 
-// ALGEMEEN
+// EIENAAR
 $horse->name = $request->name;
 $horse->name_owner = $request->name_owner;
 $horse->phone_number = $request->phone_number;
@@ -183,30 +156,24 @@ $horse->gender = $request->gender;
 $horse->alternatief_adres = $request->alternatief_adres;
 
 // SITUATIE
-$horse->bezit_eigenaar = $request->bezit_eigenaar;
-$horse->huisvesting = $request->huisvesting;
-$horse->voorgeschiedenis = $request->voorgeschiedenis;
-$horse->voeding = $request->voeding;
-$horse->medicijnen = $request->medicijnen;
-$horse->overig = $request->overig;
-$horse->aankoopkeuring = $request->aankoopkeuring;
+$horse->situatie = $request->situatie;
 
-// KLACHTEN
-$horse->stoornissen = $request->stoornissen;
+// STOORNISSEN
 $horse->klacht = $request->klacht;
+
+// BEHANDELING TNT
 $horse->behandeling = $request->behandeling;
-$horse->veranderingen = $request->veranderingen;
-$horse->mesten = $request->mesten;
+
+// VERANDERINGEN
+$horse->verandering = $request->verandering;
+
 
 // ALGEMENE INDRUK
-$horse->BAR = $request->BAR;
-$horse->voedingstoestand = $request->voedingstoestand;
-$horse->vacht = $request->vacht;
-$horse->voeten = $request->voeten;
+$horse->algemeen = $request->algemeen;
 
-// INSPECTIE IN STAND
+
+// // INSPECTIE IN STAND
 $horse->inspectie_stand = $request->inspectie_stand;
-
 
 // ORIENTERENDE PALPATIE
 $horse->orienterende_palpatie = $request->orienterende_palpatie;
@@ -214,10 +181,9 @@ $horse->orienterende_palpatie = $request->orienterende_palpatie;
 // BEWEGINGSONDERZOEK
 $horse->bewegingsonderzoek = $request->bewegingsonderzoek;
 
-
        $horse->save();
-    //    Session()->flash('success', 'Post created succesfully');
        return redirect()->route('horses/index');
+
     }
 
 
@@ -262,19 +228,34 @@ $horse->bewegingsonderzoek = $request->bewegingsonderzoek;
     {
         $horse = Horse::find($id);
 
-        if($request->hasFile('featured'))
-        {
-            $featured = $request->featured;
-            $featured_new_name = time().$featured->getClientOriginalName();
-            $featured->move('uploads/horses/', $featured_new_name);
-            $horse->featured = 'uploads/horses/'.$featured_new_name;
-        }
+        if($request->hasFile('featured')){
 
+            //Get Filename with extension
+
+            $filenameWithExt = $request->file('featured')->getClientOriginalName();
+
+            // Get Just Filename
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            // Get Just Ext
+
+            $extension = $request->file('featured')->getClientOriginalExtension();
+
+            // Filename to store
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            // Upload image
+
+            $path = $request->file('featured')->storeAs('public/storage/uploads/horses', $fileNameToStore);
+
+            }
 
 // DATUM
 $horse->datum = $request->datum;
 
-// ALGEMEEN
+// EIGENAAR
 $horse->name = $request->name;
 $horse->name_owner = $request->name_owner;
 $horse->phone_number = $request->phone_number;
@@ -289,31 +270,22 @@ $horse->gender = $request->gender;
 $horse->alternatief_adres = $request->alternatief_adres;
 
 // SITUATIE
-$horse->bezit_eigenaar = $request->bezit_eigenaar;
-$horse->huisvesting = $request->huisvesting;
-$horse->voorgeschiedenis = $request->voorgeschiedenis;
-$horse->voeding = $request->voeding;
-$horse->medicijnen = $request->medicijnen;
-$horse->overig = $request->overig;
-$horse->aankoopkeuring = $request->aankoopkeuring;
+$horse->situatie = $request->situatie;
 
 // KLACHTEN
-$horse->stoornissen = $request->stoornissen;
 $horse->klacht = $request->klacht;
-$horse->behandeling = $request->behandeling;
-$horse->veranderingen = $request->veranderingen;
-$horse->mesten = $request->mesten;
 
+// BEHANDELING TNT
+$horse->behandeling = $request->behandeling;
+
+//VERANDERINGEN
+$horse->verandering = $request->verandering;
 
 // ALGEMENE INDRUK
-$horse->BAR = $request->BAR;
-$horse->voedingstoestand = $request->voedingstoestand;
-$horse->vacht = $request->vacht;
-$horse->voeten = $request->voeten;
+$horse->algemeen = $request->algemeen;
 
 // INSPECTIE IN STAND
 $horse->inspectie_stand = $request->inspectie_stand;
-
 
 // ORIENTERENDE PALPATIE
 $horse->orienterende_palpatie = $request->orienterende_palpatie;
@@ -324,12 +296,10 @@ $horse->bewegingsonderzoek = $request->bewegingsonderzoek;
 
         $horse->save();
 
+        // return redirect()->route('horses/index');
+            return redirect()->back();
 
-        // Session::flash('success', 'Category updated successfully');
-
-        return redirect()->route('horses/index');
-
-    }
+        }
 
     /**
      * Remove the specified resource from storage.
