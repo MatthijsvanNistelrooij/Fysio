@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 @if(count($errors) > 0)
 <ul class="list-group">
     @foreach($errors->all() as $error)
@@ -13,377 +14,607 @@
 </ul>
 @endif
 
-<style>
-    .form-control{
-        padding: 6px 12px;
-        margin-left: 4%;
-        margin-right: 5%;
-        max-width: 90%;
-    }
-    .title {
-        margin-left: 5%;
-        padding-bottom: 6px;
-    }
+
+<div class="card" style="border-radius: 10px">
+
+    <div class="card-header" style="text-align: center; font-weight: bold; background-color: rgb(36, 172, 193); color: white; border-radius: 5px 5px 0 0"> Nieuwe Invoer Paard</div>
+
+    <a href="/horses/index">
+
+        <button class="btn btn-light btn-sm" style="float: left; margin-top: -40px; margin-left: 10px">
+
+            <i class="fas fa-list"></i>
+
+            Index</button>
+
+        </a>
+
+        <a href="/">
+
+            <button class="btn btn-light btn-sm" style="float: right; margin-top: -40px; margin-right: 10px">
 
 
-/*the container must be positioned relative:*/
-.custom-select {
-  /* position: relative;
-  font-family: Arial; */
-}
+                Home
+                <i class="fas fa-home"></i>
+            </button>
 
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
+            </a>
 
-.select-selected {
-  /* background-color: rgb(174, 215, 255); */
-}
 
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  /* position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent; */
-}
 
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  /* border-color: transparent transparent #fff transparent;
-  top: 7px; */
-}
 
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  /* color: #ffffff;
-  padding: 8px 25px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none; */
-}
-
-/*style items (options):*/
-.select-items {
-  /* position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99; */
-}
-
-/*hide the items when the select box is closed:*/
-.select-hide {
-  /* display: none; */
-}
-
-.select-items div:hover, .same-as-selected {
-  /* background-color: rgba(0, 0, 0, 0.1); */
-}
-</style>
-
-<br>
-
-        <div class="card" style="margin-top: 20px; border-radius: 10px">
             <form action="{{ route('horses.store') }}" method="post"  enctype="multipart/form-data">
+
                 {{ csrf_field() }}
 
 
-<div class="card-header"
-style="background-color: rgb(233, 246, 247); color: white; border-radius: 10px 10px 0 0px; color: rgb(39, 39, 79)">
-    Nieuwe Invoer
-</div>
-
-<br>
-<br>
-
-
-<div class="form-group">
-    <div class="row">
-        <div class="col-sm">
-                <label for="title" style="font-weight: bold" class="title">Kies Diersoort</label>
-                <div class="select" style="">
-
-                <select class="form-control">
-                    <option value="" placeholder="">Soort Dier</option>
-                    <option value="paard" placeholder="paard">Paard</option>
-                    <option value="hond" placholder="hond">Hond</option>
-                    <option value="kat" placeholder="kat">Kat</option>
-                </select>
-                </div>
-        </div>
-
-        <div class="col-sm" style="padding-top: 38px">
-        </div>
-    </div>
-<br>
-    <br>
-    <div class="row">
-        <div class="col-sm">
-            <label for="title" style="font-weight: bold" class="title">Datum</label>
-            <input type="text" name="datum" placeholder="MM/DD/YYYY" onfocus="(this.type='date')"
-            onblur="(this.type='text')" class="form-control">
-        </div>
-        <div class="col-sm" style="padding-top: 38px">
-        </div>
-    </div>
-</div>
-
-        <br>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <label for="title" style="font-weight: bold" class="title">Algemeen</label>
-                        <input type="text" name="name" placeholder="naam eigenaar" class="form-control">
-                    </div>
-                    <div class="col-sm" style="padding-top: 38px">
-                        <input type="text" name="name_owner" placeholder="achternaam" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="telefoonnummer" name="phone_number" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="adres" name="address" class="form-control">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="email" name="email" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                    </div>
-                </div>
-            </div>
-<br>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <label for="title" style="font-weight: bold" class="title">Info Paard</label>
-                        <input type="text" placeholder="naam paard" name="name_horse" class="form-control">
-                    </div>
-
-                    <div class="col-sm" style="padding-top: 38px">
-                        <input type="text" placeholder="leeftijd" name="age" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="ras" name="breed" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="geslacht" name="gender" class="form-control">
-                    </div>
-                </div>
-            </div>
                 <div class="form-group">
+
                     <div class="row">
+
                         <div class="col-sm">
-                            <input type="text" placeholder="alternatief adres" name="alternatief_adres" class="form-control">
-                        </div>
-                        <div class="col-sm">
-                            {{-- <input type="file" name="featured" class="form-control"> --}}
-                        </div>
-
-                    </div>
-            </div>
-<br>
-            <label for="title" style="font-weight: bold; margin-left: 26px" class="title">Foto's</label>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="file" name="featured" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="file" name="featured2" class="form-control">
-                    </div>
-
-                </div>
-        </div>
-
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm">
-                    <input type="file" name="featured3" class="form-control">
-                </div>
-                <div class="col-sm">
-                    <input type="file" name="featured4" class="form-control">
-                </div>
-
-            </div>
-    </div>
-
-            <br>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <label for="title" style="font-weight: bold" class="title">Situatie</label>
-                        <input type="text" name="bezit_eigenaar" placeholder="hoe lang in bezit eigenaar?" class="form-control">
-                    </div>
-                    <div class="col-sm" style="padding-top: 38px">
-                        <input type="text" placeholder="huisvesting en ondergrond" name="huisvesting" class="form-control">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="voorgeschiedenis (dracht/hengstigheid)" name="voorgeschiedenis" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="voeding/hoeven/tanden/harnachement" name="voeding" class="form-control">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="medicijnen" name="medicijnen" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="overige aandoeningen" name="overig" class="form-control">
-                    </div>
-                </div>
-                    <div class="form-group"></div>
-                <div class="row">
-                    <div class="col-sm">
-                        <br><br><br>
-                        <label for="aankoopkeuring" class="title" style="font-weight: bold">Aankoopkeuring?</label>
-                        <select name="aankoopkeuring" id="aankoopkeuring" class="form-control">
-                            <option value="ja" placholder="ja">ja</option>
-                            <option value="nee" placeholder="nee">nee</option>
-                        </select>
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="mesten/urineren" name="mesten" class="form-control">
-                    </div>
-                </div>
-
-            </div>
 
 
-            <br>
+                            <br><br>
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <label for="title" style="font-weight: bold" class="title">Klachten</label>
-                        <input type="text" name="stoornissen" placeholder="stoornissen" class="form-control">
-                    </div>
-                    <div class="col-sm" style="padding-top: 38px">
-                        <input type="text" name="klacht" placeholder="klacht - situatie" class="form-control">
-                    </div>
-                </div>
-            </div>
+                            <div class="form-group" style="margin-left: 5%">
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm">
-                        <input type="text" placeholder="behandeling tot nu toe" name="behandeling" class="form-control">
-                    </div>
-                    <div class="col-sm">
-                        <input type="text" placeholder="veranderingen ja/nee?" name="veranderingen" class="form-control">
-                    </div>
 
-                </div>
+                                <div class="">
 
-            </div>
+                                    <label for="title" style="font-weight: bold">Datum: </label>
+
+                                    <input type="text" name="datum" id="currentDate" style="max-width: 80%; text-align: left">
+
+                                </div>
+
+                                <br>
+
+                                <div class="">
 
 
 
-<br>
+                                    <label for="title" style="font-weight: bold">Naam:&nbsp;</label>
+
+                                    <input type="text" name="name_horse" value="..." style="max-width: 80%; text-align: left;">
+
+
+
+                                </div>
+
+                            </div>
+
+                            <br>
+
+
+                            <button type="button" class="collapsible">Eigenaar <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                            <div class="content" style="max-width: 90%; margin-left: 5%; margin-top: 5px">
+
+                                <div class="form-group" style="margin-left: 5%">
+
+                                    <div class="container">
+
+                                        <form action="/action_page.php">
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="name">Eigenaar</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" id="fname" name="name" placeholder="Naam" value="...">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="lname">Achternaam</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" id="lname" name="name_owner" placeholder="Achternaam" value="...">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="address">Adres</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" name="address" placeholder="Straatnaam" value="...">
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="postcode">Postcode</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" name="zipcode" placeholder="Postcode" value="...">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="telefoonnummer">Tel:</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" name="phone_number" placeholder="Tel." value="...">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="email">Email</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <input type="text" name="email" placeholder="Email" value="...">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-25">
+
+                                                    <label for="country">Land</label>
+
+                                                </div>
+
+                                                <div class="col-75">
+
+                                                    <select id="country" name="country">
+
+                                                        <option value="Nederland">Nederland</option>
+
+                                                        <option value="Duitsland">Duitsland</option>
+
+                                                        <option value="België">België</option>
+
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group" style="margin-top: 18px">
+
+                                    <div class="row">
+
+                                        <div class="col-sm">
+
+                                            <button type="button" class="collapsible">Info Paard <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top: 3px; float: right"></i></button>
+
+                                            <div class="content" style="max-width: 90%; margin-left: 5%; margin-top: 18px">
+
+                                                <div class="form-group" style="margin-left: 5%">
+
+                                                    <div class="container">
+
+                                                        <form action="/action_page.php">
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="age">Leeftijd</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <input type="text" name="age" placeholder="Leeftijd" value="...">
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="geboortedatum">Geboortedatum</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <input type="text" name="date_of_birth" placeholder="geboorte datum" value="...">
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="age">Kleur</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <input type="text" name="color" placeholder="kleur" value="...">
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="gender">Geslacht</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <select id="gender" name="gender">
+
+                                                                        <option value="m">Man</option>
+
+                                                                        <option value="v">Vrouw</option>
+
+                                                                    </select>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="lname">Ras</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <input type="text" name="breed" placeholder="Achternaam" value="...">
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="address">Alternatief Adres</label>
+
+                                                                </div>
+
+                                                                <div class="col-75">
+
+                                                                    <input type="text" name="alternatief_adres" placeholder="Alternatief Adres" value="nvt">
+
+                                                                </div>
+                                                            </div>
+
+                                                                <div class="row">
+
+                                                                <div class="col-25">
+
+                                                                    <label for="featured">Afbeelding</label>
+
+                                                                </div>
+                                                                    <div class="col-75">
+                                                                        <input type="file" name="featured" class="form-control" multiple>
+                                                                    </div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="content">
+
+                                                    <br>
+
+                                                    <div class="form-group">
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="row">
+
+                                                <div class="col-sm">
+
+                                                    <div class="form-group"></div>
+
+                                                    <div class="row">
+
+                                                        <div class="col-sm">
+
+                                                            <button type="button" class="collapsible">Situatie  <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                                                            <div class="content">
+
+                                                                <div class="info">
+
+                                                                    <h6> Huisvesting & ondergrond / Hoe lang in bezit eigenaar? / aankoopkeuring? / Voorgeschiedenis ( dracht / hengstigheid )
+
+                                                                    </h6>
+
+                                                                </div>
+
+                                                                <textarea class="form-control" name="situatie" rows="5" placeholder="Situatie" value="...">...</textarea>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="form-group" style="margin-top: 18px">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm">
+
+                                                        <button type="button" class="collapsible">Stoornissen  <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                                                        <div class="content">
+
+                                                            <div class="info">
+
+                                                                <h6>Klacht - situatie / verloop / huidige status / ++ /--
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                            <textarea class="form-control" name="klacht" rows="5" placeholder="Klachten">...</textarea>
+
+                                                        </div>
+
+                                                        <div class="content" >
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="form-group">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm">
+
+                                                        <button type="button" class="collapsible">Behandeling tot nu toe <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                                                        <div class="content">
+
+                                                            <div class="info">
+
+                                                                <h6> Behandeling tot nu toe
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                            <textarea class="form-control" name="behandeling" rows="5" placeholder="Behandeling"> ...</textarea>
+
+                                                        </div>
+
+                                                        <div class="content" >
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+                                            <div class="form-group">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm">
+
+                                                        <button type="button" class="collapsible">Veranderingen <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                                                        <div class="content">
+
+                                                            <div class="info">
+
+                                                                <h6> Uiterlijk / Gedrag / Mesten / Urineren / Voeding / Hoeven / Tanden / Harnachement / Medicijnen / Overige aandoeningen
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                            <textarea class="form-control" name="verandering" rows="5" placeholder="Veranderingen"> ...</textarea>
+
+                                                        </div>
+
+                                                        <div class="content" >
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm">
+
+                                                        <button type="button" class="collapsible">Algemene Indruk <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+                                                        <div class="content">
+
+                                                            <div class="info">
+
+                                                                <h6> BAR / Voedingstoestand / Vacht / Voeten
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                            <textarea class="form-control" name="algemeen" rows="5" placeholder="Algemene indruk"> ...</textarea>
+
+                                                        </div>
+
+                                                        <div class="content" >
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+
+
 
 <div class="form-group">
     <div class="row">
-        <div class="col-sm">
-            <label for="title" style="font-weight: bold" class="title">Algemene Indruk</label>
-            <br>
-            <label for="BAR" class="title" style="font-weight: bold; margin-top: 5px" >BAR:</label>
+            <div class="col-sm">
+                <button type="button" class="collapsible">Inspectie in stand <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+                <div class="content" style="margin-top: 5px">
+                    <textarea class="form-control" name="inspectie_stand" rows="5">...</textarea>
 
-            <select name="BAR" id="BAR" class="form-control">
-                <option value="-5" placeholder="-5">-5</option>
-                <option value="-4" placeholder="-4">-4</option>
-                <option value="-3" placeholder="-3">-3</option>
-                <option value="-2" placeholder="-2">-2</option>
-                <option value="-1" placholder="-1">-1</option>
-
-                <option value="0" placholder="0">0</option>
-
-                <option value="1" placholder="1">1</option>
-                <option value="2" placeholder="2">2</option>
-                <option value="3" placeholder="3">3</option>
-                <option value="4" placeholder="4">4</option>
-                <option value="5" placeholder="5">5</option>
-
-
-            </select>
-        </div>
-        <div class="col-sm" style="padding-top: 38px">
-            <input type="text" name="voedingstoestand" placeholder="voedingstoestand" class="form-control">
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="form-group">
+    <div class="form-group">
+        <div class="row">
+                <div class="col-sm">
+        <button type="button" class="collapsible">Oriënterende Palpatie <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+
+        <div class="content" style="margin-top: 5px">
+            <textarea class="form-control" name="orienterende_palpatie" rows="5">...</textarea>
+  </div>
+   </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+                <div class="col-sm">
+                    <button type="button" class="collapsible">Inspectie in beweging <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+                    <div class="content" style="margin-top: 5px">
+                        <label for="stap" style="margin-left: 5%; margin-bottom: -15px; color: gray">stap</label>
+                        <textarea class="form-control" name="inspectie_beweging_stap" rows="3">...</textarea>
+                        <label for="stap" style="margin-left: 5%; margin-bottom: -15px; color: gray">draf</label>
+                        <textarea class="form-control" name="inspectie_beweging_draf" rows="3">...</textarea>
+                        <label for="stap" style="margin-left: 5%; margin-bottom: -15px; color: gray">galop</label>
+                        <textarea class="form-control" name="inspectie_beweging_galop" rows="3">...</textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <div class="form-group">
     <div class="row">
-        <div class="col-sm">
-            <input type="text" placeholder="vacht" name="vacht" class="form-control">
-        </div>
-        <div class="col-sm">
-            <input type="text" placeholder="voeten" name="voeten" class="form-control">
-        </div>
-    </div>
-</div>
-<br>
-<br>
+            <div class="col-sm">
+        <button type="button" class="collapsible">Bewegingsonderzoek <i class="far fa-question-circle"></i><i class="fas fa-chevron-circle-down" style="margin-top:3px; float: right"></i></button>
+        <div class="content" style="margin-top: 5px">
 
-<div class="form-group" style="margin-left:-15px">
-    <label for="orienterende_palpatie" class="title" style="font-weight: bold">Inspectie in stand</label>
-    <textarea class="form-control" name="inspectie_stand" rows="3"></textarea>
-  </div>
-
-  <br>
-
-<div class="form-group" style="margin:-15px">
-    <label for="orienterende_palpatie" class="title" style="font-weight: bold">Oriënterende Palpatie</label>
-    <textarea class="form-control" name="orienterende_palpatie" rows="3"></textarea>
-  </div>
-
-  <br>
-<br>
-    <div class="form-group" style="margin: -15px">
-        <label for="bewegingsonderzoek" class="title" style="font-weight: bold">Bewegingsonderzoek</label>
-        <textarea class="form-control" name="bewegingsonderzoek" rows="3"></textarea>
+        <textarea class="form-control" name="bewegingsonderzoek" rows="5">...</textarea>
       </div>
+     </div>
+
       <br><br>
 </div>
 
-</div>
 
+<br>
+                </div>
             <div class="form-group">
                 <div class="text-center">
                     <button class="btn btn-success" type="submit">
-                        Opslaan
+                        <i class="fas fa-chevron-circle-right"></i>
+                        Verder
                     </button>
                 </div>
                 <br>
@@ -393,6 +624,29 @@ style="background-color: rgb(233, 246, 247); color: white; border-radius: 10px 1
 </div>
 
 
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    var today = new Date();
+
+    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+
+    document.getElementById("currentDate").value = date;
+
+</script>
 
 
 @endsection

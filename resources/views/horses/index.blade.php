@@ -2,68 +2,93 @@
 
 @section('content')
 
+<div class="form-group">
 
+    <div class="row">
 
-@if (Session::has('message'))
-    <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
+        <div class="col-sm">
 
-<br>
+            <div class="text-center">
 
-<div class="search">
-    <div class="input-group">
-        <br>
-        <div class="form-outline">
+                <div class="card-header" style="text-align: center; font-weight: bold; background-color: rgb(36, 172, 193); color: white; border-radius: 5px 5px 0 0">
 
-          <input type="search" id="form1" placeholder="zoek op klantnaam" class="form-control"/>
-        </div>
-        &nbsp;
-        <a href="/horses/index">
-            <button type="button" class="btn btn-primary">
-                <i class="fas fa-search"></i>
-              </button>
+                    <a href="/animals/index">
+
+                        <button class="btn btn-light btn-sm" style="float: left; margin-top: -3px; margin-left: -10px">
+
+                            <i class="fas fa-arrow-circle-left"></i>
+
+                            Start</button>
+
+                        </a>
+
+                    Index
+
+                    <i class="fas fa-search"></i>
+
+                    <a href="/">
+
+                        <button class="btn btn-light btn-sm" style="float: right; margin-top: -3px; margin-right: -10px">
+
+                            Home
+
+                            <i class="fas fa-home"></i>
+
+                        </button>
+
                 </a>
-         </div>
-</div>
+                </div>
+        </div>
+        <div class="card" style="border-radius: 0 0 10px 10px; overflow: hidden; border:1px solid rgb(221, 221, 221); padding: 5px; background-color: rgb(255, 255, 255)">
+
+           <br><br>
+
+        <br>
+        <div class="center" style="text-align: center; margin-left: 10%">
+            <select id="select" class="form-control" style="width: 80%">
+                <option value="">...</option>
+                @foreach($horses as $key => $value)
 
 
+                {{-- go to show --}}
+                {{-- <option value="{{ URL::to('horses/' . $value->id) }}">{{ $value->name_horse }} ({{ $value->datum }})</option> --}}
+
+                {{-- go to edit --}}
+                <option value="{{ URL::to('horses/' . $value->id . '/edit') }}">{{ $value->name_horse }} ({{ $value->datum }})</option>
+
+                @endforeach
+            </select>
+        </div>
+
+            <br>
+            <div class="center" style="text-align: center">
+                <button class="btn btn-success" style="text-align: center" type="submit" onclick="redirectToMyPage();">
+                    <i class="fas fa-chevron-circle-right"></i>
+                    Verder
+                </button>
+            </div>
 <br>
-<table class="table table-striped table-bordered" style="margin-top: 20px; background-color: white; border-radius: 10px; border:none">
-    <thead>
-        <tr>
-            <td class="top" style="padding-top: 15px">ID</td>
-            <td class="top" style="padding-top: 15px">Naam Paard</td>
-            <td class="top" style="padding-top: 15px">Leeftijd</td>
-            <td class="top" style="padding-top: 15px">Eigenaar</td>
-            <td class="top" style="padding-top: 15px">Telefoonnummer</td>
-            <td class="top" style="padding-top: 15px">Email</td>
-            <td class="top" style="padding-top: 15px">&nbsp;Action
-     </td>
-        </tr>
-    </thead>
-    <tbody>
+<br>
+        </div>
 
-        @foreach($horses as $key => $value)
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
 
-    <tr style="cursor: pointer">
-        <td style="padding-top: 15px">{{ $value->id }}</td>
-        <td style="padding-top: 15px">{{ $value->name_horse }}</td>
-        <td style="padding-top: 15px">{{ $value->age }}</td>
-        <td style="padding-top: 15px">{{ $value->name }} {{ $value->name_owner }}</td>
-        <td style="padding-top: 15px">{{ $value->phone_number }}</td>
-        <td style="padding-top: 15px">{{ $value->email }}</td>
-    <td>
-
-            <a class="btn btn-small btn-success" href="{{ URL::to('horses/' . $value->id) }}" style="margin-bottom: 5px">Openen</a>
-&nbsp;
-            <a class="btn btn-small btn-info" href="{{ URL::to('horses/' . $value->id . '/edit') }}" style="margin-bottom: 5px">Aanpassen</a>
-        </td>
-    </tr>
-    @endforeach
-</tbody>
-</table>
+    </div>
 
 </div>
 
+
+
+{{-- MAKE SELECT LINK CLICKABLE --}}
+
+<script>
+     function redirectToMyPage(){
+            location.href = document.getElementById('select').value;
+        }
+</script>
 
 @endsection

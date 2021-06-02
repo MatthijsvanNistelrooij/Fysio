@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
+{{-- <style>
 
-<style>
 body {
     font-family: Arial;
     background-image: url('/images/logo4.png');
@@ -49,14 +51,13 @@ cursor: pointer;
 padding: 14px 16px;
 transition: 0.3s;
 font-size: 17px;
-color: rgb(46, 114, 187, 0.8);
-border-bottom: 1px solid rgb(206, 206, 206);
+color: rgb(223, 223, 223);
 font-weight: bold;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    color:gray;
+    color: rgb(36, 172, 193);
     }
 
 /* Style the tab content */
@@ -64,9 +65,7 @@ font-weight: bold;
 background-color:  rgb(255, 255, 255);
 display: none;
 padding: 6px 12px;
-border: 1px solid rgb(209, 209, 209);
-border-radius: 0 0 8px 8px;
-border-top: none;
+
 }
 
 .tab .tab_1 {
@@ -79,14 +78,11 @@ border-top: none;
 
 }
 
-/* Create an active/current tablink class */
 .tab button.active {
-background-color:  rgb(255, 255, 255);
-color: rgb(145, 145, 145);
-border: 1px solid rgb(206, 206, 206);
-border-bottom: white;
+background-color:rgb(255, 255, 255);
 font-weight: bold;
-border-radius: 8px 8px 0 0;
+color: rgb(0, 151, 174);
+
 }
 
 
@@ -110,99 +106,17 @@ border-radius: 8px 8px 0 0;
         transform: scale(1.1);
         }
 
-        </style>
+        </style> --}}
 
 </head>
 <body>
 
     <br><br><br>
-    <div class="container">
-
+    <div class="container" style="background-color: transparent">
+        <br>
     <div id="app">
-
-        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-radius: 5px; height: 72px; border: 1.5px solid rgb(155, 155, 155, 0.5); color: rgb(233, 246, 247)">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('/') }}" style="margin-top: 5px">
-                                 <img src="/images/logo.png" alt="" style="width: 155px; margin-left: -15px; margin-top: -15px; margin-bottom: -10px" class="zoom_no_image">
-                                </a>
-                          </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('horses/index') }}" style="margin-top: 5px">
-                                <i class="fas fa-home"></i>
-                                Home</a>
-                          </li> &nbsp;
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('horses/create') }}" style="margin-top: 5px">
-                                <i class="fas fa-plus"></i>
-                                Nieuwe Invoer</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('animals/index') }}" style="margin-top: 5px">
-                                <i class="fas fa-dog"></i>
-                                Dieren </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('horses/index') }}" style="margin-top: 5px">
-                                <i class="fas fa-gear"></i>
-                                Settings </a>
-                          </li>
-                          <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ URL::to('horses/twitter') }}" style="margin-top: 5px">
-                                    <i class="fab fa-twitter"></i>
-                                    Twitter &nbsp;</a>
-                              </li>
-
-
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-
-
-                        <!-- Authentication Links -->
-                        {{-- @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div> --}}
             </div>
-        </nav>
+
 
         <main class="py-4">
             @yield('content')
@@ -212,3 +126,14 @@ border-radius: 8px 8px 0 0;
 
 </body>
 </html>
+
+<script>
+    function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>

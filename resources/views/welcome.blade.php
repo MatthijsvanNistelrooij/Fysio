@@ -30,33 +30,75 @@
             box-sizing: border-box;
             }
 
-            img {
-                margin-left: -15%;
-            }
-
-            .zoom {
-            position: relative;
-            margin-top: -4%;
-            margin-left: 30%;
-            width: 50%;
-            transition: transform .4s;
-            }
 
             .zoom:hover {
-
             -ms-transform: scale(1.1); /* IE 9 */
             -webkit-transform: scale(1.1); /* Safari 3-8 */
             transform: scale(1.15);
             }
 
-            .search {
-            margin-top: 150px;
-            margin-left: 43%;
-            width: 50%;
 
-            }
+    .logo {
+        height: auto;
+        margin: auto;
+        width: 80%;
+        padding: 5px;
+        margin-top: 10%;
+        text-align: center;
+        margin-bottom: 2%;
+        margin-right: 8%;
+    }
+
+    .start {
+        height: 110px;
+        margin: auto;
+        width: 25%;
+        padding: 0px;
+        text-align: center;
+        border: 3px solid rgba(36, 172, 193, 0.2);
+        background-color: rgb(36, 172, 193);
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        border-radius: 15px;
+        font-weight: bold;
+    }
+
+    .a {
+        width: 300px;
+    }
+
+    .versie {
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        margin-top: 50px
+
+    }
 
 
+    .start:hover{
+        background-color: rgb(36, 172, 193, 0.8);
+        color: white;
+    }
+
+    .row{
+        max-width: 99%;
+        margin-left: 0.5%;
+        margin-top: 10%;
+    }
+    .col{
+        padding: 10px;
+        height: 80px;
+        width: 100%;
+        border: 1px solid rgb(236, 236, 236);
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+        .col:hover {
+            background-color: rgb(211, 211, 211, 0.2);
+            color: black;
+        }
         </style>
     </head>
 
@@ -64,66 +106,69 @@
     <body>
     </html>
 
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-{{--
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
- --}}
-
-
-
-        <div class="container">
-                            <div class="zoom">
-                                <a href="/horses/index">
-                                    <img src="/images/horses3.png" alt="" style="width: 550px">
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           </div>
+<div class="container">
+        <div class="logo">
+            <img src="images/afbeelding1.jpg" alt="" class="logo">
         </div>
 
+        <div class="start">
+        <a href="/animals/index" style="text-decoration: none">
 
-        <div class="search">
-            <div class="input-group">
-                <br>
-                <div class="form-outline">
-
-                  <input type="search" id="form1" class="form-control"/>
-                </div>
-                &nbsp;
-                <a href="/horses/index">
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-search"></i>
-                      </button>
-
-                </a>
-                 </div>
-
+            <i class="fas fa-plus-circle" style="color: rgb(255, 255, 255); margin-top: 10px; font-size: 22px"></i>
+            <br>
+            <p>Start</p>
+             <p style="margin-top: -22px; margin-bottom: 10px"> Sessie</p>
+        </div>
+    </a>
 
         </div>
-        {{-- @endif --}}
+        <div class="versie"">
+            {{-- v.1.0 --}}
+        </div>
 
     </div>
 
+
+<div class="row">
+    <div class="col">
+        <a href="/horses/index" style="text-decoration: none">
+
+    <i class="fas fa-address-book" style="font-size: 25px"></i>
+    <br>
+    Contacten
+    <br>
+    </div>
+</a>
+
+    <div class="col">
+        <a href="/horses/index" style="text-decoration: none">
+        <i class="fas fa-dog" style="font-size: 25px"></i>
+        <br>
+        Dieren
+    <br>
+</a>
+
+    </div>
+    <div class="col">
+        <a href="/horses/index" style="text-decoration: none">
+        <i class="fas fa-list" style="font-size: 25px"></i>
+        <br>
+        Overzicht
+    <br>
+</a>
+
+</div>
+    <div class="col">
+        <a href="/horses/index" style="text-decoration: none">
+
+        <i class="fas fa-ellipsis-h"></i>
+        <br>
+
+        Overig
+    <br>
+        </a>
+</div>
+  </div>
 
 
 </body>
