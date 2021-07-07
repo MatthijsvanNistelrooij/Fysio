@@ -2637,16 +2637,11 @@
             </th>
             <th>
             </th>
-
         </tr>
             <tr>
                 <th>Scapula</th>
-
-
                 <th>
-
                     Elevation-depression
-
                     <p style="font-weight: initial">{{ $sessie->bbr15 }}</p>
 
                 </th>
@@ -2762,8 +2757,10 @@
                 Retraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbr34 }} </p>
             </th>
         </tr>
+    </table>
         <br>
         <br>
+
         <span style="font-weight: bold">Behandeling Been (links)</span>
         <table class="table" style="font-size: 15px">
             <br>
