@@ -1,462 +1,331 @@
-
 body {
-    font-family: Arial;
-    background-image: url('/images/logo4.png');
-    /* background-repeat: no-repeat; */
-    background-position: -1000% -50%;
-    background-attachment: fixed;
-    background-size: 1800px auto;
-    opacity: 0.9;
+font-family: Arial;
+margin: 0;
 }
 
-
-td.top{
-    background-color: rgb(77, 77, 77);
-    color: rgb(208, 208, 208);
-    border-radius: 10px 10px 0 0;
-    border: none;
+* {
+box-sizing: border-box;
 }
 
-.tablinks {
-    margin-left: 2%;
-
-}
-
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border-bottom: none;
-    background-color: transparent;
-    border-radius: 10px 10px 0 0;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-background-color: inherit;
-float: left;
-border: none;
-outline: none;
-cursor: pointer;
-padding: 14px 16px;
-transition: 0.3s;
-font-size: 17px;
-color: rgb(223, 223, 223);
-font-weight: bold;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    color: rgb(36, 172, 193);
-    }
-
-/* Style the tab content */
-.tabcontent {
-background-color:  rgb(255, 255, 255);
-display: none;
-padding: 6px 12px;
-
-}
-
-.tab .tab_1 {
-    border-right: none;
-}
-
-.tab .tab_1:hover {
-    background-color: white;
-    cursor: default;
-
-}
-
-.tab button.active {
-background-color:rgb(255, 255, 255);
-font-weight: bold;
-color: rgb(0, 151, 174);
-
-}
-
-
-        .zoom {
-        transition: transform .25s;
-        }
-
-        .zoom_no_image {
-        transition: transform .3s;
-        }
-
-        .zoom_no_image:hover {
-        -ms-transform: scale(1.1); /* IE 9 */
-        -webkit-transform: scale(1.1); /* Safari 3-8 */
-        transform: scale(1.06);
-        }
-
-        .zoom:hover {
-        -ms-transform: scale(1.1); /* IE 9 */
-        -webkit-transform: scale(1.1); /* Safari 3-8 */
-        transform: scale(1.1);
-        }
-
-
-
-    /* show.blade */
-
-    div::-webkit-scrollbar {
-        width: 12px;               /* width of the entire scrollbar */
-      }
-
-      div::-webkit-scrollbar-track {
-        background: rgb(255, 255, 255);        /* color of the tracking area */
-      }
-
-      div::-webkit-scrollbar-thumb {
-        background-color: rgb(169, 169, 169);    /* color of the scroll thumb */
-        border-radius: 20px;       /* roundness of the scroll thumb */
-        border: 3px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
-      }
-
-       .collapsible {
-        color: rgb(17, 17, 17);
-        cursor: pointer;
-        padding: 15px;
-        width: 100%;
-        height: 55px;
-        text-align: left;
-        outline: none;
-        font-size: 20px;
-        border: 1px solid rgb(206, 206, 206);
-        border-radius: 1px;
-        font-weight: bold;
-        margin-bottom: -25px;
-        padding-bottom: -35px;
-        background-color: rgb(250, 250, 250);
-      }
-
-      .collapsible_2 {
-        cursor: pointer;
-        padding: 0px;
-        padding-top: 10px;
-        padding-left: 12px;
-        width: 100%;
-        height: 48px;
-        text-align: left;
-        outline: none;
-        font-size: 17px;
-        border: 1px solid rgb(223, 223, 223);
-        border-radius: 5px;
-        font-weight: bold;
-        color: rgb(141, 141, 141, 0.8);
-        background-color: rgb(242, 242, 242, 0.4);
-      }
-
-
-
-      .active_2, .collapsible_2:hover {
-          background-color: rgb(238, 238, 238, 0.5);
-          color: rgb(0, 151, 174);
-        }
-
-      .content_2 {
-          display: none;
-          padding-left: 15px;
-          margin-top: 5px;
-          border: 1px solid rgb(223, 223, 223);
-          border-radius: 5px;
-      }
-
-      .content {
-        width: 100%;
-        border: none;
-        display: none;
-        overflow: hidden;
-        background-color: rgb(250, 250, 250);
-        margin-bottom: -25px;
-        color: rgb(162, 162, 162);
-      }
-
-      .img2 {
-          width: 90%;
-      }
-
-      .l1 {
-          background-color: rgb(250, 250, 250);
-          font-size: 14px;
-      }
-
-      .fa-chevron-circle-down {
-          margin-right: 10px
-      }
-
-      .title {
-          font-weight: bold;
-          text-align: center;
-      }
-
-
-
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      td, th {
-        border: 1px solid #bfbfbf;
-        text-align: left;
-        padding: 4px;
-
-      }
-
-      tr:nth-child(even) {
-        background-color: #f3f3f3;
-      }
-
-
-      /* ////// CREATE */
-
-      * {
-        box-sizing: border-box;
-      }
-
-      input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-      }
-
-      /* label {
-        padding: 12px 12px 12px 0;
-        display: inline-block;
-      } */
-
-      input[type=submit] {
-        background-color: #04AA6D;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-      }
-
-      input[type=submit]:hover {
-        background-color: #45a049;
-      }
-
-      .container {
-        border-radius: 5px;
-        background-color: white;
-        padding: 20px;
-      }
-
-      .card{
-          border: 1px solid rgb(230, 230, 230);
-      }
-
-      .col-25 {
-        float: left;
-        width: 25%;
-        margin-top: 6px;
-      }
-
-      .col-75 {
-        float: left;
-        width: 75%;
-        margin-top: 6px;
-      }
-
-
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .col-25, .col-75, input[type=submit] {
-          width: 100%;
-          margin-top: 0;
-        }
-      }
-          .info {
-              width: 90%;
-              border: 1px solid rgb(220, 220, 220);
-              margin-left: 5%;
-              border-radius: 5px;
-              padding: 3px;
-              padding-top: 10px;
-              padding-left: 15px;
-              margin-top: 10px;
-              font-style: italic;
-              color: rgb(175, 175, 175);
-          }
-
-
-          .collapsible {
-          background-color: rgb(36, 172, 193);
-          color: rgb(255, 255, 255);
-          cursor: pointer;
-          padding: 5px;
-          padding-left: 15px;
-          padding-right: 15px;
-          width: 90%;
-          /* border: 2px solid rgb(122, 122, 122, 0.2); */
-          text-align: left;
-          outline: none;
-          font-size: 18px;
-          margin-left: 5%;
-          border-radius: 5px;
-          height: 45px;
-          }
-
-      .active, .collapsible:hover {
-          background-color: rgb(36, 172, 193, 0.8);
-      }
-
-
-
-      .content {
-        padding: 5px 0px;
-        display: none;
-        overflow: hidden;
-        background-color: #ffffff;
-        width: 100%;
-      }
-
-          .form-control{
-              padding: 6px 12px;
-            margin-left: 5%;
-            max-width: 90%;
-            margin-top: 5px;
-            margin-bottom: 10px;
-          }
-
-          .input-group-text{
-              max-width: 80%;
-              margin-left: 5%;
-              background-color: white;
-              border: none;
-          }
-
-
-      .fa-chevron-circle-down{
-          color: rgb(255, 255, 255);
-      }
-
-/*  EDIT PAGE  */
-
-
-
-    * {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
+img {
+vertical-align: middle;
 }
 
 .container {
-  border-radius: 5px;
-  background-color: white;
-  padding: 20px;
+position: relative;
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+.cursor {
+cursor: pointer;
 }
 
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+.prev, .next{
+cursor: pointer;
+position: absolute;
+top: 40%;
+width: auto;
+padding: 16px;
+margin-top: -80px;
+color: rgb(214, 214, 214);
+font-weight: bold;
+font-size: 45px;
+text-decoration: none;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
 }
 
+.prev:hover{
+text-decoration: none;
+color: gray;
+background-color: transparent;
+}
 
+.next:hover{
+text-decoration: none;
+color: gray;
+background-color: transparent;
+}
 
-/* Clear floats after the columns */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+.caption-container {
+text-align: center;
+background-color: #222;
+padding: 2px 16px;
+color: white;
+}
+
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+content: "";
+display: table;
+clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
+/* Six columns side by side */
+.column {
+float: left;
+width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+opacity: 1;
+}
+
+.collapsible {
+color: rgb(111, 111, 111);
+cursor: pointer;
+padding: 6px;
+width: 100%;
+border: 1px solid rgb(235, 235, 235);
+text-align: center;
+outline: none;
+margin-bottom: 2px;
+height: 40px;
+border-radius: 5px;
+background-color: rgba(232, 232, 232, 0.3);
+font-size: 15px;
+font-weight: bold;
+}
+
+
+.inputs{
+    display: none;
+}
+
+.zoom {
+    transition: transform .2s;
+    transform: scale(1.2);
+
+
+}
+.zoom:hover{
+    transform: scale(1.4);
+}
+
+.tile{
+
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 80px;
+    margin-left: 5%;
     width: 100%;
-    margin-top: 0;
-  }
+    height: 150px;
+    background-color: rgb(242, 193, 31);
+    color: rgb(255, 255, 255);
+    border: none;
+
 }
-    /* .info {
-        width: 90%;
-        border: 1px solid rgb(220, 220, 220);
-        margin-left: 5%;
-        border-radius: 5px;
-        padding: 1%;
-        margin-top: 0.5%;
-        margin-bottom: 1%;
-        font-style: italic;
-        color: rgb(175, 175, 175);
-    } */
+.tile:hover {
+    background-color: rgb(218, 169, 10);
+    color: rgb(255, 255, 255);
+
+}
+
+.tile2{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(121, 170, 93);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.tile2:hover{
+    background-color: rgb(104, 146, 80);
+    color: rgb(255, 255, 255);
+
+}
+
+.tile3{
+    margin-left: -15px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(255, 115, 115);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.tile3:hover {
+    background-color: rgb(199, 90, 90);
+    color: rgb(255, 255, 255);
+
+}
+
+
+.tile4{
+    margin-left: 5%;
+    margin-top: -2px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(50, 154, 223);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.tile4:hover {
+    background-color: rgb(38, 120, 175);
+    color: rgb(255, 255, 255);
+
+}
+
+.tile5{
+    margin-top: -2px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(161, 98, 161);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+.tile5:hover{
+    background-color: rgb(146, 85, 146);
+    color: rgb(255, 255, 255);
+
+}
+.horse {
+
+    margin-top: 40px;
+    background: url('/images/horse_skelet.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 80%;
+    width: 500px;
+}
+
+.imgbtn {
+    height: 80px;
+    width: 80px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+}
+
+.imgbtn:hover {
+    background-color: rgba(255, 17, 17, 0.2);
+    border-radius: 50%;
+}
 
 
 
-.active, .collapsible:hover {
-    background-color: rgb(36, 172, 193, 0.8);
+.imgbtn2 {
+    height: 80px;
+    width: 80px;
+
+    background-color: transparent;
+    border: none;
+}
+
+
+
+.tile6{
+    margin-left: -15px;
+    margin-top: -2px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(63, 194, 192);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.tile6:hover {
+    background-color: rgb(48, 148, 146);
+    color: rgb(255, 255, 255);
+}
+
+
+.collapsible2 {
+    color: rgb(167, 167, 167, 0.9);
+    cursor: pointer;
+    padding: 6px;
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    text-align: left;
+    outline: none;
+    margin-bottom: 2px;
+    height: 35px;
+    background-color: rgba(232, 232, 232, 0.3);
+    font-size: 15px;
+    }
+
+.active{
+    background-color: rgb(0, 72, 255);
+    color: rgb(116, 160, 255);
+}
+
+.info {
+    border: 1px solid rgb(221, 221, 221);
+    font-style: italic;
+    color: rgb(206, 206, 206);
+    padding-top: 6px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    height: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.collapsible:hover {
+    background-color: rgb(45, 105, 255, 0.8);
+    color: rgb(255, 255, 255);
 }
 
 .content {
-  padding: 5px 0px;
-  display: none;
-  overflow: hidden;
-  background-color: #ffffff;
-  width: 100%;
+padding: 0 18px;
+display: none;
+overflow: hidden;
+background-color: #f1f1f1;
 }
 
 
-
-    .input-group-text{
-        max-width: 80%;
-        margin-left: 5%;
-        background-color: white;
-        border: none;
-    }
-/*
-    .title {
-        margin-left: 15%;
-        padding-bottom: 6px;
-        display: block;
-        font-weight: bold;
-    } */
-
-.fa-chevron-circle-down{
-    color: rgb(255, 255, 255);
+.title1 {
+    font-size: 15px;
+    margin-bottom: 32px;
+    color: rgb(167, 167, 167);
 }
+
+.title {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+    width:  8px;
+  }
+
+  .input{
+      margin-bottom: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border:none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(221, 221, 221);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(189, 189, 189);
+  }
