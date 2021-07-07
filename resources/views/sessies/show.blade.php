@@ -2552,224 +2552,430 @@
 {{-- </div> --}}
 <br>
 <br>
-<span style="font-weight: bold">Behandeling Been</span>
+<span style="font-weight: bold">Behandeling Been (rechts)</span>
 <table class="table" style="font-size: 15px">
     <br>
     <tbody>
         <tr>
-            <th style="border-top: 2px solid rgb(0, 0, 0)">TMJ</th>
+            <th style="border-top: 2px solid rgb(0, 0, 0)">Front DIJ</th>
             <th style="border-top: 2px solid black">
-                Lateral:   <p style="font-weight: initial">{{ $sessie->bo1 }} - {{ $sessie->bo2}}</p>
-            </th>
-            <th style="border-top: 2px solid black">
-               Caudal glide:  <p style="font-weight: initial">{{ $sessie->bo3 }} - {{ $sessie->bo4}}</p>
+                Flexion-extension   <p style="font-weight: initial">{{ $sessie->bbr1 }} </p>
             </th>
             <th style="border-top: 2px solid black">
-               Rostral glide:  <p style="font-weight: initial">{{ $sessie->bo5 }} - {{ $sessie->bo6}}</p>
+                Abduction-addaction <p style="font-weight: initial">{{ $sessie->bbr2 }}</p>
+            </th>
+            <th style="border-top: 2px solid black">
+                Internal/external rotation<p style="font-weight: initial">{{ $sessie->bbr3 }}</p>
             </th>
 
         </tr>
         <tr>
-            <th style="height: 30px">Hyoid</th>
+            <th style="height: 30px">Front PIJ</th>
             <th>
-                 Dorsal <p style="font-weight: initial">{{ $sessie->bo7 }} - {{ $sessie->bo8}}</p>
+                Flexion-extension<p style="font-weight: initial">{{ $sessie->bbr4 }}</p>
             </th>
             <th>
-                 Lateral <p style="font-weight: initial">{{ $sessie->bo9 }} - {{ $sessie->bo10}}</p>
+                Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbr5 }}</p>
             </th>
             <th>
+                Internal/external-adduction <p style="font-weight: initial">{{ $sessie->bbr6 }}</p>
             </th>
 
-        </tr>
         <tr>
-            <th>General extension CWK</th>
+            <th>MPJ</th>
             <th>
-                <p style="font-weight: initial">{{ $sessie->bo7 }} </p>
-            </th>
-        </tr>
-        <tr>
-            <th>C01-C1</th>
-            <th>
-                Flexie <p style="font-weight: initial">{{ $sessie->bo12 }}</p>
+                Flexion-extension <p style="font-weight: initial">{{ $sessie->bbr7 }}</p>
             </th>
             <th>
-                Extensie <p style="font-weight: initial">{{ $sessie->bo14 }}</p>
+                Abductionj-adduction <p style="font-weight: initial">{{ $sessie->bbr8 }}</p>
             </th>
             <th>
-               Lateroflexie <p style="font-weight: initial">{{ $sessie->bo15 }} - {{ $sessie->bo16}}</p>
+                Lateroflexie <p style="font-weight: initial">{{ $sessie->bbr9 }}</p>
             </th>
 
 
 
         </tr>
         <tr>
-            <th>C1-C2</th>
+            <th>Carpal Joints</th>
             <th>
-                Rotatie <p style="font-weight: initial">{{ $sessie->bo17 }} - {{ $sessie->bo18}}</p>
+                Flexion-extension <p style="font-weight: initial">{{ $sessie->bbr10 }}</p>
             </th>
-            <th></th>
+            <th>Flexion abduction/adductio <p style="font-weight: initial">{{ $sessie->bbr11 }}</p>
+
+            </th>
             <th></th>
 
 
         </tr>
         <tr>
-            <th>General latflex CWK</th>
+            <th>Accessory bone</th>
                 <th>
-                    <p style="font-weight: initial">{{ $sessie->bo11 }} - {{ $sessie->bo13}}</p>
+                    Lateral-medial motion
+                    <p style="font-weight: initial">{{ $sessie->bbr12 }}</p>
                 </th>
         </tr>
         <tr>
-            <th>C2-C7</th>
+            <th>Elbow</th>
             <th>
-                Lateroflexie <p style="font-weight: initial">{{ $sessie->bo19 }} - {{ $sessie->bo20}}</p>
+                Flexion-extension <p style="font-weight: initial">{{ $sessie->bbr13 }}</p>
             </th>
             <th>
-              Flexie <p style="font-weight: initial">{{ $sessie->bo21 }}</p>
             </th>
             <th>
-                Extensie <p style="font-weight: initial">{{ $sessie->bo22 }}</p>
             </th>
 
 
         </tr>
         <tr>
-            <th>T3-T10</th>
+            <th>Shoulder</th>
 
             <th>
-                General Flexion <p style="font-weight: initial">{{ $sessie->bo25 }}</p>
+                Flexion abduction/adductio <p style="font-weight: initial">{{ $sessie->bbr14 }}</p>
             </th>
             <th>
-                Specific flexion <p style="font-weight: initial">{{ $sessie->bo26 }}</p>
             </th>
             <th>
-                General rot/latflex <p style="font-weight: initial">{{ $sessie->bo27 }} - {{ $sessie->bo28 }}</p>
             </th>
 
         </tr>
             <tr>
-<th></th>
+                <th>Scapula</th>
+
+
+                <th>
+
+                    Elevation-depression
+
+                    <p style="font-weight: initial">{{ $sessie->bbr15 }}</p>
+
+                </th>
             <th>
-                Specific rot/latflex <p style="font-weight: initial">{{ $sessie->bo29 }} - {{ $sessie->bo30 }}</p>
+                Neutral-abduction       <p style="font-weight: initial">{{ $sessie->bbr16 }}</p>
+
             </th>
             <th>
-                Specific extension <p style="font-weight: initial">{{ $sessie->bo31 }}</p>
             </th>
 
         </tr>
         <tr>
-            <th>T10-L6</th>
+            <th>Front leg general</th>
             <th>
-                Active extension cranial - caudal <p style="font-weight: initial">{{ $sessie->bo32 }}</p>
+                Protraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbr17 }}</p>
             </th>
             <th>
-                Active flexion caudal - cranial <p style="font-weight: initial">{{ $sessie->bo33 }}</p>
             </th>
             <th>
-                 Passive regional lateral bending <p style="font-weight: initial">{{ $sessie->bo34 }} - {{ $sessie->bo35 }}</p>
             </th>
         </tr>
             <tr>
-                <th></th>
+                <th>Hind DIJ</th>
 
             <th>
-                Flexion segmental <p style="font-weight: initial">{{ $sessie->bo37 }} </p>
+                Flexion-extension
+
+                <p style="font-weight: initial">{{ $sessie->bbr18 }} </p>
             </th>
             <th>
-                Latflex/rot <p style="font-weight: initial">{{ $sessie->bo38 }} - {{ $sessie->bo39 }} </p>
+                Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbr19 }} </p>
             </th>
-            <th></th>
+            <th>Internal/external rotation
+                <p style="font-weight: initial">{{ $sessie->bbr20 }} </p>
+            </th>
         </tr>
 
         <tr>
-            <th>Ribs</th>
+            <th>Hind PIJ</th>
             <th>
-                Cranial-caudal -cranial <p style="font-weight: initial">{{ $sessie->bo40 }} - {{ $sessie->bo41 }} </p>
+                Flexion-extension
+                <p style="font-weight: initial">{{ $sessie->bbr21}} </p>
             </th>
             <th>
-                Dorso-ventral <p style="font-weight: initial">{{ $sessie->bo42 }} - {{ $sessie->bo43 }} </p>
+                Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbr22 }} </p>
+            </th>
+            <th>
+                Internal-external rotation
+              <p style="font-weight: initial">{{ $sessie->bbr23 }} </p>
+
+            </th>
+        </tr>
+        <tr>
+            <th>MPJ</th>
+            <th>
+                Flexion-extension
+
+                <p style="font-weight: initial">{{ $sessie->bbr24 }}  </p>
+            </th>
+            <th>
             </th>
             <th></th>
         </tr>
         <tr>
-            <th>L1-L6</th>
+            <th>Tarsal joint</th>
             <th>
-                Extension SP <p style="font-weight: initial">{{ $sessie->bo44 }} - {{ $sessie->bo45 }} </p>
+                Flexion-extension
+                <p style="font-weight: initial">{{ $sessie->bbr25 }} </p>
             </th>
-            <th>
-                Extension AP <p style="font-weight: initial">{{ $sessie->bo46 }} - {{ $sessie->bo47 }} </p>
+            <th>Abduction-adduction + rotation
+                <p style="font-weight: initial">{{ $sessie->bbr26 }} </p>
+
             </th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>L4-S1</th>
-            <th>
-                Extension Intertransverse <p style="font-weight: initial">{{ $sessie->bo48 }} - {{ $sessie->bo49 }} </p>
-            </th>
-            <th></th>
             <th></th>
             </tr>
         <tr>
-            <th>T18-T8</th>
+            <th>Stifle</th>
             <th>
-                Extension <p style="font-weight: initial">{{ $sessie->bo50 }} </p>
+                Flexion <p style="font-weight: initial">{{ $sessie->bbr27 }} </p>
             </th>
-            <th></th>
+            <th>Internal-external rotation
+                <p style="font-weight: initial">{{ $sessie->bbr28 }} </p>
+            </th>
 
-            <th></th>
+            <th>Abduction-adduction
+                <p style="font-weight: initial">{{ $sessie->bbr29 }} </p>
+
+            </th>
         </tr>
         <tr>
-            <th>Pelvic</th>
+            <th>Coxofemeral</th>
             <th>
-                General squeeze <p style="font-weight: initial">{{ $sessie->bo51 }} </p>
+                Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbr30 }} </p>
             </th>
             <th>
-                Forward rotation ilium general <p style="font-weight: initial">{{ $sessie->bo52 }} - {{ $sessie->bo53 }} </p>
+                Internal-external rotation<p style="font-weight: initial">{{ $sessie->bbr31 }} </p>
             </th>
             <th>
-                Forward rotation ilium spec. <p style="font-weight: initial">{{ $sessie->bo54 }} - {{ $sessie->bo55 }} </p>
             </th>
 
         </tr>
             <tr>
 
-                <th></th>
+                <th>Pelvic limb</th>
 
             <th>
-                Backward rotation ilium tub sacrale / tub coxae <p style="font-weight: initial">{{ $sessie->bo56 }} - {{ $sessie->bo57 }} </p>
+                Protraction <p style="font-weight: initial">{{ $sessie->bbr32 }}  </p>
             </th>
             <th>
-                Glide tub sacrale <p style="font-weight: initial">{{ $sessie->bo58 }} - {{ $sessie->bo59 }} </p>
+                Protraction + adduction <p style="font-weight: initial">{{ $sessie->bbr33 }} </p>
             </th>
             <th>
-                Extension sacrum <p style="font-weight: initial">{{ $sessie->bo60 }} </p>
+                Retraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbr34 }} </p>
             </th>
         </tr>
-            <tr>
-                <th></th>
+        <br>
+        <br>
+        <span style="font-weight: bold">Behandeling Been (links)</span>
+        <table class="table" style="font-size: 15px">
+            <br>
+            <tbody>
+                <tr>
+                    <th style="border-top: 2px solid rgb(0, 0, 0)">Front DIJ</th>
+                    <th style="border-top: 2px solid black">
+                        Flexion-extension   <p style="font-weight: initial">{{ $sessie->bbl1 }} </p>
+                    </th>
+                    <th style="border-top: 2px solid black">
+                        Abduction-addaction <p style="font-weight: initial">{{ $sessie->bbl2 }}</p>
+                    </th>
+                    <th style="border-top: 2px solid black">
+                        Internal/external rotation<p style="font-weight: initial">{{ $sessie->bbl3 }}</p>
+                    </th>
 
-            <th>
-                Flexion sacrum <p style="font-weight: initial">{{ $sessie->bo61 }} </p>
-            </th>
-            <th>
-                Rotation sacrum <p style="font-weight: initial">{{ $sessie->bo62 }} - {{ $sessie->bo63 }} </p>
-            </th>
-            <th>
-                Lateral flexion sacrum <p style="font-weight: initial">{{ $sessie->bo64 }} - {{ $sessie->bo65 }} </p>
-            </th>
-          </tr>
-        <tr>
-            <th>Caudal joints</th>
-            <th>
-                Flexion-extension <p style="font-weight: initial">{{ $sessie->bo66 }} </p>
-            </th>
-            <th>
-                Lateral flexion <p style="font-weight: initial">{{ $sessie->bo67 }} </p>
-            </th>
-            <th></th>
-            <th></th>
-            <th></th>
+                </tr>
+                <tr>
+                    <th style="height: 30px">Front PIJ</th>
+                    <th>
+                        Flexion-extension<p style="font-weight: initial">{{ $sessie->bbl4 }}</p>
+                    </th>
+                    <th>
+                        Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbl5 }}</p>
+                    </th>
+                    <th>
+                        Internal/external-adduction <p style="font-weight: initial">{{ $sessie->bbl6 }}</p>
+                    </th>
 
-        </tr>
+                <tr>
+                    <th>MPJ</th>
+                    <th>
+                        Flexion-extension <p style="font-weight: initial">{{ $sessie->bbl7 }}</p>
+                    </th>
+                    <th>
+                        Abductionj-adduction <p style="font-weight: initial">{{ $sessie->bbl8 }}</p>
+                    </th>
+                    <th>
+                        Lateroflexie <p style="font-weight: initial">{{ $sessie->bbl9 }}</p>
+                    </th>
+
+
+
+                </tr>
+                <tr>
+                    <th>Carpal Joints</th>
+                    <th>
+                        Flexion-extension <p style="font-weight: initial">{{ $sessie->bbl10 }}</p>
+                    </th>
+                    <th>Flexion abduction/adductio <p style="font-weight: initial">{{ $sessie->bbl11 }}</p>
+
+                    </th>
+                    <th></th>
+
+
+                </tr>
+                <tr>
+                    <th>Accessory bone</th>
+                        <th>
+                            Lateral-medial motion
+                            <p style="font-weight: initial">{{ $sessie->bbl12 }}</p>
+                        </th>
+                </tr>
+                <tr>
+                    <th>Elbow</th>
+                    <th>
+                        Flexion-extension <p style="font-weight: initial">{{ $sessie->bbl13 }}</p>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+
+
+                </tr>
+                <tr>
+                    <th>Shoulder</th>
+
+                    <th>
+                        Flexion abduction/adductio <p style="font-weight: initial">{{ $sessie->bbl14 }}</p>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+
+                </tr>
+                    <tr>
+                        <th>Scapula</th>
+
+
+                        <th>
+
+                            Elevation-depression
+
+                            <p style="font-weight: initial">{{ $sessie->bbl15 }}</p>
+
+                        </th>
+                    <th>
+                        Neutral-abduction       <p style="font-weight: initial">{{ $sessie->bbl16 }}</p>
+
+                    </th>
+                    <th>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th>Front leg general</th>
+                    <th>
+                        Protraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbr17 }}</p>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                    <tr>
+                        <th>Hind DIJ</th>
+
+                    <th>
+                        Flexion-extension
+
+                        <p style="font-weight: initial">{{ $sessie->bbl18 }} </p>
+                    </th>
+                    <th>
+                        Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbl19 }} </p>
+                    </th>
+                    <th>Internal/external rotation
+                        <p style="font-weight: initial">{{ $sessie->bbl20 }} </p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>Hind PIJ</th>
+                    <th>
+                        Flexion-extension
+                        <p style="font-weight: initial">{{ $sessie->bbl21}} </p>
+                    </th>
+                    <th>
+                        Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbl22 }} </p>
+                    </th>
+                    <th>
+                        Internal-external rotation
+                      <p style="font-weight: initial">{{ $sessie->bbl23 }} </p>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>MPJ</th>
+                    <th>
+                        Flexion-extension
+
+                        <p style="font-weight: initial">{{ $sessie->bbl24 }}  </p>
+                    </th>
+                    <th>
+                    </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Tarsal joint</th>
+                    <th>
+                        Flexion-extension
+                        <p style="font-weight: initial">{{ $sessie->bbl25 }} </p>
+                    </th>
+                    <th>Abduction-adduction + rotation
+                        <p style="font-weight: initial">{{ $sessie->bbl26 }} </p>
+
+                    </th>
+                    <th></th>
+                    </tr>
+                <tr>
+                    <th>Stifle</th>
+                    <th>
+                        Flexion <p style="font-weight: initial">{{ $sessie->bbl27 }} </p>
+                    </th>
+                    <th>Internal-external rotation
+                        <p style="font-weight: initial">{{ $sessie->bbl28 }} </p>
+                    </th>
+
+                    <th>Abduction-adduction
+                        <p style="font-weight: initial">{{ $sessie->bbl29 }} </p>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>Coxofemeral</th>
+                    <th>
+                        Abduction-adduction <p style="font-weight: initial">{{ $sessie->bbl30 }} </p>
+                    </th>
+                    <th>
+                        Internal-external rotation<p style="font-weight: initial">{{ $sessie->bbl31 }} </p>
+                    </th>
+                    <th>
+                    </th>
+
+                </tr>
+                    <tr>
+
+                        <th>Pelvic limb</th>
+
+                    <th>
+                        Protraction <p style="font-weight: initial">{{ $sessie->bbl32 }}  </p>
+                    </th>
+                    <th>
+                        Protraction + adduction <p style="font-weight: initial">{{ $sessie->bbl33 }} </p>
+                    </th>
+                    <th>
+                        Retraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbl34 }} </p>
+                    </th>
+                </tr>
+
+
     </tbody>
 </table>
 
