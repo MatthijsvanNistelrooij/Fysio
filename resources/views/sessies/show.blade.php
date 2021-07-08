@@ -2361,7 +2361,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th>C01-C1</th>
+                                <th>C0-C1</th>
                                 <th>
                                     Flexie <p style="font-weight: initial">{{ $sessie->bo12 }}</p>
                                 </th>
