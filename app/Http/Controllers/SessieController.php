@@ -121,7 +121,7 @@ class SessieController extends Controller
     $sessie->bbl10 = $request->bbl10;
     $sessie->bbl11 = $request->bbl11;
     $sessie->bbl12 = $request->bbl12;
-    $sessie->bbl13 = $request->bbl3;
+    $sessie->bbl13 = $request->bbl13;
     $sessie->bbl14 = $request->bbl14;
     $sessie->bbl15 = $request->bbl15;
     $sessie->bbl16 = $request->bbl16;

@@ -1238,13 +1238,13 @@
 
         <div id="demo29" class="collapse">
             <h6 for="lateral" class="title">Flexion-extension</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr19" value="{{ $sessie->bbr19 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr18" value="{{ $sessie->bbr18 }}">
 
             <h6 for="lateral" class="title">Abduction-adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr20" value="{{ $sessie->bbr20 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr19" value="{{ $sessie->bbr19 }}">
 
             <h6 for="lateral" class="title">Internal/external rotation</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr21" value="{{ $sessie->bbr21 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr20" value="{{ $sessie->bbr20 }}">
         </div>
 
         <button data-toggle="collapse" data-target="#demo30" class="collapsible" style="border-radius: 5px" type="button">
@@ -1254,11 +1254,11 @@
 
         <div id="demo30" class="collapse">
             <h6 for="lateral" class="title">Flexion-extension</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr22" value="{{ $sessie->bbr22 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr21" value="{{ $sessie->bbr21 }}">
             <h6 for="lateral" class="title">Abduction-adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr23" value="{{ $sessie->bbr23 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr22" value="{{ $sessie->bbr22 }}">
             <h6 for="lateral" class="title">Internal-external rotation</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr24" value="{{ $sessie->bbr24 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom: 5px" name="bbr23" value="{{ $sessie->bbr23 }}">
         </div>
 
 
@@ -1269,7 +1269,7 @@
 
         <div id="demo31" class="collapse">
             <h6 for="lateral" class="title">Flexion-extension</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr25" value="{{ $sessie->bbr25 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr24" value="{{ $sessie->bbr24 }}">
         </div>
 
 
@@ -1280,10 +1280,10 @@
 
         <div id="demo32" class="collapse">
             <h6 for="lateral" class="title">Flexion-extension</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr26" value="{{ $sessie->bbr26 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr25" value="{{ $sessie->bbr25 }}">
 
             <h6 for="lateral" class="title">Abduction-adduction + rotation</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr27" value="{{ $sessie->bbr27 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr26" value="{{ $sessie->bbr26 }}">
         </div>
 
 
@@ -1294,13 +1294,13 @@
 
         <div id="demo33" class="collapse">
             <h6 for="lateral" class="title">Flexion</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr28" value="{{ $sessie->bbr28 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr27" value="{{ $sessie->bbr27 }}">
 
             <h6 for="lateral" class="title">Internal-external rotation</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr29" value="{{ $sessie->bbr29 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr28" value="{{ $sessie->bbr28 }}">
 
             <h6 for="lateral" class="title">Abduction-adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr30" value="{{ $sessie->bbr30 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr29" value="{{ $sessie->bbr29 }}">
         </div>
 
         <button data-toggle="collapse" data-target="#demo34" class="collapsible" style="border-radius: 5px" type="button">
@@ -1310,10 +1310,10 @@
 
         <div id="demo34" class="collapse">
             <h6 for="lateral" class="title">Abduction-adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr32" value="{{ $sessie->bbr32 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr30" value="{{ $sessie->bbr30 }}">
 
             <h6 for="lateral" class="title">Internal-external rotation</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr33" value="{{ $sessie->bbr33 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr31" value="{{ $sessie->bbr31 }}">
         </div>
 
         <button data-toggle="collapse" data-target="#demo35" class="collapsible" style="border-radius: 5px" type="button">
@@ -1323,13 +1323,13 @@
 
         <div id="demo35" class="collapse">
             <h6 for="lateral" class="title">Protraction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr34" value="{{ $sessie->bbr34 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr32" value="{{ $sessie->bbr32 }}">
 
             <h6 for="lateral" class="title">Protraction + adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr35" value="{{ $sessie->bbr35 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr33" value="{{ $sessie->bbr33 }}">
 
             <h6 for="lateral" class="title">Retraction + ab-/adduction</h6>
-            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr36" value="{{ $sessie->bbr36 }}">
+            <input type="text" class="form-control" style="margin-top: 5px; margin-bottom:5px" name="bbr34" value="{{ $sessie->bbr34 }}">
         </div>
 
                 </div>
@@ -1347,8 +1347,7 @@
     <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
     <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
     <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
-    <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
-    <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+
     <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
     <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
     <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
@@ -1471,6 +1470,9 @@
     <input type="text" name="bbl34" id="" value="{{ $sessie->bbl34 }}">
     <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
     <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
+    <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+    <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+
 </div>
 
 
@@ -2827,7 +2829,7 @@
                 <tr>
                     <th>Elbow</th>
                     <th>
-                        Flexion-extension <p style="font-weight: initial">{{ $sessie->bbl13 }}</p>
+                        Flexion-extension <p style="font-weight: initial">{{ $sessie->bbl13 }} </p>
                     </th>
                     <th>
                     </th>
@@ -2870,7 +2872,7 @@
                 <tr>
                     <th>Front leg general</th>
                     <th>
-                        Protraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbr17 }}</p>
+                        Protraction + ab-/adduction <p style="font-weight: initial">{{ $sessie->bbl17 }}</p>
                     </th>
                     <th>
                     </th>
