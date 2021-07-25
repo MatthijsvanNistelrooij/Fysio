@@ -55,8 +55,9 @@
 
                 </div>
                 <div class="col">
-
-                    <img src="{{$horse->image}}" style="width: 80%; float: right">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal5" style="border: none; padding: -5px">
+                        <img src="{{$horse->image}}" style="width: 100%; float: right">
+                    </button>
                 </div>
             </div>
             <br>
@@ -457,26 +458,17 @@
 
                                 <img src="{{$horse->image}}" style="width: 10%; padding: 5px">
 
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-                                <img src="/images/horse_default.jpg" alt="" style="width: 10%; padding: 5px">
-
                             </div>
                         </div>
                             <div class="container" style="padding: 15px; border-top: none; overflow: hidden; height: auto">
                                 <div class="row">
                                     <div class="col-sm-12" style="overflow-y:auto; height: 750px; border: 1px solid rgb(223, 223, 223); border-radius: 5px; padding-top: 15px; margin-bottom: 15px">
-
                                         <img src="{{$horse->image}}" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%; padding: 5px">
-                                        <img src="/images/horse_default.jpg" alt="" style="width: 100%">
+                                        <img src="{{$horse->image}}" style="width: 100%; padding: 5px">
+                                        <img src="{{$horse->image}}" style="width: 100%; padding: 5px">
+                                        <img src="{{$horse->image}}" style="width: 100%; padding: 5px">
+
+
                                     </div>
                                 </div>
                         </div>
@@ -538,7 +530,8 @@
 
 
                                           <div class="form-group">
-                                              <img src="{{ $horse->image }}" alt="" style="width: 100px">
+
+                                                <img src="{{ $horse->image }}" alt="" style="width: 100px">
 
                                           </div>
                                           <input type="file" name="image" class="form-control" style="margin-bottom: 15px">
