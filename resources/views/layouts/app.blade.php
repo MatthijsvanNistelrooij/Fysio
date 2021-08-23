@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Dierfysiotherapie Drenthe
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -82,28 +82,16 @@
         @if(!in_array(request()->path(), ['login', 'register', 'password/email', 'password/reset']))
 
     <main class="container py-4">
+        @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+        @endif
                 <div class="row">
                     <div class="col-md-2">
                         @auth
                         <a href="/horses/index" class="btn btn-primary" style="width: 100%; color: rgb(255, 255, 255">Index</a>
                         <a href="{{ route('horses.create') }}" class="btn btn-info my-2" style="width: 100%; color: white">Nieuwe Invoer</a>
-{{-- 
-<div class="row">
-    <div class="col-md-10">
-        <select class="form-select" id="select">
-            <option value="">...</option>
-            @foreach($horses as $key => $value)
-            <option value="{{ URL::to('/horses/' . $value->id ) }}">{{ $value->name_horse }} ( {{ $value->achternaam }}, {{ $value->name_owner }}  ) </option>
-            @endforeach
-        </select>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-success" type="submit" onclick="redirectToMyPage();" style="width: 100%">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-    </div>
-
-</div> --}}
                         @else
                         <a href="/horses/index" class="btn btn-primary" style="width: 100%; color: rgb(255, 255, 255">Index</a>
                         <a href="{{ route('login') }}" class="btn btn-info my-2" style="width: 100%; color: white">Log in om een paard toe te voegen</a>
@@ -112,11 +100,12 @@
 
 
 
-                        <div class="card">
+                        <div class="card" style=" margin-bottom: 5px">
+
                             <div class="card-header">
                                 Fysio App
                             </div>
-                            <div class="card-body" style="background-image: url('/images/logo2.png'); height: 300px; background-size: 250px; background-repeat: no-repeat">
+                            <div class="card-body" style="background-image: url('/images/logo2.png'); height: 500px; background-size: 250px; background-repeat: no-repeat">
                             <span style="position: absolute; bottom: 15px; font-size: 10px">Versie 1.1 (2021)</span>
                     </div>
                 </div>

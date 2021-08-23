@@ -12,6 +12,7 @@ use App\Form;
 use Browser;
 use CreateHorsesTable;
 use DB;
+use App\Session;
 
 class HorseController extends Controller
 {
@@ -24,11 +25,25 @@ class HorseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function welcome()
+    {
+
+        $horse=Horse::orderBy('id', 'desc')->paginate(5);
+        return view('welcome', ['horses' =>$horse ]);
+
+    }
+
+
     public function index()
     {
-        return view('horses.index')
-        ->with('horses', Horse::all())->with('channels', Channel::all());
+
+        // $horse=Horse::paginate(4);
+        $horse=Horse::all();
+        return view('horses.index', ['horses' =>$horse ]);
+
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -96,8 +111,10 @@ $horse = Horse::create([
     'situatie' => $request->situatie,
 
 ]);
-
 $horse->save();
+
+session()->flash('success', 'Nieuwe invoer succesvol opgeslagen.');
+
 return redirect()->route('horses/index');
  }
     /**
@@ -181,6 +198,9 @@ if($request->hasFile('image'))
             $horse->situatie = $request->situatie;
 
         $horse->save();
+
+        session()->flash('success', 'Wijzigingen succesvol opgeslagen.');
+
         return redirect()->back();
         }
 
@@ -384,12 +404,11 @@ if($request->hasFile('image'))
 'lp1' => request()->lp1,
 'lp2' => request()->lp2,
 
-
-
-
-
         ]);
 
-        return redirect()->back()->with('horses', Horse::all());
+
+
+        return redirect()->back()->with('horses', Horse::all())->with(session()->flash('success', 'Nieuw consult succesvol opgeslagen.'));
+
     }
 }

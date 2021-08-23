@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Fysio</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
             }
 
 
+
             .zoom:hover {
             -ms-transform: scale(1.1); /* IE 9 */
             -webkit-transform: scale(1.1); /* Safari 3-8 */
@@ -40,7 +41,7 @@
         margin: auto;
         width: 80%;
         padding: 5px;
-        margin-top: 10%;
+        margin-top: 5%;
         text-align: center;
         margin-bottom: 2%;
         margin-right: 8%;
@@ -52,11 +53,11 @@
         width: 25%;
         padding: 10px;
         text-align: center;
-        border: 3px solid rgba(36, 172, 193, 0.2);
-        background-color: rgb(36, 172, 193);
-        color: rgb(255, 255, 255);
+        border: 1px solid rgba(36, 172, 193, 0.2);
+        background-color: rgba(195, 255, 229, 0.5);
+
+        color: rgb(0, 0, 0);
         font-size: 20px;
-        border-radius: 15px;
         font-weight: bold;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
@@ -73,29 +74,26 @@
 
 
     .start:hover{
-        background-color: rgb(36, 172, 193, 0.8);
-        color: white;
+        background-color: rgb(58, 255, 170, 0.4);
     }
 
-    .row{
-        max-width: 99%;
-        margin-left: 0.5%;
-        margin-top: 10%;
-    }
-    .col{
+    .links {
+                float: right;
+            }
+
+    .subnav{
         padding: 10px;
         height: 80px;
-        width: 99%;
-        border: 1px solid rgb(236, 236, 236);
+        width: 100%;
         text-align: center;
         font-size: 18px;
         font-weight: bold;
     }
 
-        .col:hover {
-            background-color: rgb(211, 211, 211, 0.2);
-            color: black;
-        }
+    .subnav:hover {
+        background-color: rgb(211, 211, 211, 0.2);
+        color: black;
+    }
 
         .fa-plus-circle{
             color: rgb(255, 255, 255);
@@ -106,7 +104,6 @@
             color: white;
         }
         .start_text:hover{
-            color: white;
         }
         .start_link{
             text-decoration: none;
@@ -115,7 +112,24 @@
         .start_link:hover{
             color: white;
         }
+
+        .latest {
+            margin-top: 25px;
+            width: 100%;
+            height: 120px;
+            max-width: 220px;
+            background-color: rgba(195, 255, 229, 0.5);
+            border: 1px solid rgba(40, 140, 140, 0.8);
+            box-shadow: 5px 10px rgb(157, 0, 157, 0.2);
+        }
+
+        .latest:hover {
+            background-color: rgb(58, 255, 170, 0.4);
+        }
+
+
         </style>
+
     </head>
 
 
@@ -126,30 +140,87 @@
         <div class="logo">
             <img src="images/afbeelding1.jpg" alt="" class="logo">
         </div>
-        <a href="/horses/create" class="start_link">
 
-        <div class="start">
-                <i class="fas fa-plus-circle"></i>
-                    <br>
-                    <p class="start_text">Nieuwe Invoer</p>
-            </div>
-        </a>
-    </div>
+        <div style="text-align: center">
+            <a href="/horses/create" class="btn btn-light" style="width: 15%; border: 1px solid gray">
+                Nieuwe invoer
+            </a>
+        <a href="/horses/index" class="btn btn-light" style="width: 15%; border: 1px solid gray">Index</a>
+
+        </div>
+<br>
+<br>
+        <br>
+        <br>
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <h6>
+                                Laatste   <span style="color: orange; font-size: 25px">
+                                    {{$horses->count()}}
+                                </span>   van
+                                <span style="color: orange; font-size: 25px">
+                                    {{ $horses->total()}}
+                                </span>
+                                invoeren
+
+                            </h6>
+                            </div>
+                            <div class="col">
+                                <div class="links">
+                                    {{$horses->links() }}
+                                </div>
+                        </div>
+                    </div>
+                        <div class="row"  style="background-color: rgb(255, 162, 255, 0.2); height: 180px">
+                                @foreach($horses as $key => $value)
+
+                                <div class="col">
+                                    <a href="{{ URL::to('/horses/' . $value->id ) }}">
+
+
+                                    <div class="latest">
+                                        <div class="card-header">
+                                            {{ $value->name_horse }}
+                                            <i class="fas fa-info-circle" style="float: right; color: rgb(255, 255, 255); font-size: 20px"></i>
+
+                                        </div>
+                                            <div style="margin-left: 20px; margin-top: 10px">
+                                                {{ $value->name_owner }}
+                                                {{ $value->achternaam }}
+
+                                            </div>
+
+                                    </div>
+                                </a>
+
+                                </div>
+
+                                @endforeach
+
+                            </div>
+
+</div>
 </div>
 
-
-
-<div class="row">
+</div>
+<br>
+<br>
+<br>
+{{-- <div class="row">
     <div class="col">
+        <div class="subnav">
         <a href="/horses/index" style="text-decoration: none">
         <i class="fas fa-address-book" style="font-size: 25px"></i>
         <br>
         Contacten
     <br>
 </a>
-
+</div>
     </div>
     <div class="col">
+        <div class="subnav">
+
         <a href="/horses/index" style="text-decoration: none">
         <i class="fas fa-dog" style="font-size: 25px"></i>
         <br>
@@ -158,16 +229,23 @@
 </a>
 
 </div>
+</div>
     <div class="col">
+        <div class="subnav">
+
         <a href="/horses/index" style="text-decoration: none">
             <i class="fas fa-list"></i>
             <br>
             Overzicht
             <br>
         </a>
+
+    </div>
     </div>
 
     <div class="col">
+        <div class="subnav">
+
         <a href="/horses/index" style="text-decoration: none">
             <i class="fas fa-ellipsis-h"></i>
             <br>
@@ -177,7 +255,8 @@
     </div>
 
 </div>
-
+</div>
+ --}}
 
 
 </body>

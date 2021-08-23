@@ -6,7 +6,7 @@
 
 
 <button class="btn btn-info">
-    <a href="{{ URL::to('/horses/' . $sessie->horse_id ) }}" style="text-decoration: none; color: rgb(255, 255, 255);">
+    <a href="{{ URL::to('/horses/' . $sessie->horse_id ) }}" style="text-decoration: none; color: rgb(255, 255, 255); ">
         <i class="far fa-arrow-alt-circle-left"></i>
              Terug naar   {{ $sessie->name_horse}}
 </a>
@@ -14,12 +14,265 @@
 </button>
 <div class="card my-2">
     <div class="card-header" style="max-height: 44px">
-                <strong>Sessie:   {{ $sessie->name_horse }} {{ $sessie->datum }}</strong>
+                <strong>Consult:   {{ $sessie->name_horse }} {{ $sessie->datum }}</strong>
     </div>
-    <div class="card-body">
 
-</div>
-<div class="row" style="width: 95%; margin-left: 2%; margin-bottom: 1%">
+    <div class="card-body">
+        <form action="{{ route('sessies.update', ['id' =>$sessie->id ]) }}" method="get"  enctype="multipart/form-data">
+            {{ csrf_field() }}
+        <div class="row" style="margin: 3%; margin-top: 10px; margin-bottom: 15px;">
+            <div class="col-md-2">
+                <label for="notitie" style="font-weight: bold; margin-top: 8px">Notitie:</label>
+            </div>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="bbl36" placeholder="..." value="{{ $sessie->bbl36 }}">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success btn-sm" type="submit" style="float: right;">
+                    <i class="fas fa-check" style="color: rgb(253, 253, 253); font-size: 25px"></i>
+                    </button>
+            </div>
+        </div>
+        <div class="inputs">
+            <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
+            <input type="text" name="bo24" id="" value="{{ $sessie->bo24}}">
+            <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
+            <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
+            <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
+            <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
+            <input type="text" name="behandeling" id="" value="{{ $sessie->behandeling }}">
+            <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
+            <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
+            <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
+            <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
+            <input type="text" name="ib4" id="" value="{{ $sessie->ib4 }}">
+            <input type="text" name="ib5" id="" value="{{ $sessie->ib5 }}">
+            <input type="text" name="ib6" id="" value="{{ $sessie->ib6 }}">
+            <input type="text" name="ib7" id="" value="{{ $sessie->ib7 }}">
+            <input type="text" name="ib8" id="" value="{{ $sessie->ib8 }}">
+            <input type="text" name="ib9" id="" value="{{ $sessie->ib9 }}">
+            <input type="text" name="ib10" id="" value="{{ $sessie->ib10 }}">
+            <input type="text" name="ib11" id="" value="{{ $sessie->ib11 }}">
+            <input type="text" name="ib12" id="" value="{{ $sessie->ib12 }}">
+            <input type="text" name="ib13" id="" value="{{ $sessie->ib13 }}">
+            <input type="text" name="ib14" id="" value="{{ $sessie->ib14 }}">
+            <input type="text" name="ib15" id="" value="{{ $sessie->ib15 }}">
+            <input type="text" name="ib16" id="" value="{{ $sessie->ib16 }}">
+            <input type="text" name="ib17" id="" value="{{ $sessie->ib17 }}">
+            <input type="text" name="ib18" id="" value="{{ $sessie->ib18 }}">
+            <input type="text" name="ib19" id="" value="{{ $sessie->ib19 }}">
+            <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
+            <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
+            <input type="text" name="bbr1" id="" value="{{ $sessie->bbr1 }}">
+            <input type="text" name="bbr2" id="" value="{{ $sessie->bbr2 }}">
+            <input type="text" name="bbr3" id="" value="{{ $sessie->bbr3 }}">
+            <input type="text" name="bbr4" id="" value="{{ $sessie->bbr4 }}">
+            <input type="text" name="bbr5" id="" value="{{ $sessie->bbr5 }}">
+            <input type="text" name="bbr6" id="" value="{{ $sessie->bbr6 }}">
+            <input type="text" name="bbr7" id="" value="{{ $sessie->bbr7 }}">
+            <input type="text" name="bbr8" id="" value="{{ $sessie->bbr8 }}">
+            <input type="text" name="bbr9" id="" value="{{ $sessie->bbr9 }}">
+            <input type="text" name="bbr10" id="" value="{{ $sessie->bbr10 }}">
+            <input type="text" name="bbr11" id="" value="{{ $sessie->bbr11 }}">
+            <input type="text" name="bbr12" id="" value="{{ $sessie->bbr12 }}">
+            <input type="text" name="bbr13" id="" value="{{ $sessie->bbr13 }}">
+            <input type="text" name="bbr14" id="" value="{{ $sessie->bbr14 }}">
+            <input type="text" name="bbr15" id="" value="{{ $sessie->bbr15 }}">
+            <input type="text" name="bbr16" id="" value="{{ $sessie->bbr16 }}">
+            <input type="text" name="bbr17" id="" value="{{ $sessie->bbr17 }}">
+            <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
+            <input type="text" name="bbr19" id="" value="{{ $sessie->bbr19 }}">
+            <input type="text" name="bbr20" id="" value="{{ $sessie->bbr20 }}">
+            <input type="text" name="bbr21" id="" value="{{ $sessie->bbr21 }}">
+            <input type="text" name="bbr22" id="" value="{{ $sessie->bbr22 }}">
+            <input type="text" name="bbr23" id="" value="{{ $sessie->bbr23 }}">
+            <input type="text" name="bbr24" id="" value="{{ $sessie->bbr24 }}">
+            <input type="text" name="bbr25" id="" value="{{ $sessie->bbr25 }}">
+            <input type="text" name="bbr26" id="" value="{{ $sessie->bbr26 }}">
+            <input type="text" name="bbr27" id="" value="{{ $sessie->bbr27 }}">
+            <input type="text" name="bbr28" id="" value="{{ $sessie->bbr28 }}">
+            <input type="text" name="bbr29" id="" value="{{ $sessie->bbr29 }}">
+            <input type="text" name="bbr30" id="" value="{{ $sessie->bbr30 }}">
+            <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+            <input type="text" name="bbr32" id="" value="{{ $sessie->bbr32 }}">
+            <input type="text" name="bbr33" id="" value="{{ $sessie->bbr33 }}">
+            <input type="text" name="bbr34" id="" value="{{ $sessie->bbr34 }}">
+            <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+            <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+            <input type="text" name="bbl1" id="" value="{{ $sessie->bbl1 }}">
+            <input type="text" name="bbl2" id="" value="{{ $sessie->bbl2 }}">
+            <input type="text" name="bbl3" id="" value="{{ $sessie->bbl3 }}">
+            <input type="text" name="bbl4" id="" value="{{ $sessie->bbl4 }}">
+            <input type="text" name="bbl5" id="" value="{{ $sessie->bbl5 }}">
+            <input type="text" name="bbl6" id="" value="{{ $sessie->bbl6 }}">
+            <input type="text" name="bbl7" id="" value="{{ $sessie->bbl7 }}">
+            <input type="text" name="bbl8" id="" value="{{ $sessie->bbl8 }}">
+            <input type="text" name="bbl9" id="" value="{{ $sessie->bbl9 }}">
+            <input type="text" name="bbl10" id="" value="{{ $sessie->bbl10 }}">
+            <input type="text" name="bbl11" id="" value="{{ $sessie->bbl11 }}">
+            <input type="text" name="bbl12" id="" value="{{ $sessie->bbl12 }}">
+            <input type="text" name="bbl13" id="" value="{{ $sessie->bbl13 }}">
+            <input type="text" name="bbl14" id="" value="{{ $sessie->bbl14 }}">
+            <input type="text" name="bbl15" id="" value="{{ $sessie->bbl15 }}">
+            <input type="text" name="bbl16" id="" value="{{ $sessie->bbl16 }}">
+            <input type="text" name="bbl17" id="" value="{{ $sessie->bbl17 }}">
+            <input type="text" name="bbl18" id="" value="{{ $sessie->bbl18 }}">
+            <input type="text" name="bbl19" id="" value="{{ $sessie->bbl19 }}">
+            <input type="text" name="bbl20" id="" value="{{ $sessie->bbl20 }}">
+            <input type="text" name="bbl21" id="" value="{{ $sessie->bbl21 }}">
+            <input type="text" name="bbl22" id="" value="{{ $sessie->bbl22 }}">
+            <input type="text" name="bbl23" id="" value="{{ $sessie->bbl23 }}">
+            <input type="text" name="bbl24" id="" value="{{ $sessie->bbl24 }}">
+            <input type="text" name="bbl25" id="" value="{{ $sessie->bbl25 }}">
+            <input type="text" name="bbl26" id="" value="{{ $sessie->bbl26 }}">
+            <input type="text" name="bbl27" id="" value="{{ $sessie->bbl27 }}">
+            <input type="text" name="bbl28" id="" value="{{ $sessie->bbl28 }}">
+            <input type="text" name="bbl29" id="" value="{{ $sessie->bbl29 }}">
+            <input type="text" name="bbl30" id="" value="{{ $sessie->bbl30 }}">
+            <input type="text" name="bbl31" id="" value="{{ $sessie->bbl31 }}">
+            <input type="text" name="bbl32" id="" value="{{ $sessie->bbl32 }}">
+            <input type="text" name="bbl33" id="" value="{{ $sessie->bbl33 }}">
+            <input type="text" name="bbl34" id="" value="{{ $sessie->bbl34 }}">
+            <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
+            {{-- <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}"> --}}
+
+            <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
+            <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
+            <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
+            <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
+            <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
+            <input type="text" name="ib4" id="" value="{{ $sessie->ib4 }}">
+            <input type="text" name="ib5" id="" value="{{ $sessie->ib5 }}">
+            <input type="text" name="ib6" id="" value="{{ $sessie->ib6 }}">
+            <input type="text" name="ib7" id="" value="{{ $sessie->ib7 }}">
+            <input type="text" name="ib8" id="" value="{{ $sessie->ib8 }}">
+            <input type="text" name="ib9" id="" value="{{ $sessie->ib9 }}">
+            <input type="text" name="ib10" id="" value="{{ $sessie->ib10 }}">
+            <input type="text" name="ib11" id="" value="{{ $sessie->ib11 }}">
+            <input type="text" name="ib12" id="" value="{{ $sessie->ib12 }}">
+            <input type="text" name="ib13" id="" value="{{ $sessie->ib13 }}">
+            <input type="text" name="ib14" id="" value="{{ $sessie->ib14 }}">
+            <input type="text" name="ib15" id="" value="{{ $sessie->ib15 }}">
+            <input type="text" name="ib16" id="" value="{{ $sessie->ib16 }}">
+            <input type="text" name="ib17" id="" value="{{ $sessie->ib17 }}">
+            <input type="text" name="ib18" id="" value="{{ $sessie->ib18 }}">
+            <input type="text" name="ib19" id="" value="{{ $sessie->ib19 }}">
+            <input type="text" name="bo1" id="" value="{{ $sessie->bo1 }}">
+            <input type="text" name="bo2" id="" value="{{ $sessie->bo2 }}">
+            <input type="text" name="bo3" id="" value="{{ $sessie->bo3 }}">
+            <input type="text" name="bo4" id="" value="{{ $sessie->bo4 }}">
+            <input type="text" name="bo5" id="" value="{{ $sessie->bo5 }}">
+            <input type="text" name="bo6" id="" value="{{ $sessie->bo6 }}">
+            <input type="text" name="bo7" id="" value="{{ $sessie->bo7 }}">
+            <input type="text" name="bo8" id="" value="{{ $sessie->bo8 }}">
+            <input type="text" name="bo9" id="" value="{{ $sessie->bo9 }}">
+            <input type="text" name="bo10" id="" value="{{ $sessie->bo10 }}">
+            <input type="text" name="bo11" id="" value="{{ $sessie->bo11 }}">
+            <input type="text" name="bo12" id="" value="{{ $sessie->bo12 }}">
+            <input type="text" name="bo13" id="" value="{{ $sessie->bo13 }}">
+            <input type="text" name="bo14" id="" value="{{ $sessie->bo14 }}">
+            <input type="text" name="bo15" id="" value="{{ $sessie->bo15 }}">
+            <input type="text" name="bo16" id="" value="{{ $sessie->bo16 }}">
+            <input type="text" name="bo17" id="" value="{{ $sessie->bo17 }}">
+            <input type="text" name="bo18" id="" value="{{ $sessie->bo18 }}">
+            <input type="text" name="bo19" id="" value="{{ $sessie->bo19 }}">
+            <input type="text" name="bo20" id="" value="{{ $sessie->bo20 }}">
+            <input type="text" name="bo21" id="" value="{{ $sessie->bo21 }}">
+            <input type="text" name="bo22" id="" value="{{ $sessie->bo22 }}">
+            <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
+            <input type="text" name="bo24" id="" value="{{ $sessie->bo24 }}">
+            <input type="text" name="bo25" id="" value="{{ $sessie->bo25 }}">
+            <input type="text" name="bo26" id="" value="{{ $sessie->bo26 }}">
+            <input type="text" name="bo27" id="" value="{{ $sessie->bo27 }}">
+            <input type="text" name="bo28" id="" value="{{ $sessie->bo28 }}">
+            <input type="text" name="bo29" id="" value="{{ $sessie->bo29 }}">
+            <input type="text" name="bo30" id="" value="{{ $sessie->bo30 }}">
+            <input type="text" name="bo31" id="" value="{{ $sessie->bo31 }}">
+            <input type="text" name="bo32" id="" value="{{ $sessie->bo32 }}">
+            <input type="text" name="bo33" id="" value="{{ $sessie->bo33 }}">
+            <input type="text" name="bo34" id="" value="{{ $sessie->bo34 }}">
+            <input type="text" name="bo35" id="" value="{{ $sessie->bo35 }}">
+            <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
+            <input type="text" name="bo37" id="" value="{{ $sessie->bo37 }}">
+            <input type="text" name="bo38" id="" value="{{ $sessie->bo38 }}">
+            <input type="text" name="bo39" id="" value="{{ $sessie->bo39 }}">
+            <input type="text" name="bo40" id="" value="{{ $sessie->bo40 }}">
+            <input type="text" name="bo41" id="" value="{{ $sessie->bo41 }}">
+            <input type="text" name="bo42" id="" value="{{ $sessie->bo42 }}">
+            <input type="text" name="bo43" id="" value="{{ $sessie->bo43 }}">
+            <input type="text" name="bo44" id="" value="{{ $sessie->bo44 }}">
+            <input type="text" name="bo45" id="" value="{{ $sessie->bo45 }}">
+            <input type="text" name="bo46" id="" value="{{ $sessie->bo46 }}">
+            <input type="text" name="bo47" id="" value="{{ $sessie->bo47 }}">
+            <input type="text" name="bo48" id="" value="{{ $sessie->bo48 }}">
+            <input type="text" name="bo49" id="" value="{{ $sessie->bo49 }}">
+            <input type="text" name="bo50" id="" value="{{ $sessie->bo50 }}">
+            <input type="text" name="bo51" id="" value="{{ $sessie->bo51 }}">
+            <input type="text" name="bo52" id="" value="{{ $sessie->bo52 }}">
+            <input type="text" name="bo53" id="" value="{{ $sessie->bo53 }}">
+            <input type="text" name="bo54" id="" value="{{ $sessie->bo54 }}">
+            <input type="text" name="bo55" id="" value="{{ $sessie->bo55 }}">
+            <input type="text" name="bo56" id="" value="{{ $sessie->bo56 }}">
+            <input type="text" name="bo57" id="" value="{{ $sessie->bo57 }}">
+            <input type="text" name="bo58" id="" value="{{ $sessie->bo58 }}">
+            <input type="text" name="bo59" id="" value="{{ $sessie->bo59 }}">
+            <input type="text" name="bo60" id="" value="{{ $sessie->bo60 }}">
+            <input type="text" name="bo61" id="" value="{{ $sessie->bo61 }}">
+            <input type="text" name="bo62" id="" value="{{ $sessie->bo62 }}">
+            <input type="text" name="bo63" id="" value="{{ $sessie->bo63 }}">
+            <input type="text" name="bo64" id="" value="{{ $sessie->bo64 }}">
+            <input type="text" name="bo65" id="" value="{{ $sessie->bo65 }}">
+            <input type="text" name="bo66" id="" value="{{ $sessie->bo66 }}">
+            <input type="text" name="bo67" id="" value="{{ $sessie->bo67 }}">
+            <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
+            <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
+            <input type="text" name="bbr1" id="" value="{{ $sessie->bbr1 }}">
+            <input type="text" name="bbr2" id="" value="{{ $sessie->bbr2 }}">
+            <input type="text" name="bbr3" id="" value="{{ $sessie->bbr3 }}">
+            <input type="text" name="bbr4" id="" value="{{ $sessie->bbr4 }}">
+            <input type="text" name="bbr5" id="" value="{{ $sessie->bbr5 }}">
+            <input type="text" name="bbr6" id="" value="{{ $sessie->bbr6 }}">
+            <input type="text" name="bbr7" id="" value="{{ $sessie->bbr7 }}">
+            <input type="text" name="bbr8" id="" value="{{ $sessie->bbr8 }}">
+            <input type="text" name="bbr9" id="" value="{{ $sessie->bbr9 }}">
+            <input type="text" name="bbr10" id="" value="{{ $sessie->bbr10 }}">
+            <input type="text" name="bbr11" id="" value="{{ $sessie->bbr11 }}">
+            <input type="text" name="bbr12" id="" value="{{ $sessie->bbr12 }}">
+            <input type="text" name="bbr13" id="" value="{{ $sessie->bbr13 }}">
+            <input type="text" name="bbr14" id="" value="{{ $sessie->bbr14 }}">
+            <input type="text" name="bbr15" id="" value="{{ $sessie->bbr15 }}">
+            <input type="text" name="bbr16" id="" value="{{ $sessie->bbr16 }}">
+            <input type="text" name="bbr17" id="" value="{{ $sessie->bbr17 }}">
+            <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
+            <input type="text" name="bbr19" id="" value="{{ $sessie->bbr19 }}">
+            <input type="text" name="bbr20" id="" value="{{ $sessie->bbr20 }}">
+            <input type="text" name="bbr21" id="" value="{{ $sessie->bbr21 }}">
+            <input type="text" name="bbr22" id="" value="{{ $sessie->bbr22 }}">
+            <input type="text" name="bbr23" id="" value="{{ $sessie->bbr23 }}">
+            <input type="text" name="bbr24" id="" value="{{ $sessie->bbr24 }}">
+            <input type="text" name="bbr25" id="" value="{{ $sessie->bbr25 }}">
+            <input type="text" name="bbr26" id="" value="{{ $sessie->bbr26 }}">
+            <input type="text" name="bbr27" id="" value="{{ $sessie->bbr27 }}">
+            <input type="text" name="bbr28" id="" value="{{ $sessie->bbr28 }}">
+            <input type="text" name="bbr29" id="" value="{{ $sessie->bbr29 }}">
+            <input type="text" name="bbr30" id="" value="{{ $sessie->bbr30 }}">
+            <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+            <input type="text" name="bbr32" id="" value="{{ $sessie->bbr32 }}">
+            <input type="text" name="bbr33" id="" value="{{ $sessie->bbr33 }}">
+            <input type="text" name="bbr34" id="" value="{{ $sessie->bbr34 }}">
+            <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+            <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+
+
+    </div>
+
+
+    </form>
+
+    </div>
+
+<div class="row" style="width: 100%; margin-left: 2%; margin-bottom: 8px">
     <div class="col"><button type="button" class="tile" data-toggle="modal" data-target="#exampleModal6">
         <h6 class="zoom">
            Algemene Indruk <br>
@@ -29,54 +282,180 @@
      </button>
     </div>
 
-    <div class="col"><button type="button" class="tile2" data-toggle="modal" data-target="#exampleModal3">
+    <div class="col">
+        <button type="button" class="tile2" data-toggle="modal" data-target="#exampleModal1">
         <h6 class="zoom">
-            Laser Protocol <br>
-            <i class="fas fa-stream" style="font-size: 40px; margin-top:5px"></i>
+            Inspectie in Stand <br>
+            <i class="fas fa-angle-double-down" style="font-size: 40px; margin-top:5px"></i>
 
         </h6>
      </button>
     </div>
-     <div class="col"><button type="button" class="tile3" data-toggle="modal" data-target="#exampleModal4">
-        <h6 class="zoom">
-            Beweging Been (rechts) <br>
-            <i class="fas fa-angle-double-right" style="font-size: 40px; margin-top:5px"></i>
-        </h6>
-     </button>
-    </div>
-</div>
 
-<div class="row" style="width: 95%; margin-left: 2%">
     <div class="col">
         <button type="button" class="tile4" data-toggle="modal" data-target="#exampleModal5">
             <h6 class="zoom">
-                Inspectie in Beweging <br>
+                 Inspectie in Beweging <br>
                 <i class="fas fa-arrows-alt" style="font-size: 40px; margin-top:5px"></i>
             </h6>
         </button>
     </div>
 
-    <div class="col"><button type="button" class="tile5" data-toggle="modal" data-target="#exampleModal2">
+     <div class="col">
+         <button type="button" class="tile3" data-toggle="modal" data-target="#exampleModal11">
         <h6 class="zoom">
-            Bewegingsonderzoek <br>
-            <i class="fas fa-compress-arrows-alt" style="font-size: 40px; margin-top: 5px"></i>
-
+            Oriënterende Palpatie
+            <br>
+            <i class="fas fa-sort" style="font-size: 40px; margin-top:5px"></i>
         </h6>
      </button>
     </div>
-     <div class="col"><button type="button" class="tile6" data-toggle="modal" data-target="#exampleModal7">
+
+</div>
+
+<div class="row" style="width: 100%; margin-left: 4%; margin-top: -6px">
+
+
+    <div class="col">
+        <button type="button" class="tile5" data-toggle="modal" data-target="#exampleModal8">
         <h6 class="zoom">
-            Beweging Been (links) <br>
-            <i class="fas fa-angle-double-left" style="font-size: 40px; margin-top: 5px"></i>
+             TMJ / HYOID<br>
+            <i class="fas fa-compress-arrows-alt" style="font-size: 40px; margin-top: 5px"></i>
+        </h6>
+     </button>
+    </div>
+     <div class="col">
+         <button type="button" class="tile6" data-toggle="modal" data-target="#exampleModal2">
+        <h6 class="zoom">
+             Wervelkolom <br>
+            <i class="fas fa-angle-double-right" style="font-size: 40px; margin-top: 5px"></i>
 
         </h6>
 
      </button>
+
+    </div>
+    <div class="col">
+        <button type="button" class="tile7" data-toggle="modal" data-target="#exampleModal7">
+        <h6 class="zoom">
+            Extremiteiten <br>
+            <i class="fas fa-angle-double-left" style="font-size: 40px; margin-top: 5px"></i>
+        </h6>
+     </button>
+     <br><br><br>
     </div>
 </div>
+</div>
+
+    <div class="subnav" style="margin-left: 10%; margin-top: 20px">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-light" style="width: 45%; border: 1px solid rgb(220, 220, 220)" type="button"  data-toggle="modal" data-target="#exampleModal9">
+
+                    <i class="fas fa-film"></i>
+                    Oefeningen
+                </button>
+                <a href="" class="btn btn-light" style="width: 45%; border: 1px solid rgb(220, 220, 220)" data-toggle="modal" data-target="#exampleModal3">
+
+                    <i class="fas fa-layer-group"></i>
+                    Laser Behandeling
+                </a>
+
+                <button class="btn btn-light" style="width: 45%; border: 1px solid rgb(220, 220, 220); margin-top: 5px" type="button"  data-toggle="modal" data-target="#exampleModal9">
+                    <i class="fas fa-check"></i>
+                    Fysioth. Beh.
+                </button>
+                <a href="" class="btn btn-light" style="width: 45%; border: 1px solid rgb(220, 220, 220); margin-top: 5px" data-toggle="modal" data-target="#exampleModal10">
+                    <i class="fas fa-file-alt"></i>
+                    Rapport
+                </a>
+
+            </div>
+
+    </form>
+
+</div>
+
 <br>
+
+
+<div class="modal fade-xg bd-example-modal-lg" id="exampleModal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Oriënterende Palpatie {{ $sessie->op1 }} ({{ $sessie->datum }}) </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+           <form action="{{ route('sessies.update', ['id' =>$sessie->id ]) }}" method="get"  enctype="multipart/form-data">
+                {{ csrf_field() }}
+        <div class="modal-body">
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        Voor inspectie in beweging:
+                    </div>
+                    <div class="col-md-10">
+                        <textarea name="" id="" cols="30" rows="2" class="form-control" style="margin-bottom: 5px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Na inspectie in beweging:
+                    </div>
+                    <div class="col-md-10">
+                        <textarea name="" id="" cols="30" rows="2" class="form-control" ></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
+                        <input type="text" name="" id="" class="form-control" style="width: 80%">
+                    </div>
+
+                        <div class="col-md-4">
+                            <img src="/images/horse_left.jpg" alt="" style="width: 80%">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/images/horse_right.jpg" alt="" style="width: 80%">
+                        </div>
+
+
+                    <div class="col-md-2">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
+                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
+                        <input type="text" name="" id="" class="form-control" style="width: 80%; float: right">
+                    </div>
+                </div>
+
+
+                </div>
+
+
+            <div class="modal-footer">
+                <button class="btn btn-success" type="submit">
+                    <i class="fas fa-check"></i>
+                    Opslaan
+                </button>
 <br>
-<div class="modal fade-xg bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
+</div>
+        </div>
+           </form>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade-xg bd-example-modal-lg" id="exampleModal8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -92,73 +471,321 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4" style="overflow:scroll; height: 650px; overflow-x: hidden; margin-bottom: 50px">
-                        <button data-toggle="collapse" data-target="#demo" class="collapsible" style="border-radius: 5px" type='button'>
+                        <button data-toggle="collapse" data-target="#demo" class="collapsible" style="border-radius:" type='button'>
                             <span>TMJ</span>
                             <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
                         </button>
 
-                        <div id="demo" class="collapse">
-                            <h6 for="lateral" class="title">Lateral</h6>
-                            <select name="bo1" id="" class="form-control" style="padding-left: 42%">
-                                <option value="{{ $sessie->bo1 }}">{{ $sessie->bo1 }}</option>
-                                <option value="li">( li )</option>
-                                <option value="re">( re )</option>
-                            </select>
-                            <input type="text" name="bo2" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo2 }}">
+<div id="demo" class="collapse">
+    <h6 for="lateral" class="title">Lateral</h6>
+    <div class="row">
+        <div class="col-md-2">
+            <h6 style="margin-top: 5px"> li</h6>
+        </div>
+        <div class="col-md-10">
+            <input type="text" name="bo1" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo1 }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h6 for="lateral">re</h6>
+        </div>
+        <div class="col-md-10">
+            <input type="text" name="bo2" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo2 }}">
+        </div>
+    </div>
 
-                            <h6 for="lateral" class="title">Caudal glide</h6>
-                            <select name="bo3" id="" class="form-control" style="padding-left: 42%">
-                                <option value="{{ $sessie->bo3 }}">{{ $sessie->bo3 }}</option>
 
-                                <option value="li">( li )</option>
-                                <option value="re">( re )</option>
-                            </select>
-                            <input type="text" name="bo4" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo4 }}">
+            <h6 for="caudal" class="title" >Caudal glide</h6>
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>li</h6>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" name="bo3" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo3 }}">
 
-                            <h6 for="lateral" class="title">Rostral glide</h6>
-                            <select name="bo5" id="" class="form-control" style="padding-left: 42%">
-                                <option value="{{ $sessie->bo5 }}">{{ $sessie->bo5 }}</option>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>re</h6>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" name="bo4" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo4 }}">
+                </div>
+            </div>
+            <h6 for="lateral" class="title">Rostral glide </h6>
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>li</h6>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" name="bo5" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo5 }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>re</h6>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" name="bo6" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo6 }}">
+                </div>
+            </div>
+        </div>
+        <br>
+    <button data-toggle="collapse" data-target="#demo1" class="collapsible" style="border-radius: 5px" type='button'>
+        <span>Hyoid</span>
+        <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
+    </button>
 
-                                <option value="li">( li )</option>
-                                <option value="re">( re )</option>
-                            </select>
-                            <input type="text" name="bo6" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo6 }}">
+    <div id="demo1" class="collapse">
+        <h6 for="lateral" class="title" >Dorsal</h6>
+                <input type="text" name="bo8" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo8 }}">
+        <h6 for="lateral" class="title" >Lateral </h6>
+        <div class="row">
+            <div class="col-md-2">
+                li
+            </div>
+            <div class="col-md-10">
+                <input type="text" name="bo9" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo9 }}">
+
+            </div>
+        </div>
+<div class="row">
+    <div class="col-md-2">
+        <h6>re</h6>
+         </div>
+         <div class="col-md-10">
+            <input type="text" name="bo10" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo10 }}">
+
+            <div class="inputs">
+                <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
+                <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
+                <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
+                <input type="text" name="behandeling" id="" value="{{ $sessie->behandeling }}">
+                <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
+                <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
+                <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
+                <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
+                <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
+                <input type="text" name="ib4" id="" value="{{ $sessie->ib4 }}">
+                <input type="text" name="ib5" id="" value="{{ $sessie->ib5 }}">
+                <input type="text" name="ib6" id="" value="{{ $sessie->ib6 }}">
+                <input type="text" name="ib7" id="" value="{{ $sessie->ib7 }}">
+                <input type="text" name="ib8" id="" value="{{ $sessie->ib8 }}">
+                <input type="text" name="ib9" id="" value="{{ $sessie->ib9 }}">
+                <input type="text" name="ib10" id="" value="{{ $sessie->ib10 }}">
+                <input type="text" name="ib11" id="" value="{{ $sessie->ib11 }}">
+                <input type="text" name="ib12" id="" value="{{ $sessie->ib12 }}">
+                <input type="text" name="ib13" id="" value="{{ $sessie->ib13 }}">
+                <input type="text" name="ib14" id="" value="{{ $sessie->ib14 }}">
+                <input type="text" name="ib15" id="" value="{{ $sessie->ib15 }}">
+                <input type="text" name="ib16" id="" value="{{ $sessie->ib16 }}">
+                <input type="text" name="ib17" id="" value="{{ $sessie->ib17 }}">
+                <input type="text" name="ib18" id="" value="{{ $sessie->ib18 }}">
+                <input type="text" name="ib19" id="" value="{{ $sessie->ib19 }}">
+                <input type="text" name="bo7" id="" value="{{ $sessie->bo7 }}">
+                <input type="text" name="bo11" id="" value="{{ $sessie->bo11 }}">
+                <input type="text" name="bo12" id="" value="{{ $sessie->bo12 }}">
+                <input type="text" name="bo13" id="" value="{{ $sessie->bo13 }}">
+                <input type="text" name="bo14" id="" value="{{ $sessie->bo14 }}">
+                <input type="text" name="bo15" id="" value="{{ $sessie->bo15 }}">
+                <input type="text" name="bo16" id="" value="{{ $sessie->bo16 }}">
+                <input type="text" name="bo17" id="" value="{{ $sessie->bo17 }}">
+                <input type="text" name="bo18" id="" value="{{ $sessie->bo18 }}">
+                <input type="text" name="bo19" id="" value="{{ $sessie->bo19 }}">
+                <input type="text" name="bo20" id="" value="{{ $sessie->bo20 }}">
+                <input type="text" name="bo21" id="" value="{{ $sessie->bo21 }}">
+                <input type="text" name="bo22" id="" value="{{ $sessie->bo22 }}">
+                <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
+                <input type="text" name="bo24" id="" value="{{ $sessie->bo24 }}">
+                <input type="text" name="bo25" id="" value="{{ $sessie->bo25 }}">
+                <input type="text" name="bo26" id="" value="{{ $sessie->bo26 }}">
+                <input type="text" name="bo27" id="" value="{{ $sessie->bo27 }}">
+                <input type="text" name="bo28" id="" value="{{ $sessie->bo28 }}">
+                <input type="text" name="bo29" id="" value="{{ $sessie->bo29 }}">
+                <input type="text" name="bo30" id="" value="{{ $sessie->bo30 }}">
+                <input type="text" name="bo31" id="" value="{{ $sessie->bo31 }}">
+                <input type="text" name="bo32" id="" value="{{ $sessie->bo32 }}">
+                <input type="text" name="bo33" id="" value="{{ $sessie->bo33 }}">
+                <input type="text" name="bo34" id="" value="{{ $sessie->bo34 }}">
+                <input type="text" name="bo35" id="" value="{{ $sessie->bo35 }}">
+                <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
+                <input type="text" name="bo37" id="" value="{{ $sessie->bo37 }}">
+                <input type="text" name="bo38" id="" value="{{ $sessie->bo38 }}">
+                <input type="text" name="bo39" id="" value="{{ $sessie->bo39 }}">
+                <input type="text" name="bo40" id="" value="{{ $sessie->bo40 }}">
+                <input type="text" name="bo41" id="" value="{{ $sessie->bo41 }}">
+                <input type="text" name="bo42" id="" value="{{ $sessie->bo42 }}">
+                <input type="text" name="bo43" id="" value="{{ $sessie->bo43 }}">
+                <input type="text" name="bo44" id="" value="{{ $sessie->bo44 }}">
+                <input type="text" name="bo45" id="" value="{{ $sessie->bo45 }}">
+                <input type="text" name="bo46" id="" value="{{ $sessie->bo46 }}">
+                <input type="text" name="bo47" id="" value="{{ $sessie->bo47 }}">
+                <input type="text" name="bo48" id="" value="{{ $sessie->bo48 }}">
+                <input type="text" name="bo49" id="" value="{{ $sessie->bo49 }}">
+                <input type="text" name="bo50" id="" value="{{ $sessie->bo50 }}">
+                <input type="text" name="bo51" id="" value="{{ $sessie->bo51 }}">
+                <input type="text" name="bo52" id="" value="{{ $sessie->bo52 }}">
+                <input type="text" name="bo53" id="" value="{{ $sessie->bo53 }}">
+                <input type="text" name="bo54" id="" value="{{ $sessie->bo54 }}">
+                <input type="text" name="bo55" id="" value="{{ $sessie->bo55 }}">
+                <input type="text" name="bo56" id="" value="{{ $sessie->bo56 }}">
+                <input type="text" name="bo57" id="" value="{{ $sessie->bo57 }}">
+                <input type="text" name="bo58" id="" value="{{ $sessie->bo58 }}">
+                <input type="text" name="bo59" id="" value="{{ $sessie->bo59 }}">
+                <input type="text" name="bo60" id="" value="{{ $sessie->bo60 }}">
+                <input type="text" name="bo61" id="" value="{{ $sessie->bo61 }}">
+                <input type="text" name="bo62" id="" value="{{ $sessie->bo62 }}">
+                <input type="text" name="bo63" id="" value="{{ $sessie->bo63 }}">
+                <input type="text" name="bo64" id="" value="{{ $sessie->bo64 }}">
+                <input type="text" name="bo65" id="" value="{{ $sessie->bo65 }}">
+                <input type="text" name="bo66" id="" value="{{ $sessie->bo66 }}">
+                <input type="text" name="bo67" id="" value="{{ $sessie->bo67 }}">
+                <input type="text" name="bbr1" id="" value="{{ $sessie->bbr1 }}">
+                <input type="text" name="bbr2" id="" value="{{ $sessie->bbr2 }}">
+                <input type="text" name="bbr3" id="" value="{{ $sessie->bbr3 }}">
+                <input type="text" name="bbr4" id="" value="{{ $sessie->bbr4 }}">
+                <input type="text" name="bbr5" id="" value="{{ $sessie->bbr5 }}">
+                <input type="text" name="bbr6" id="" value="{{ $sessie->bbr6 }}">
+                <input type="text" name="bbr7" id="" value="{{ $sessie->bbr7 }}">
+                <input type="text" name="bbr8" id="" value="{{ $sessie->bbr8 }}">
+                <input type="text" name="bbr9" id="" value="{{ $sessie->bbr9 }}">
+                <input type="text" name="bbr10" id="" value="{{ $sessie->bbr10 }}">
+                <input type="text" name="bbr11" id="" value="{{ $sessie->bbr11 }}">
+                <input type="text" name="bbr12" id="" value="{{ $sessie->bbr12 }}">
+                <input type="text" name="bbr13" id="" value="{{ $sessie->bbr13 }}">
+                <input type="text" name="bbr14" id="" value="{{ $sessie->bbr14 }}">
+                <input type="text" name="bbr15" id="" value="{{ $sessie->bbr15 }}">
+                <input type="text" name="bbr16" id="" value="{{ $sessie->bbr16 }}">
+                <input type="text" name="bbr17" id="" value="{{ $sessie->bbr17 }}">
+                <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
+                <input type="text" name="bbr19" id="" value="{{ $sessie->bbr19 }}">
+                <input type="text" name="bbr20" id="" value="{{ $sessie->bbr20 }}">
+                <input type="text" name="bbr21" id="" value="{{ $sessie->bbr21 }}">
+                <input type="text" name="bbr22" id="" value="{{ $sessie->bbr22 }}">
+                <input type="text" name="bbr23" id="" value="{{ $sessie->bbr23 }}">
+                <input type="text" name="bbr24" id="" value="{{ $sessie->bbr24 }}">
+                <input type="text" name="bbr25" id="" value="{{ $sessie->bbr25 }}">
+                <input type="text" name="bbr26" id="" value="{{ $sessie->bbr26 }}">
+                <input type="text" name="bbr27" id="" value="{{ $sessie->bbr27 }}">
+                <input type="text" name="bbr28" id="" value="{{ $sessie->bbr28 }}">
+                <input type="text" name="bbr29" id="" value="{{ $sessie->bbr29 }}">
+                <input type="text" name="bbr30" id="" value="{{ $sessie->bbr30 }}">
+                <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+                <input type="text" name="bbr32" id="" value="{{ $sessie->bbr32 }}">
+                <input type="text" name="bbr33" id="" value="{{ $sessie->bbr33 }}">
+                <input type="text" name="bbr34" id="" value="{{ $sessie->bbr34 }}">
+                <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+                <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+                <input type="text" name="bbl1" id="" value="{{ $sessie->bbl1 }}">
+                <input type="text" name="bbl2" id="" value="{{ $sessie->bbl2 }}">
+                <input type="text" name="bbl3" id="" value="{{ $sessie->bbl3 }}">
+                <input type="text" name="bbl4" id="" value="{{ $sessie->bbl4 }}">
+                <input type="text" name="bbl5" id="" value="{{ $sessie->bbl5 }}">
+                <input type="text" name="bbl6" id="" value="{{ $sessie->bbl6 }}">
+                <input type="text" name="bbl7" id="" value="{{ $sessie->bbl7 }}">
+                <input type="text" name="bbl8" id="" value="{{ $sessie->bbl8 }}">
+                <input type="text" name="bbl9" id="" value="{{ $sessie->bbl9 }}">
+                <input type="text" name="bbl10" id="" value="{{ $sessie->bbl10 }}">
+                <input type="text" name="bbl11" id="" value="{{ $sessie->bbl11 }}">
+                <input type="text" name="bbl12" id="" value="{{ $sessie->bbl12 }}">
+                <input type="text" name="bbl13" id="" value="{{ $sessie->bbl13 }}">
+                <input type="text" name="bbl14" id="" value="{{ $sessie->bbl14 }}">
+                <input type="text" name="bbl15" id="" value="{{ $sessie->bbl15 }}">
+                <input type="text" name="bbl16" id="" value="{{ $sessie->bbl16 }}">
+                <input type="text" name="bbl17" id="" value="{{ $sessie->bbl17 }}">
+                <input type="text" name="bbl18" id="" value="{{ $sessie->bbl18 }}">
+                <input type="text" name="bbl19" id="" value="{{ $sessie->bbl19 }}">
+                <input type="text" name="bbl20" id="" value="{{ $sessie->bbl20 }}">
+                <input type="text" name="bbl21" id="" value="{{ $sessie->bbl21 }}">
+                <input type="text" name="bbl22" id="" value="{{ $sessie->bbl22 }}">
+                <input type="text" name="bbl23" id="" value="{{ $sessie->bbl23 }}">
+                <input type="text" name="bbl24" id="" value="{{ $sessie->bbl24 }}">
+                <input type="text" name="bbl25" id="" value="{{ $sessie->bbl25 }}">
+                <input type="text" name="bbl26" id="" value="{{ $sessie->bbl26 }}">
+                <input type="text" name="bbl27" id="" value="{{ $sessie->bbl27 }}">
+                <input type="text" name="bbl28" id="" value="{{ $sessie->bbl28 }}">
+                <input type="text" name="bbl29" id="" value="{{ $sessie->bbl29 }}">
+                <input type="text" name="bbl30" id="" value="{{ $sessie->bbl30 }}">
+                <input type="text" name="bbl31" id="" value="{{ $sessie->bbl31 }}">
+                <input type="text" name="bbl32" id="" value="{{ $sessie->bbl32 }}">
+                <input type="text" name="bbl33" id="" value="{{ $sessie->bbl33 }}">
+                <input type="text" name="bbl34" id="" value="{{ $sessie->bbl34 }}">
+                <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
+                <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
+                <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
+                <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
+
+            </div>
+
+         </div>
+</div>
+
+                    </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="horse2">
+                            <div class="row">
+                                <div class="col" style="margin-top: 100px; margin-left: 60%">
+                                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo" class="collapsible"></button>
+                                    <br>
+                                    <div style="margin-top: 140px; margin-left: -140px">
+                                        <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo1" class="collapsible"></button>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                    <button data-toggle="collapse" data-target="#demo1" class="collapsible" style="border-radius: 5px" type='button'>
-                        <span>Hyoid</span>
-                        <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
-                    </button>
-
-                    <div id="demo1" class="collapse">
-                        <h6 for="lateral" class="title">Dorsal</h6>
-
-                        <input type="text" name="bo8" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo8 }}">
-
-                        <h6 for="lateral" class="title">Lateral</h6>
-                        <select name="bo9" id="" class="form-control" style="padding-left: 42%">
-                            <option value="{{ $sessie->bo9 }}">{{ $sessie->bo9 }}</option>
-
-                            <option value="li">( li )</option>
-                            <option value="re">( re )</option>
-                        </select>
-                        <input type="text" name="bo10" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo10 }}">
                     </div>
+                </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fas fa-check"></i>
+                                Opslaan
+                            </button>
 
-                    <button data-toggle="collapse" data-target="#demo200" class="collapsible" style="border-radius: 5px" type='button'>
-                        <span>General extension CWK</span>
-                        <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
-                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <div id="demo200" class="collapse">
-                        <input type="text" name="bo7" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo7 }}">
-                    </div>
+</div>
 
-                    <button data-toggle="collapse" data-target="#demo2" class="collapsible" style="border-radius: 5px" type='button'>
-                        <span>C0-C1</span>
-                        <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
-                    </button>
 
+
+
+<div class="modal fade-xg bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bewegingsonderzoek {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+                <div class="modal-body">
+
+                    <div class="card-body">
+                        <form action="{{ route('sessies.update', ['id' =>$sessie->id ]) }}" method="get"  enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-md-4" style="overflow:scroll; height: 650px; overflow-x: hidden; margin-bottom: 50px">
+                                <button data-toggle="collapse" data-target="#demo200" class="collapsible" style="border-radius: 5px" type='button'>
+                                    <span>General extension CWK</span>
+                                    <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
+                                </button>
+                                <div id="demo200" class="collapse">
+                                    <input type="text" name="bo7" class="form-control" style="margin-top: 5px; margin-bottom: 10px" value="{{ $sessie->bo7 }}">
+                                </div>
+                                <button data-toggle="collapse" data-target="#demo2" class="collapsible" style="border-radius: 5px" type='button'>
+                                    <span>C0-C1</span>
+                                    <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
+                                </button>
                     <div id="demo2" class="collapse">
                         <h6 for="lateral" class="title">Flexie</h6>
                         <input type="text" name="bo12" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo12 }}">
@@ -167,13 +794,25 @@
                         <input type="text" name="bo14" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo14 }}">
 
                         <h6 for="lateral" class="title">Lateroflexie</h6>
-                        <select name="bo15" id="" class="form-control" style="padding-left: 42%">
-                            <option value="{{ $sessie->bo15 }}">{{ $sessie->bo15 }}</option>
 
-                            <option value="li">( li )</option>
-                            <option value="re">( re )</option>
-                        </select>
-                        <input type="text" name="bo16" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo16 }}">
+                                <div class="row">
+                                <div class="col-md-2">
+                                    li
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" name="bo15" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo15 }}">
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        re
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" name="bo16" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo16 }}">
+                                    </div>
+                                    </div>
+                                <br>
+
                     </div>
 
                 <button data-toggle="collapse" data-target="#demo3" class="collapsible" style="border-radius: 5px" type='button'>
@@ -183,13 +822,23 @@
 
                 <div id="demo3" class="collapse">
                     <h6 for="lateral" class="title">Rotatie</h6>
-                    <select name="bo17" id="" class="form-control" style="padding-left: 42%">
-                        <option value="{{ $sessie->bo17 }}">{{ $sessie->bo17 }}</option>
-
-                        <option value="li">( li )</option>
-                        <option value="re">( re )</option>
-                    </select>
-                    <input type="text" name="bo18" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo18 }}">
+                    <div class="row">
+                        <div class="col-md-2">
+                            li
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" name="bo17" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo17 }}">
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                re
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" name="bo18" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo18 }}">
+                            </div>
+                            </div>
+                            <br>
                 </div>
                 <button data-toggle="collapse" data-target="#demo201" class="collapsible" style="border-radius: 5px" type='button'>
                     <span>General latflex CWK</span>
@@ -492,10 +1141,7 @@
                             <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo10" class="collapsible" style="margin-left: 40px"></button>
 
                         </div>
-
                       </div>
-
-
                               </div>
                               <script>
                               var slideIndex = 1;
@@ -633,15 +1279,17 @@
                 <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
                 <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
         </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-success" type="submit">
-                                        <i class="fas fa-check"></i>
-                                        Opslaan
-                                    </button>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-success" type="submit">
+                                            <i class="fas fa-check"></i>
+                                            Opslaan
+                                        </button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
-            </form>
                     </div>
                 </div>
         </div>
@@ -666,43 +1314,51 @@
                         <label for="">
                             Naam Paard:
                         </label>
-                        <label style="margin-top: 30px">
-                            Behandeling
-                        </label>
-                        <label style="margin-top: 70px">
-                        Inspectie in Stand
-                        </label>
-
-                        <label style="margin-top: 130px">
-                            Oriënterende Palpatie
-                        </label>
-                        </label>
-                        </div>
+                    </div>
                         <div class="col-md-10">
                             <input type="text" name="name_horse" id="" class="form-control" value="{{ $sessie->name_horse }}">
-                            <br>
-                            <select name="behandeling" id="" class="form-control">
-                                <option value="{{ $sessie->behandeling }}">{{ $sessie->behandeling }}</option>
-                                <option value="Laser Behandeling">Laser Behandeling</option>
-                                <option value="Behandeling Been">Behandeling Been</option>
-                                <option value="Inspectie in Beweging">Inspectie in Beweging</option>
-                                <option value="Bewegingsonderzoek">Bewegingsonderzoek</option>
-                            </select>
-                            <br>
-                            <div class="info">
-                                <h6 style="margin-top: 2px">
-                                    <i class="far fa-question-circle"></i>
-                                    BAR / Voedingstoestand / Vacht / Voeten
-                                </h6>
-                            </div>
-                            <textarea type="text" name="inspectie_stand" id="" cols="5" rows="5" class="form-control">{{ $sessie->inspectie_stand }}</textarea>
-
-                            <br>
-                            <textarea type="text" name="orienterende_palpatie" id="" cols="5" rows="5" class="form-control" class="form-control">{{ $sessie->orienterende_palpatie }}</textarea>
-
                         </div>
                 </div>
+                        <div class="row" style="margin-top: 5px">
+                            <div class="col-md-2">
+                                <label>
+                                    Type Consult:
+                                 </label>
+                            </div>
+
+                            <div class="col-md-10">
+                                <select name="behandeling" id="" class="form-control">
+                                    <option value="{{ $sessie->behandeling }}">{{ $sessie->behandeling }}</option>
+                                    <option value="Laser Behandeling">Laser Behandeling</option>
+                                    <option value="Fysiotherapeutische Behandeling">Fysiotherapeutische Behandeling</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    <div class="info">
+                                        <h6 style="margin-top: 2px">
+                                            <i class="far fa-question-circle"></i>
+                                            BAR / Voedingstoestand / Vacht / Voeten
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Algemene indruk:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <textarea type="text" name="inspectie_stand" id="" cols="5" rows="5" class="form-control">{{ $sessie->inspectie_stand }}</textarea>
+                            </div>
+                        </div>
             </div>
+            <br><br><br>
             <div class="modal-footer">
                 <div class="form-group">
                     <button class="btn btn-success btn-sm" type="submit">
@@ -710,6 +1366,7 @@
                         Opslaan</button>
                     </div>
                 <div class="inputs">
+                    <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
                     <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
                     <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
                     <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
@@ -906,12 +1563,38 @@
             <div class="row" style="margin-bottom: 10px ">
                 <div class="col-md-2">
                     <label for="">Datum</label>
-                    <input type="text" name="lp1" class="form-control" style="margin-bottom: 5px; width: 100%" value="{{ $sessie->lp1 }}">
+                    <input type="date" name="lp1" class="form-control" style="margin-bottom: 5px; width: 100%" value="{{ $sessie->lp1 }}">
 
                 </div>
                 <div class="col-md-10">
                     <label for="">Behandeling</label>
                     <textarea type="text" rows="1" cols="2" class="form-control" style="margin-bottom: 5px; width: 100%" name="lp2">{{ $sessie->lp2}}</textarea>
+                    <br>
+                    <br>
+                </div>
+<br>
+<br>
+<br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="foto">Foto's toevoegen</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="file" name="" id="" class="form-control">
+                        <input type="file" name="" id="" class="form-control mt-2">
+                        <input type="file" name="" id="" class="form-control mt-2">
+                        <input type="file" name="" id="" class="form-control mt-2">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <input type="file" name="" id="" class="form-control">
+                        <input type="file" name="" id="" class="form-control mt-2">
+                        <input type="file" name="" id="" class="form-control mt-2">
+                        <input type="file" name="" id="" class="form-control mt-2">
+
+
+                    </div>
                 </div>
             </div>
 
@@ -1335,7 +2018,7 @@
                 </div>
                     <div class="col">
                               <div class="mySlides2">
-                                <img src="/images/horse_leg2.jpg" style="width: 90%; margin-left: 5%; margin-top: 5%">
+                                <img src="/images/horse_leg2.jpg" style="width: 90%; margin-left: 1%; margin-top: 5%">
                               </div>
 
 <div class="inputs">
@@ -1722,16 +2405,18 @@
     <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
     <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
 </div>
+</div>
 
-                                            <button class="btn btn-success" type="submit">
+                                            <button class="btn btn-success" type="submit" style="float: right">
                                                 <i class="fas fa-check"></i>
                                                 Opslaan
                                             </button>
                                           </div>
                                         </form>
+
+                                    </div>
                                 </div>
-                                </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1974,12 +2659,8 @@
 
                 </div>
                     <div class="col">
-                              <div class="">
-                                <img src="/images/horse_leg.jpg" style="width: 90%; margin-left: 15%; margin-top: 5%">
-                              </div>
-
-                    <br>
-                            </div>
+                        <img src="/images/horse_leg.jpg" alt="" style="width: 60%; margin-left: 20%">
+                    </div>
 
 
 <div class="inputs">
@@ -2128,27 +2809,340 @@
                 </div>
         </div>
     </div>
-    <div class="subnav" style="margin-left: 25%">
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-success" style="width: 45%" type="submit">
-                    <i class="fas fa-check"></i>
-                    Opslaan
-                </button>
-                <a href="" class="btn btn-light" style="width: 45%; border: 1px solid rgb(220, 220, 220)" data-toggle="modal" data-target="#exampleModal10">
-                    <i class="fas fa-file-alt"></i>
-                    Rapport
-                </a>
-            </div>
-            {{-- <div class="col">
-
-            </div> --}}
-        </div>
-
-    </form>
 
 </div>
 <br>
+<div class="modal fade-xg bd-example-modal-lg" id="exampleModal9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Oefeningen {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <div></div>
+                    <br>
+
+<div class="row">
+<div class="col-md-2">
+<p style="font-weight: bold">
+    Filter op:
+    </p>
+</div>
+
+<div class="col-md-10">
+                    <select name="" id="" class="form-select" style="width: 80%">
+                        <option value="Beenbewegingen">Beenbewegingen</option>
+                        <option value="Beenbewegingen">Bewegingen achterbeen</option>
+                        <option value="Beenbewegingen">Bewegingen voorbeen</option>
+
+                    </select>
+                </div>
+                </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="radio" style="float: top">
+                        </div>
+                        <div class="col-md-4">
+                            <iframe width="250" height="auto"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="radio" style="float: top">
+                        </div>
+                        <div class="col-md-4">
+                            <iframe width="250" height="auto"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="radio" style="float: top">
+                        </div>
+                        <div class="col-md-4">
+                            <iframe width="250" height="auto"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="radio" style="float: top">
+                        </div>
+                        <div class="col-md-4">
+                            <iframe width="250" height="auto"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                        </div>
+
+                    </div>
+                        <br><br>
+                        <button class="btn btn-light" style="float: right; width:15%; border: 1px solid gray">
+                            <i class="fas fa-check"></i>
+                            Selecteer</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+      <br>
+
+
+      <div class="modal fade-xg bd-example-modal-lg" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Inspectie in Stand {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="{{ route('sessies.update', ['id' =>$sessie->id ]) }}" method="get"  enctype="multipart/form-data">
+                    {{ csrf_field() }}
+
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            Voorzijde
+                        </div>
+                        <div class="col-md-10">
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Achterzijde
+                        </div>
+                        <div class="col-md-10">
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Linkerzijde
+                        </div>
+                        <div class="col-md-10">
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Rechterzijde
+                        </div>
+                        <div class="col-md-10">
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="">{{ $sessie->inspectie_stand }}</textarea>
+                        </div>
+                    </div>
+
+                        <br>
+                       </div>
+                       <div class="modal-footer">
+                        <button class="btn btn-success" type="submit">
+                            <i class="fas fa-check"></i>
+                            Opslaan
+                        </button>
+                    </div>
+                    </div>
+
+        <div class="inputs">
+            <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
+            <input type="text" name="behandeling" id="" value="{{ $sessie->behandeling }}">
+
+            <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
+            <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
+            <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
+            <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
+            <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
+            <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
+            <input type="text" name="ib4" id="" value="{{ $sessie->ib4 }}">
+            <input type="text" name="ib5" id="" value="{{ $sessie->ib5 }}">
+            <input type="text" name="ib6" id="" value="{{ $sessie->ib6 }}">
+            <input type="text" name="ib7" id="" value="{{ $sessie->ib7 }}">
+            <input type="text" name="ib8" id="" value="{{ $sessie->ib8 }}">
+            <input type="text" name="ib9" id="" value="{{ $sessie->ib9 }}">
+            <input type="text" name="ib10" id="" value="{{ $sessie->ib10 }}">
+            <input type="text" name="ib11" id="" value="{{ $sessie->ib11 }}">
+            <input type="text" name="ib12" id="" value="{{ $sessie->ib12 }}">
+            <input type="text" name="ib13" id="" value="{{ $sessie->ib13 }}">
+            <input type="text" name="ib14" id="" value="{{ $sessie->ib14 }}">
+            <input type="text" name="ib15" id="" value="{{ $sessie->ib15 }}">
+            <input type="text" name="ib16" id="" value="{{ $sessie->ib16 }}">
+            <input type="text" name="ib17" id="" value="{{ $sessie->ib17 }}">
+            <input type="text" name="ib18" id="" value="{{ $sessie->ib18 }}">
+            <input type="text" name="ib19" id="" value="{{ $sessie->ib19 }}">
+            <input type="text" name="bo1" id="" value="{{ $sessie->bo1 }}">
+            <input type="text" name="bo2" id="" value="{{ $sessie->bo2 }}">
+            <input type="text" name="bo3" id="" value="{{ $sessie->bo3 }}">
+            <input type="text" name="bo4" id="" value="{{ $sessie->bo4 }}">
+            <input type="text" name="bo5" id="" value="{{ $sessie->bo5 }}">
+            <input type="text" name="bo6" id="" value="{{ $sessie->bo6 }}">
+            <input type="text" name="bo7" id="" value="{{ $sessie->bo7 }}">
+            <input type="text" name="bo8" id="" value="{{ $sessie->bo8 }}">
+            <input type="text" name="bo9" id="" value="{{ $sessie->bo9 }}">
+            <input type="text" name="bo10" id="" value="{{ $sessie->bo10 }}">
+            <input type="text" name="bo11" id="" value="{{ $sessie->bo11 }}">
+            <input type="text" name="bo12" id="" value="{{ $sessie->bo12 }}">
+            <input type="text" name="bo13" id="" value="{{ $sessie->bo13 }}">
+            <input type="text" name="bo14" id="" value="{{ $sessie->bo14 }}">
+            <input type="text" name="bo15" id="" value="{{ $sessie->bo15 }}">
+            <input type="text" name="bo16" id="" value="{{ $sessie->bo16 }}">
+            <input type="text" name="bo17" id="" value="{{ $sessie->bo17 }}">
+            <input type="text" name="bo18" id="" value="{{ $sessie->bo18 }}">
+            <input type="text" name="bo19" id="" value="{{ $sessie->bo19 }}">
+            <input type="text" name="bo20" id="" value="{{ $sessie->bo20 }}">
+            <input type="text" name="bo21" id="" value="{{ $sessie->bo21 }}">
+            <input type="text" name="bo22" id="" value="{{ $sessie->bo22 }}">
+            <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
+            <input type="text" name="bo24" id="" value="{{ $sessie->bo24 }}">
+            <input type="text" name="bo25" id="" value="{{ $sessie->bo25 }}">
+            <input type="text" name="bo26" id="" value="{{ $sessie->bo26 }}">
+            <input type="text" name="bo27" id="" value="{{ $sessie->bo27 }}">
+            <input type="text" name="bo28" id="" value="{{ $sessie->bo28 }}">
+            <input type="text" name="bo29" id="" value="{{ $sessie->bo29 }}">
+            <input type="text" name="bo30" id="" value="{{ $sessie->bo30 }}">
+            <input type="text" name="bo31" id="" value="{{ $sessie->bo31 }}">
+            <input type="text" name="bo32" id="" value="{{ $sessie->bo32 }}">
+            <input type="text" name="bo33" id="" value="{{ $sessie->bo33 }}">
+            <input type="text" name="bo34" id="" value="{{ $sessie->bo34 }}">
+            <input type="text" name="bo35" id="" value="{{ $sessie->bo35 }}">
+            <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
+            <input type="text" name="bo37" id="" value="{{ $sessie->bo37 }}">
+            <input type="text" name="bo38" id="" value="{{ $sessie->bo38 }}">
+            <input type="text" name="bo39" id="" value="{{ $sessie->bo39 }}">
+            <input type="text" name="bo40" id="" value="{{ $sessie->bo40 }}">
+            <input type="text" name="bo41" id="" value="{{ $sessie->bo41 }}">
+            <input type="text" name="bo42" id="" value="{{ $sessie->bo42 }}">
+            <input type="text" name="bo43" id="" value="{{ $sessie->bo43 }}">
+            <input type="text" name="bo44" id="" value="{{ $sessie->bo44 }}">
+            <input type="text" name="bo45" id="" value="{{ $sessie->bo45 }}">
+            <input type="text" name="bo46" id="" value="{{ $sessie->bo46 }}">
+            <input type="text" name="bo47" id="" value="{{ $sessie->bo47 }}">
+            <input type="text" name="bo48" id="" value="{{ $sessie->bo48 }}">
+            <input type="text" name="bo49" id="" value="{{ $sessie->bo49 }}">
+            <input type="text" name="bo50" id="" value="{{ $sessie->bo50 }}">
+            <input type="text" name="bo51" id="" value="{{ $sessie->bo51 }}">
+            <input type="text" name="bo52" id="" value="{{ $sessie->bo52 }}">
+            <input type="text" name="bo53" id="" value="{{ $sessie->bo53 }}">
+            <input type="text" name="bo54" id="" value="{{ $sessie->bo54 }}">
+            <input type="text" name="bo55" id="" value="{{ $sessie->bo55 }}">
+            <input type="text" name="bo56" id="" value="{{ $sessie->bo56 }}">
+            <input type="text" name="bo57" id="" value="{{ $sessie->bo57 }}">
+            <input type="text" name="bo58" id="" value="{{ $sessie->bo58 }}">
+            <input type="text" name="bo59" id="" value="{{ $sessie->bo59 }}">
+            <input type="text" name="bo60" id="" value="{{ $sessie->bo60 }}">
+            <input type="text" name="bo61" id="" value="{{ $sessie->bo61 }}">
+            <input type="text" name="bo62" id="" value="{{ $sessie->bo62 }}">
+            <input type="text" name="bo63" id="" value="{{ $sessie->bo63 }}">
+            <input type="text" name="bo64" id="" value="{{ $sessie->bo64 }}">
+            <input type="text" name="bo65" id="" value="{{ $sessie->bo65 }}">
+            <input type="text" name="bo66" id="" value="{{ $sessie->bo66 }}">
+            <input type="text" name="bo67" id="" value="{{ $sessie->bo67 }}">
+            <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
+            <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
+            <input type="text" name="bbr1" id="" value="{{ $sessie->bbr1 }}">
+            <input type="text" name="bbr2" id="" value="{{ $sessie->bbr2 }}">
+            <input type="text" name="bbr3" id="" value="{{ $sessie->bbr3 }}">
+            <input type="text" name="bbr4" id="" value="{{ $sessie->bbr4 }}">
+            <input type="text" name="bbr5" id="" value="{{ $sessie->bbr5 }}">
+            <input type="text" name="bbr6" id="" value="{{ $sessie->bbr6 }}">
+            <input type="text" name="bbr7" id="" value="{{ $sessie->bbr7 }}">
+            <input type="text" name="bbr8" id="" value="{{ $sessie->bbr8 }}">
+            <input type="text" name="bbr9" id="" value="{{ $sessie->bbr9 }}">
+            <input type="text" name="bbr10" id="" value="{{ $sessie->bbr10 }}">
+            <input type="text" name="bbr11" id="" value="{{ $sessie->bbr11 }}">
+            <input type="text" name="bbr12" id="" value="{{ $sessie->bbr12 }}">
+            <input type="text" name="bbr13" id="" value="{{ $sessie->bbr13 }}">
+            <input type="text" name="bbr14" id="" value="{{ $sessie->bbr14 }}">
+            <input type="text" name="bbr15" id="" value="{{ $sessie->bbr15 }}">
+            <input type="text" name="bbr16" id="" value="{{ $sessie->bbr16 }}">
+            <input type="text" name="bbr17" id="" value="{{ $sessie->bbr17 }}">
+            <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
+            <input type="text" name="bbr19" id="" value="{{ $sessie->bbr19 }}">
+            <input type="text" name="bbr20" id="" value="{{ $sessie->bbr20 }}">
+            <input type="text" name="bbr21" id="" value="{{ $sessie->bbr21 }}">
+            <input type="text" name="bbr22" id="" value="{{ $sessie->bbr22 }}">
+            <input type="text" name="bbr23" id="" value="{{ $sessie->bbr23 }}">
+            <input type="text" name="bbr24" id="" value="{{ $sessie->bbr24 }}">
+            <input type="text" name="bbr25" id="" value="{{ $sessie->bbr25 }}">
+            <input type="text" name="bbr26" id="" value="{{ $sessie->bbr26 }}">
+            <input type="text" name="bbr27" id="" value="{{ $sessie->bbr27 }}">
+            <input type="text" name="bbr28" id="" value="{{ $sessie->bbr28 }}">
+            <input type="text" name="bbr29" id="" value="{{ $sessie->bbr29 }}">
+            <input type="text" name="bbr30" id="" value="{{ $sessie->bbr30 }}">
+            <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+            <input type="text" name="bbr32" id="" value="{{ $sessie->bbr32 }}">
+            <input type="text" name="bbr33" id="" value="{{ $sessie->bbr33 }}">
+            <input type="text" name="bbr34" id="" value="{{ $sessie->bbr34 }}">
+            <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+            <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+            <input type="text" name="bbl1" id="" value="{{ $sessie->bbl1 }}">
+            <input type="text" name="bbl2" id="" value="{{ $sessie->bbl2 }}">
+            <input type="text" name="bbl3" id="" value="{{ $sessie->bbl3 }}">
+            <input type="text" name="bbl4" id="" value="{{ $sessie->bbl4 }}">
+            <input type="text" name="bbl5" id="" value="{{ $sessie->bbl5 }}">
+            <input type="text" name="bbl6" id="" value="{{ $sessie->bbl6 }}">
+            <input type="text" name="bbl7" id="" value="{{ $sessie->bbl7 }}">
+            <input type="text" name="bbl8" id="" value="{{ $sessie->bbl8 }}">
+            <input type="text" name="bbl9" id="" value="{{ $sessie->bbl9 }}">
+            <input type="text" name="bbl10" id="" value="{{ $sessie->bbl10 }}">
+            <input type="text" name="bbl11" id="" value="{{ $sessie->bbl11 }}">
+            <input type="text" name="bbl12" id="" value="{{ $sessie->bbl12 }}">
+            <input type="text" name="bbl13" id="" value="{{ $sessie->bbl13 }}">
+            <input type="text" name="bbl14" id="" value="{{ $sessie->bbl14 }}">
+            <input type="text" name="bbl15" id="" value="{{ $sessie->bbl15 }}">
+            <input type="text" name="bbl16" id="" value="{{ $sessie->bbl16 }}">
+            <input type="text" name="bbl17" id="" value="{{ $sessie->bbl17 }}">
+            <input type="text" name="bbl18" id="" value="{{ $sessie->bbl18 }}">
+            <input type="text" name="bbl19" id="" value="{{ $sessie->bbl19 }}">
+            <input type="text" name="bbl20" id="" value="{{ $sessie->bbl20 }}">
+            <input type="text" name="bbl21" id="" value="{{ $sessie->bbl21 }}">
+            <input type="text" name="bbl22" id="" value="{{ $sessie->bbl22 }}">
+            <input type="text" name="bbl23" id="" value="{{ $sessie->bbl23 }}">
+            <input type="text" name="bbl24" id="" value="{{ $sessie->bbl24 }}">
+            <input type="text" name="bbl25" id="" value="{{ $sessie->bbl25 }}">
+            <input type="text" name="bbl26" id="" value="{{ $sessie->bbl26 }}">
+            <input type="text" name="bbl27" id="" value="{{ $sessie->bbl27 }}">
+            <input type="text" name="bbl28" id="" value="{{ $sessie->bbl28 }}">
+            <input type="text" name="bbl29" id="" value="{{ $sessie->bbl29 }}">
+            <input type="text" name="bbl30" id="" value="{{ $sessie->bbl30 }}">
+            <input type="text" name="bbl31" id="" value="{{ $sessie->bbl31 }}">
+            <input type="text" name="bbl32" id="" value="{{ $sessie->bbl32 }}">
+            <input type="text" name="bbl33" id="" value="{{ $sessie->bbl33 }}">
+            <input type="text" name="bbl34" id="" value="{{ $sessie->bbl34 }}">
+            <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
+            <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
+        </div>
+
+
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+
+
+
+
+
+
 <div class="modal fade-xg bd-example-modal-lg" id="exampleModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 100%">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
@@ -2161,6 +3155,7 @@
         <div class="modal-body">
             <div class="card">
                 <div class="card-body">
+
                     <div></div>
                     <h5 style="text-align: center">Rapport {{ $sessie->name_horse }} {{ $sessie->datum }}</h5>
                     <br>
@@ -2168,12 +3163,6 @@
                         Algemeen
                     </span>
 
-                   {{-- <button data-toggle="collapse" data-target="#demo101" type='button' style="float: right; border:none; background-color:transparent">
-                        <i class="fas fa-chevron-circle-down"></i>
-                    </button>
-
-
-                    <div id="demo101" class="collapse"> --}}
                     <table class="table">
                         <br>
                         <tbody>
@@ -2197,11 +3186,7 @@
                     <br>
 
                     <span style="font-weight: bold">Laser Behandeling</span>
-                    {{--
-                    <button data-toggle="collapse" data-target="#demo103" type='button' style="float: right; border:none; background-color:transparent">
-                        <i class="fas fa-chevron-circle-down"></i>
-                    </button>
-                    <div id="demo103" class="collapse"> --}}
+
                                         <table class="table">
                                             <br>
                                             <tbody>
@@ -2220,10 +3205,6 @@
                     <span style="font-weight: bold">
                         Inspectie in Beweging
                     </span>
-                   {{-- <button data-toggle="collapse" data-target="#demo100" type='button' style="float: right; border:none; background-color:transparent">
-                        <i class="fas fa-chevron-circle-down"></i>
-                    </button>
-                    <div id="demo100" class="collapse"> --}}
 
                             <table class="table">
                                 <br>
@@ -2547,11 +3528,11 @@
                             </tr>
                         </tbody>
                     </table>
-{{-- </div> --}}
+
 <br>
 <br>
 
-{{-- </div> --}}
+
 <br>
 <br>
 <span style="font-weight: bold">Behandeling Been (rechts)</span>

@@ -66,7 +66,7 @@
     <br>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width: 95%; margin-left:2%; font-weight: bold">
         <i class="fas fa-play-circle"></i>
-         Start Sessie
+         Start Consult
     </button>
     <br>
 @endforeach
@@ -76,7 +76,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sessie {{ $horse->name_horse }}</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Consult {{ $horse->name_horse }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -84,16 +84,16 @@
         <div class="modal-body">
 
 <div class="card mt-4">
-    <div class="card-header">Nieuwe Sessie</div>
+    <div class="card-header">Nieuw Consult</div>
     <div class="card-body">
 @auth
 <form action="{{ route('horses.sessie', $horse->id, $horse->name_horse) }}" method="POST">
     {{ csrf_field() }}
     <div class="row">
         <div class="col-md-4">
-            <label for="reply" style="margin-bottom: 35px">Datum Sessie:</label>
+            <label for="reply" style="margin-bottom: 35px">Datum:</label>
          <br>
-            <label for="reply" style="margin-bottom: 35px">Type Sessie:</label>
+            <label for="reply" style="margin-bottom: 35px">Type:</label>
             <br>
             <br>
         </div>
@@ -101,10 +101,7 @@
             <input class="form-control" type="date" name="datum" id="datePicker" value="...">
             <br>
                 <select name="behandeling" id="" class="form-control">
-                        <option value="Inspectie in Beweging">Inspectie in Beweging</option>
-                        <option value="Oriënterende Palpatie">Oriënterende Palpatie</option>
-                        <option value="Bewegingsonderzoek">Bewegingsonderzoek</option>
-                        <option value="Behandeling Been">Behandeling Been</option>
+                        <option value="Fysiotherapeutische Behandeling">Fysiotherapeutische Behandeling</option>
                         <option value="Laser Behandeling">Laser Behandeling</option>
 
                 </select>
@@ -113,6 +110,7 @@
 
 
   <div class="inputs">
+      <input type="text" name="bbl36" id="" value="...">
     <input type="text" name="name_horse" value="{{ $horse->name_horse }}">
     <input type="text" name="inspectie_stand" value="...">
     <input type="text" name="orienterende_palpatie" value="...">
@@ -189,7 +187,7 @@
     <input type="text" name="bbl33" value="...">
     <input type="text" name="bbl34" value="...">
     <input type="text" name="bbl35" value="...">
-    <input type="text" name="bbl36" value="...">
+    <input type="text" name="" value="...">
     <input type="text" name="bo1" value="...">
     <input type="text" name="bo2" value="...">
     <input type="text" name="bo3" value="...">
@@ -310,10 +308,7 @@
         </div>
         <div class="modal-body">
 
-        <div class="card mt-4">
-            <div class="card-header">Info Paard
-                <i class="fas fa-info" style="float: right"></i>
-            </div>
+        <div class="card mt-2">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -365,10 +360,7 @@
         </div>
         <div class="modal-body">
 
-        <div class="card mt-4">
-            <div class="card-header">Contact Info
-                <i class="fas fa-phone" style="float: right"></i>
-            </div>
+        <div class="card mt-2">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -416,16 +408,14 @@
         </div>
         <div class="modal-body">
 
-        <div class="card mt-4">
-            <div class="card-header">Overzicht
-                <i class="fas fa-list" style="float: right"></i>
-            </div>
+        <div class="card mt-2">
+
             <div class="card-body" style="min-height: 200px">
 
               @foreach ($horse->sessies as $sessie )
               <div class="row">
                   <div class="col">
-                    {{ $sessie->datum }}: {{ $sessie->lp5 }}
+                    {{ $sessie->datum }}: {{ $sessie->bbl36 }}
                   </div>
               </div>
               @endforeach
@@ -553,6 +543,10 @@
 
                             <input type="text" name="phone_number" class="form-control" style="margin-bottom: 15px" value="{{ $horse->phone_number }}">
                             <input type="text" name="email" class="form-control" style="margin-bottom: 15px" value="{{ $horse->email }}">
+                            <button class="btn btn-success" type="submit" style="float: right">
+                                <i class="fas fa-check"></i>
+                                Opslaan
+                            </button>
                         </div>
 
 
@@ -589,10 +583,7 @@
                             <br>
                             <br>
                             <div class="form-group">
-                                <button class="btn btn-success" type="submit">
-                                    <i class="fas fa-check"></i>
-                                    Opslaan
-                                </button>
+
 
                                 <div class="inputs">
                                     <input type="text" name="behandeling" id="" value="...">
@@ -622,13 +613,13 @@
 
 <div class="card">
     <div class="card-header">
-<strong>Sessies</strong>
+<strong>Overzicht Consulten</strong>
 
-<select name="" id="" style="width: 18%; float: right; margin: -6px; margin-right: -14px; margin-bottom: -7px; border: none; border-radius: 0" class="form-control">
+<select name="" id=""  class="form-select" style="width: 18%; float: right; margin: -6px; margin-right: -14px; margin-bottom: -7px; border: none; border-radius: 0" class="form-control">
     <option value="">Standaard </option>
     <option value="">Datum (nieuw-oud)</option>
     <option value="">Datum (oud-nieuw)</option>
-    <option value="">Type Sessie</option>
+    <option value="">Type Consult</option>
 </select>
 
 </div>
@@ -639,9 +630,9 @@
 <div class="col">
     </select>
     <a href="{{ URL::to('sessies/' . $sessie->id ) }}" style="text-decoration: none">
-        <div class="card my-4" style="width: 100%; min-width: 180px; max-width: 190px; float: left">
+        <div class="card my-4" style="width: 100%; min-width: 180px; max-width: 190px; float: left; min-height: 140px">
             <div class="card-header">
-                Sessie {{ $sessie->datum }}
+                Consult: {{ $sessie->datum }}
                 <i class="fas fa-thumbtack" style="float: right; color: rgba(74, 248, 0, 0.8); margin-right: -8px; font-size: 10px"></i>
             </div>
                 <div>

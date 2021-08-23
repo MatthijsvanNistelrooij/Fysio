@@ -13,13 +13,17 @@ use App\Http\Controllers\SessieController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\HorseController::class, 'welcome'])->name('welcome');
+
+
 Route::get('/horses/index', [App\Http\Controllers\HorseController::class, 'index'])->name('horses/index');
 Route::get('/horses/create', [App\Http\Controllers\HorseController::class, 'create'])->name('horses.create');
 Route::post('/horses/store', [App\Http\Controllers\HorseController::class, 'store'])->name('horses.store');

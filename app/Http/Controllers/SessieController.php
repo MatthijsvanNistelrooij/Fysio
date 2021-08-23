@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Horse;
 use App\Models\Sessie;
 use App\Models\Channel;
+use App\Session;
 
 class SessieController extends Controller
 {
@@ -65,7 +66,10 @@ class SessieController extends Controller
     public function edit($id)
     {
         $sessie = Sessie::where("id","=","$id");
+
+
         return view('sessies.edit')->with('sessies', Sessie::all());
+        ;
     }
 
     /**
@@ -263,6 +267,8 @@ $sessie->bo67 = $request->bo67;
 
 
     $sessie->save();
+    session()->flash('success', 'Wijzigingen succesvol opgeslagen.');
+
     return redirect()->back();
 }
 

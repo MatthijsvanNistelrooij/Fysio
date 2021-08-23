@@ -27,7 +27,7 @@
 <div>
     <img src="/images/horses2.png" alt="" style="width: 60%; margin: 10%; margin-left: 20%; border:1px solid rgb(194, 194, 194)">
 </div>
-<br>
+
 
 
 
@@ -36,11 +36,8 @@
     $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
-
-
      function redirectToMyPage(){
             location.href = document.getElementById('select').value;
         }
-
 </script>
 @endsection
