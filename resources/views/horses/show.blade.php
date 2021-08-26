@@ -509,8 +509,8 @@
                                                 <div class="form-group">
                                                     <select name="gender" id="" class="form-control">
                                                         <option value="{{ $horse->gender }}">{{ $horse->gender }}</option>
-                                                        <option value="man">man</option>
-                                                        <option value="vrouw">vrouw</option>
+                                                        <option value="hengst">hengst</option>
+                                                        <option value="merrie">merrie</option>
                                                     </select>
                                                 </div>
                                                 <input type="text" name="age" class="form-control" style="margin-bottom: 15px" value="{{ $horse->age }}">

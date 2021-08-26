@@ -304,8 +304,8 @@ font-weight: bold;
 }
 
 .collapsible:hover {
-    background-color: rgb(45, 105, 255, 0.8);
-    color: rgb(255, 255, 255);
+    background-color: #e1eee7;
+    color: #3d6b54;
 }
 
 .content {
