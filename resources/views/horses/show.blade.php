@@ -63,7 +63,7 @@
             <br>
         </div>
     </div>
-    <br>
+
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width: 95%; margin-left:2%; font-weight: bold">
         <i class="fas fa-play-circle"></i>
          Start Consult
@@ -107,9 +107,16 @@
                 </select>
                 <br>
 
-
-
   <div class="inputs">
+    <input type="text" name="iis1" id="" value="...">
+    <input type="text" name="iis2" id="" value="...">
+    <input type="text" name="iis3" id="" value="...">
+    <input type="text" name="iis4" id="" value="...">
+
+    <input type="text" name="op1" id="" value="...">
+    <input type="text" name="op2" id="" value="...">
+
+
       <input type="text" name="bbl36" id="" value="...">
     <input type="text" name="name_horse" value="{{ $horse->name_horse }}">
     <input type="text" name="inspectie_stand" value="...">
@@ -415,7 +422,7 @@
               @foreach ($horse->sessies as $sessie )
               <div class="row">
                   <div class="col">
-                    {{ $sessie->datum }}: {{ $sessie->bbl36 }}
+                    {{ $sessie->updated_at->format('d F Y') }}: {{ $sessie->bbl36 }}
                   </div>
               </div>
               @endforeach
@@ -632,7 +639,7 @@
     <a href="{{ URL::to('sessies/' . $sessie->id ) }}" style="text-decoration: none">
         <div class="card my-4" style="width: 100%; min-width: 180px; max-width: 190px; float: left; min-height: 140px">
             <div class="card-header">
-                Consult: {{ $sessie->datum }}
+                Consult: {{ $sessie->updated_at->format('d-m-Y') }}
                 <i class="fas fa-thumbtack" style="float: right; color: rgba(74, 248, 0, 0.8); margin-right: -8px; font-size: 10px"></i>
             </div>
                 <div>

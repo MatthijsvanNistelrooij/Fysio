@@ -258,6 +258,13 @@ $sessie->bo65 = $request->bo65;
 $sessie->bo66 = $request->bo66;
 $sessie->bo67 = $request->bo67;
 
+$sessie->iis1 = $request->iis1;
+$sessie->iis2 = $request->iis2;
+$sessie->iis3 = $request->iis3;
+$sessie->iis4 = $request->iis4;
+
+$sessie->op1 = $request->op1;
+$sessie->op2 = $request->op2;
 
 
     $sessie->lp1 = $request->lp1;

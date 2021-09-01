@@ -14,7 +14,11 @@
 </button>
 <div class="card my-2">
     <div class="card-header" style="max-height: 44px">
-                <strong>Consult:   {{ $sessie->name_horse }} {{ $sessie->datum }}</strong>
+                <strong>Consult:   {{ $sessie->name_horse }}
+                    <span style="float: right">
+                    {{ $sessie->updated_at->format('d F Y') }}
+                    </span>
+                    </strong>
     </div>
 
     <div class="card-body">
@@ -35,6 +39,14 @@
             </div>
         </div>
         <div class="inputs">
+            <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+            <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+            <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+            <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+            <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+            <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
             <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
             <input type="text" name="bo24" id="" value="{{ $sessie->bo24}}">
             <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
@@ -323,11 +335,8 @@
         <h6 class="zoom">
              Wervelkolom <br>
             <i class="fas fa-angle-double-right" style="font-size: 40px; margin-top: 5px"></i>
-
         </h6>
-
      </button>
-
     </div>
     <div class="col">
         <button type="button" class="tile7" data-toggle="modal" data-target="#exampleModal7">
@@ -377,7 +386,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Oriënterende Palpatie {{ $sessie->op1 }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Oriënterende Palpatie {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -392,47 +401,211 @@
                         Voor inspectie in beweging:
                     </div>
                     <div class="col-md-10">
-                        <textarea name="" id="" cols="30" rows="2" class="form-control" style="margin-bottom: 5px"></textarea>
+                        <textarea name="op1" id="" cols="30" rows="2" class="form-control" style="margin-bottom: 5px">{{ $sessie->op2 }}</textarea>
                     </div>
+                </div>
+
+                <br>
+
+                <div class="row" style="margin-left: 15 %">
+                        <div class="col-md-6">
+                            <img src="/images/horse_left.jpg" alt="" style="width: 80%; margin-left: 100px">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/images/horse_right.jpg" alt="" style="width: 80%">
+                        </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
                         Na inspectie in beweging:
                     </div>
                     <div class="col-md-10">
-                        <textarea name="" id="" cols="30" rows="2" class="form-control" ></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-2">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%">
-                        <input type="text" name="" id="" class="form-control" style="width: 80%">
-                    </div>
-
-                        <div class="col-md-4">
-                            <img src="/images/horse_left.jpg" alt="" style="width: 80%">
-                        </div>
-                        <div class="col-md-4">
-                            <img src="/images/horse_right.jpg" alt="" style="width: 80%">
-                        </div>
-
-
-                    <div class="col-md-2">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
-                        <input type="text" name="" id="" class="form-control" style="margin-bottom: 5px; width: 80%; float: right">
-                        <input type="text" name="" id="" class="form-control" style="width: 80%; float: right">
+                        <textarea name="op2" id="" cols="30" rows="2" class="form-control">{{ $sessie->op2 }}</textarea>
                     </div>
                 </div>
 
-
                 </div>
 
+
+                <div class="inputs">
+                    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+                    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+                    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+                    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+
+
+
+
+                    <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
+                    <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
+                    <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
+                    <input type="text" name="behandeling" id="" value="{{ $sessie->behandeling }}">
+                    <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
+                    <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
+                    <input type="text" name="ib1" id="" value="{{ $sessie->ib1 }}">
+                    <input type="text" name="ib2" id="" value="{{ $sessie->ib2 }}">
+                    <input type="text" name="ib3" id="" value="{{ $sessie->ib3 }}">
+                    <input type="text" name="ib4" id="" value="{{ $sessie->ib4 }}">
+                    <input type="text" name="ib5" id="" value="{{ $sessie->ib5 }}">
+                    <input type="text" name="ib6" id="" value="{{ $sessie->ib6 }}">
+                    <input type="text" name="ib7" id="" value="{{ $sessie->ib7 }}">
+                    <input type="text" name="ib8" id="" value="{{ $sessie->ib8 }}">
+                    <input type="text" name="ib9" id="" value="{{ $sessie->ib9 }}">
+                    <input type="text" name="ib10" id="" value="{{ $sessie->ib10 }}">
+                    <input type="text" name="ib11" id="" value="{{ $sessie->ib11 }}">
+                    <input type="text" name="ib12" id="" value="{{ $sessie->ib12 }}">
+                    <input type="text" name="ib13" id="" value="{{ $sessie->ib13 }}">
+                    <input type="text" name="ib14" id="" value="{{ $sessie->ib14 }}">
+                    <input type="text" name="ib15" id="" value="{{ $sessie->ib15 }}">
+                    <input type="text" name="ib16" id="" value="{{ $sessie->ib16 }}">
+                    <input type="text" name="ib17" id="" value="{{ $sessie->ib17 }}">
+                    <input type="text" name="ib18" id="" value="{{ $sessie->ib18 }}">
+                    <input type="text" name="ib19" id="" value="{{ $sessie->ib19 }}">
+                    <input type="text" name="bo7" id="" value="{{ $sessie->bo7 }}">
+
+
+                    <input type="text" name="bo1" id="" value="{{ $sessie->bo1 }}">
+                    <input type="text" name="bo2" id="" value="{{ $sessie->bo2 }}">
+                    <input type="text" name="bo3" id="" value="{{ $sessie->bo3 }}">
+                    <input type="text" name="bo4" id="" value="{{ $sessie->bo4 }}">
+                    <input type="text" name="bo5" id="" value="{{ $sessie->bo5 }}">
+                    <input type="text" name="bo6" id="" value="{{ $sessie->bo6 }}">
+                    <input type="text" name="bo8" id="" value="{{ $sessie->bo8 }}">
+                    <input type="text" name="bo9" id="" value="{{ $sessie->bo9 }}">
+                    <input type="text" name="bo10" id="" value="{{ $sessie->bo10 }}">
+
+                    <input type="text" name="bo11" id="" value="{{ $sessie->bo11 }}">
+                    <input type="text" name="bo12" id="" value="{{ $sessie->bo12 }}">
+                    <input type="text" name="bo13" id="" value="{{ $sessie->bo13 }}">
+                    <input type="text" name="bo14" id="" value="{{ $sessie->bo14 }}">
+                    <input type="text" name="bo15" id="" value="{{ $sessie->bo15 }}">
+                    <input type="text" name="bo16" id="" value="{{ $sessie->bo16 }}">
+                    <input type="text" name="bo17" id="" value="{{ $sessie->bo17 }}">
+                    <input type="text" name="bo18" id="" value="{{ $sessie->bo18 }}">
+                    <input type="text" name="bo19" id="" value="{{ $sessie->bo19 }}">
+                    <input type="text" name="bo20" id="" value="{{ $sessie->bo20 }}">
+                    <input type="text" name="bo21" id="" value="{{ $sessie->bo21 }}">
+                    <input type="text" name="bo22" id="" value="{{ $sessie->bo22 }}">
+                    <input type="text" name="bo23" id="" value="{{ $sessie->bo23 }}">
+                    <input type="text" name="bo24" id="" value="{{ $sessie->bo24 }}">
+                    <input type="text" name="bo25" id="" value="{{ $sessie->bo25 }}">
+                    <input type="text" name="bo26" id="" value="{{ $sessie->bo26 }}">
+                    <input type="text" name="bo27" id="" value="{{ $sessie->bo27 }}">
+                    <input type="text" name="bo28" id="" value="{{ $sessie->bo28 }}">
+                    <input type="text" name="bo29" id="" value="{{ $sessie->bo29 }}">
+                    <input type="text" name="bo30" id="" value="{{ $sessie->bo30 }}">
+                    <input type="text" name="bo31" id="" value="{{ $sessie->bo31 }}">
+                    <input type="text" name="bo32" id="" value="{{ $sessie->bo32 }}">
+                    <input type="text" name="bo33" id="" value="{{ $sessie->bo33 }}">
+                    <input type="text" name="bo34" id="" value="{{ $sessie->bo34 }}">
+                    <input type="text" name="bo35" id="" value="{{ $sessie->bo35 }}">
+                    <input type="text" name="bo36" id="" value="{{ $sessie->bo36 }}">
+                    <input type="text" name="bo37" id="" value="{{ $sessie->bo37 }}">
+                    <input type="text" name="bo38" id="" value="{{ $sessie->bo38 }}">
+                    <input type="text" name="bo39" id="" value="{{ $sessie->bo39 }}">
+                    <input type="text" name="bo40" id="" value="{{ $sessie->bo40 }}">
+                    <input type="text" name="bo41" id="" value="{{ $sessie->bo41 }}">
+                    <input type="text" name="bo42" id="" value="{{ $sessie->bo42 }}">
+                    <input type="text" name="bo43" id="" value="{{ $sessie->bo43 }}">
+                    <input type="text" name="bo44" id="" value="{{ $sessie->bo44 }}">
+                    <input type="text" name="bo45" id="" value="{{ $sessie->bo45 }}">
+                    <input type="text" name="bo46" id="" value="{{ $sessie->bo46 }}">
+                    <input type="text" name="bo47" id="" value="{{ $sessie->bo47 }}">
+                    <input type="text" name="bo48" id="" value="{{ $sessie->bo48 }}">
+                    <input type="text" name="bo49" id="" value="{{ $sessie->bo49 }}">
+                    <input type="text" name="bo50" id="" value="{{ $sessie->bo50 }}">
+                    <input type="text" name="bo51" id="" value="{{ $sessie->bo51 }}">
+                    <input type="text" name="bo52" id="" value="{{ $sessie->bo52 }}">
+                    <input type="text" name="bo53" id="" value="{{ $sessie->bo53 }}">
+                    <input type="text" name="bo54" id="" value="{{ $sessie->bo54 }}">
+                    <input type="text" name="bo55" id="" value="{{ $sessie->bo55 }}">
+                    <input type="text" name="bo56" id="" value="{{ $sessie->bo56 }}">
+                    <input type="text" name="bo57" id="" value="{{ $sessie->bo57 }}">
+                    <input type="text" name="bo58" id="" value="{{ $sessie->bo58 }}">
+                    <input type="text" name="bo59" id="" value="{{ $sessie->bo59 }}">
+                    <input type="text" name="bo60" id="" value="{{ $sessie->bo60 }}">
+                    <input type="text" name="bo61" id="" value="{{ $sessie->bo61 }}">
+                    <input type="text" name="bo62" id="" value="{{ $sessie->bo62 }}">
+                    <input type="text" name="bo63" id="" value="{{ $sessie->bo63 }}">
+                    <input type="text" name="bo64" id="" value="{{ $sessie->bo64 }}">
+                    <input type="text" name="bo65" id="" value="{{ $sessie->bo65 }}">
+                    <input type="text" name="bo66" id="" value="{{ $sessie->bo66 }}">
+                    <input type="text" name="bo67" id="" value="{{ $sessie->bo67 }}">
+                    <input type="text" name="bbr1" id="" value="{{ $sessie->bbr1 }}">
+                    <input type="text" name="bbr2" id="" value="{{ $sessie->bbr2 }}">
+                    <input type="text" name="bbr3" id="" value="{{ $sessie->bbr3 }}">
+                    <input type="text" name="bbr4" id="" value="{{ $sessie->bbr4 }}">
+                    <input type="text" name="bbr5" id="" value="{{ $sessie->bbr5 }}">
+                    <input type="text" name="bbr6" id="" value="{{ $sessie->bbr6 }}">
+                    <input type="text" name="bbr7" id="" value="{{ $sessie->bbr7 }}">
+                    <input type="text" name="bbr8" id="" value="{{ $sessie->bbr8 }}">
+                    <input type="text" name="bbr9" id="" value="{{ $sessie->bbr9 }}">
+                    <input type="text" name="bbr10" id="" value="{{ $sessie->bbr10 }}">
+                    <input type="text" name="bbr11" id="" value="{{ $sessie->bbr11 }}">
+                    <input type="text" name="bbr12" id="" value="{{ $sessie->bbr12 }}">
+                    <input type="text" name="bbr13" id="" value="{{ $sessie->bbr13 }}">
+                    <input type="text" name="bbr14" id="" value="{{ $sessie->bbr14 }}">
+                    <input type="text" name="bbr15" id="" value="{{ $sessie->bbr15 }}">
+                    <input type="text" name="bbr16" id="" value="{{ $sessie->bbr16 }}">
+                    <input type="text" name="bbr17" id="" value="{{ $sessie->bbr17 }}">
+                    <input type="text" name="bbr18" id="" value="{{ $sessie->bbr18 }}">
+                    <input type="text" name="bbr19" id="" value="{{ $sessie->bbr19 }}">
+                    <input type="text" name="bbr20" id="" value="{{ $sessie->bbr20 }}">
+                    <input type="text" name="bbr21" id="" value="{{ $sessie->bbr21 }}">
+                    <input type="text" name="bbr22" id="" value="{{ $sessie->bbr22 }}">
+                    <input type="text" name="bbr23" id="" value="{{ $sessie->bbr23 }}">
+                    <input type="text" name="bbr24" id="" value="{{ $sessie->bbr24 }}">
+                    <input type="text" name="bbr25" id="" value="{{ $sessie->bbr25 }}">
+                    <input type="text" name="bbr26" id="" value="{{ $sessie->bbr26 }}">
+                    <input type="text" name="bbr27" id="" value="{{ $sessie->bbr27 }}">
+                    <input type="text" name="bbr28" id="" value="{{ $sessie->bbr28 }}">
+                    <input type="text" name="bbr29" id="" value="{{ $sessie->bbr29 }}">
+                    <input type="text" name="bbr30" id="" value="{{ $sessie->bbr30 }}">
+                    <input type="text" name="bbr31" id="" value="{{ $sessie->bbr31 }}">
+                    <input type="text" name="bbr32" id="" value="{{ $sessie->bbr32 }}">
+                    <input type="text" name="bbr33" id="" value="{{ $sessie->bbr33 }}">
+                    <input type="text" name="bbr34" id="" value="{{ $sessie->bbr34 }}">
+                    <input type="text" name="bbr35" id="" value="{{ $sessie->bbr35 }}">
+                    <input type="text" name="bbr36" id="" value="{{ $sessie->bbr36 }}">
+                    <input type="text" name="bbl1" id="" value="{{ $sessie->bbl1 }}">
+                    <input type="text" name="bbl2" id="" value="{{ $sessie->bbl2 }}">
+                    <input type="text" name="bbl3" id="" value="{{ $sessie->bbl3 }}">
+                    <input type="text" name="bbl4" id="" value="{{ $sessie->bbl4 }}">
+                    <input type="text" name="bbl5" id="" value="{{ $sessie->bbl5 }}">
+                    <input type="text" name="bbl6" id="" value="{{ $sessie->bbl6 }}">
+                    <input type="text" name="bbl7" id="" value="{{ $sessie->bbl7 }}">
+                    <input type="text" name="bbl8" id="" value="{{ $sessie->bbl8 }}">
+                    <input type="text" name="bbl9" id="" value="{{ $sessie->bbl9 }}">
+                    <input type="text" name="bbl10" id="" value="{{ $sessie->bbl10 }}">
+                    <input type="text" name="bbl11" id="" value="{{ $sessie->bbl11 }}">
+                    <input type="text" name="bbl12" id="" value="{{ $sessie->bbl12 }}">
+                    <input type="text" name="bbl13" id="" value="{{ $sessie->bbl13 }}">
+                    <input type="text" name="bbl14" id="" value="{{ $sessie->bbl14 }}">
+                    <input type="text" name="bbl15" id="" value="{{ $sessie->bbl15 }}">
+                    <input type="text" name="bbl16" id="" value="{{ $sessie->bbl16 }}">
+                    <input type="text" name="bbl17" id="" value="{{ $sessie->bbl17 }}">
+                    <input type="text" name="bbl18" id="" value="{{ $sessie->bbl18 }}">
+                    <input type="text" name="bbl19" id="" value="{{ $sessie->bbl19 }}">
+                    <input type="text" name="bbl20" id="" value="{{ $sessie->bbl20 }}">
+                    <input type="text" name="bbl21" id="" value="{{ $sessie->bbl21 }}">
+                    <input type="text" name="bbl22" id="" value="{{ $sessie->bbl22 }}">
+                    <input type="text" name="bbl23" id="" value="{{ $sessie->bbl23 }}">
+                    <input type="text" name="bbl24" id="" value="{{ $sessie->bbl24 }}">
+                    <input type="text" name="bbl25" id="" value="{{ $sessie->bbl25 }}">
+                    <input type="text" name="bbl26" id="" value="{{ $sessie->bbl26 }}">
+                    <input type="text" name="bbl27" id="" value="{{ $sessie->bbl27 }}">
+                    <input type="text" name="bbl28" id="" value="{{ $sessie->bbl28 }}">
+                    <input type="text" name="bbl29" id="" value="{{ $sessie->bbl29 }}">
+                    <input type="text" name="bbl30" id="" value="{{ $sessie->bbl30 }}">
+                    <input type="text" name="bbl31" id="" value="{{ $sessie->bbl31 }}">
+                    <input type="text" name="bbl32" id="" value="{{ $sessie->bbl32 }}">
+                    <input type="text" name="bbl33" id="" value="{{ $sessie->bbl33 }}">
+                    <input type="text" name="bbl34" id="" value="{{ $sessie->bbl34 }}">
+                    <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
+                    <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
+                    <input type="text" name="lp1" id="" value="{{ $sessie->lp1 }}">
+                    <input type="text" name="lp2" id="" value="{{ $sessie->lp2 }}">
+                    </div>
 
             <div class="modal-footer">
                 <button class="btn btn-success" type="submit">
@@ -455,7 +628,7 @@
 
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bewegingsonderzoek {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Bewegingsonderzoek {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -474,15 +647,15 @@
                         <div id="demo" class="collapse">
                             <h6 for="lateral" class="title">Lateral</h6>
                             <div class="row">
-                                <div class="col-md-2 mt-2">
+                                <div class="col-md-2 mt-1">
                                     <h6> li</h6>
                                 </div>
-                                <div class="col-md-10">
-                                    <input type="text" name="bo1" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo1 }}">
+                                <div class="col-md-10 mt-1">
+                                    <input type="text" name="bo1" class="form-control" value="{{ $sessie->bo1 }}">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-2 mt-1">
                                     <h6 for="lateral">re</h6>
                                 </div>
                                 <div class="col-md-10">
@@ -503,8 +676,8 @@
                                 <div class="col-md-2 mt-2">
                                     <h6>re</h6>
                                 </div>
-                                <div class="col-md-10">
-                                    <input type="text" name="bo4" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo4 }}">
+                                <div class="col-md-10 mt-1">
+                                    <input type="text" name="bo4" class="form-control" value="{{ $sessie->bo4 }}">
                                 </div>
                             </div>
                             <h6 for="lateral" class="title">Rostral glide </h6>
@@ -512,8 +685,8 @@
                                 <div class="col-md-2 mt-2">
                                     <h6>li</h6>
                                 </div>
-                                <div class="col-md-10">
-                                    <input type="text" name="bo5" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo5 }}">
+                                <div class="col-md-10 mt-1">
+                                    <input type="text" name="bo5" class="form-control" value="{{ $sessie->bo5 }}">
                                 </div>
                             </div>
                             <div class="row">
@@ -548,7 +721,17 @@
                                 </div>
                                 <div class="col-md-10">
                                     <input type="text" name="bo10" class="form-control" style="margin-top: 5px; margin-bottom:5px" value="{{ $sessie->bo10 }}">
+
                                     <div class="inputs">
+                                        <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+                                        <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+                                        <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+                                        <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+                                        <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+                                        <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
+
                                         <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
                                         <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
                                         <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
@@ -714,7 +897,7 @@
                     <div class="col">
                         <div class="horse2">
                             <div class="row">
-                                <div class="col" style="margin-top: 100px; margin-left: 60%">
+                                <div class="col" style="margin-top: 200px; margin-left: 60%">
                                     <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo" class="collapsible"></button>
                                     <br>
                                     <div style="margin-top: 140px; margin-left: -140px">
@@ -744,7 +927,7 @@
       <div class="modal-content">
 
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Bewegingsonderzoek {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+            <h5 class="modal-title" id="exampleModalLabel">Bewegingsonderzoek {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d F Y') }}) </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -757,7 +940,7 @@
                         <div class="row">
                             <div class="col-md-4" style="overflow:scroll; height: 650px; overflow-x: hidden; margin-bottom: 50px">
                                 <button data-toggle="collapse" data-target="#demo200" class="collapsible" style="border-radius: 5px" type='button'>
-                                    <span>General extension CWK</span>
+                                    <span>General extension CWK 2</span>
                                     <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
                                 </button>
                                 <div id="demo200" class="collapse">
@@ -815,17 +998,17 @@
                                     </div>
 
                                 </div>
-                                <button data-toggle="collapse" data-target="#demo201" class="collapsible" style="border-radius: 5px" type='button'>
+                                <button data-toggle="collapse" data-target="#demo201" class="collapsible" style="border-radius: 5px; margin-bottom: 50px" type='button'>
                                     <span>General latflex CWK</span>
                                     <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
                                 </button>
                                 <div id="demo201" class="collapse">
                                     <div class="row">
-                                        <div class="col-md-2 mt-2">
+                                        <div class="col-md-2">
                                             li
                                         </div>
                                         <div class="col-md-10">
-                                            <input type="text" name="bo13" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo13 }}">
+                                            <input type="text" name="bo13" class="form-control" value="{{ $sessie->bo13 }}">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -1259,7 +1442,7 @@
                             <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo6" class="collapsible"></button>
                             <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo8" class="collapsible"></button>
                             <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo9" class="collapsible" style="margin-left: 40px"></button>
-                            <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo10" class="collapsible" style="margin-left: 40px"></button>
+                            <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo10" class="collapsible" style="margin-left: 40px; background-color: blue"></button>
 
                         </div>
                       </div>
@@ -1270,6 +1453,14 @@
                 </div>
 
                 <div class="inputs">
+                    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+                    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+                    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+                    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+                    <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+                    <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
                     <input type="text" name="bo1" id="" value="{{ $sessie->bo1 }}">
                     <input type="text" name="bo2" id="" value="{{ $sessie->bo2 }}">
                     <input type="text" name="bo3" id="" value="{{ $sessie->bo3 }}">
@@ -1404,7 +1595,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Algemene Indruk {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Algemene Indruk {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -1470,6 +1661,15 @@
                         Opslaan</button>
                     </div>
                 <div class="inputs">
+
+                    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+                    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+                    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+                    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+                    <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+                    <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
                     <input type="text" name="orienterende_palpatie" id="" value="{{ $sessie->orienterende_palpatie }}">
                     <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
                     <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
@@ -1646,7 +1846,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Laser Behandeling {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Laser Behandeling {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -1703,6 +1903,14 @@
             </div>
 
         <div class="inputs">
+            <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+            <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+            <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+            <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+            <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+            <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
             <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
             <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
             <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
@@ -1888,7 +2096,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Wervelkolom {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Wervelkolom {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -1904,11 +2112,11 @@
             <div class="row">
                 <div class="col-md-4" style="overflow:scroll; height: 650px; overflow-x: hidden; margin-bottom: 50px">
                     <button data-toggle="collapse" data-target="#demo200" class="collapsible" style="border-radius: 5px" type='button'>
-                        <span>General extension CWK</span>
+                        <span>General extension CWK 1</span>
                         <i class="fas fa-chevron-circle-down" style="color:rgb(208, 208, 208); float: right; font-size: 17px; margin-top: 2px"></i>
                     </button>
                     <div id="demo200" class="collapse">
-                        <input type="text" name="bo7" class="form-control" style="margin-top: 5px; margin-bottom: 10px" value="{{ $sessie->bo7 }}">
+                        <input type="text" name="bo7" class="form-control" style="margin-top: 5px; margin-bottom: 5px" value="{{ $sessie->bo7 }}">
                     </div>
                     <button data-toggle="collapse" data-target="#demo2" class="collapsible" style="border-radius: 5px" type='button'>
                         <span>C0-C1</span>
@@ -1924,19 +2132,18 @@
                             <div class="col-md-2 mt-1">
                                 li
                             </div>
-                            <div class="col-md-10">
-                                <input type="text" name="bo15" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo15 }}">
+                            <div class="col-md-10 mt-1">
+                                <input type="text" name="bo15" class="form-control" value="{{ $sessie->bo15 }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2 mt-1">
                                 re
                             </div>
-                            <div class="col-md-10">
-                                <input type="text" name="bo16" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo16 }}">
+                            <div class="col-md-10 mt-1 mb-1">
+                                <input type="text" name="bo16" class="form-control" value="{{ $sessie->bo16 }}">
                             </div>
                         </div>
-                        <br>
                     </div>
                     <button data-toggle="collapse" data-target="#demo3" class="collapsible" style="border-radius: 5px" type='button'>
                         <span>C1-C2</span>
@@ -1956,11 +2163,11 @@
                             <div class="col-md-2 mt-1">
                                 re
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 mb-1">
                                 <input type="text" name="bo18" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo18 }}">
                             </div>
                         </div>
-                        <br>
+
                     </div>
                     <button data-toggle="collapse" data-target="#demo201" class="collapsible" style="border-radius: 5px" type='button'>
                         <span>General latflex CWK</span>
@@ -1968,23 +2175,21 @@
                     </button>
                     <div id="demo201" class="collapse">
                         <div class="row mt-2">
-
-                            <div class="col-md-2 mt-2">
+                            <div class="col-md-2 mt-1">
                                 li
                             </div>
                             <div class="col-md-10">
-                                <input type="text" name="bo13" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo13 }}">
+                                <input type="text" name="bo13" class="form-control" style="margin-top: -5px" value="{{ $sessie->bo13 }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2 mt-2">
                                 re
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 mb-1">
                                 <input type="text" name="bo11" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo11 }}">
                             </div>
                         </div>
-                        <br>
                     </div>
 
                     <button data-toggle="collapse" data-target="#demo4" class="collapsible" style="border-radius: 5px" type='button'>
@@ -2110,11 +2315,10 @@
                             <div class="col-md-2 mt-1">
                                 re
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-10 mb-1">
                     <input type="text" name="bo39" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo39 }}">
                 </div>
             </div>
-            <br>
     </div>
 
         <button data-toggle="collapse" data-target="#demo7" class="collapsible" style="border-radius: 5px" type='button'>
@@ -2155,11 +2359,11 @@
                     <div class="col-md-2 mt-1">
                         re
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10 mb-1">
                         <input type="text" name="bo43" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo43 }}">
                     </div>
                     </div>
-                    <br>
+
         </div>
 
         <button data-toggle="collapse" data-target="#demo8" class="collapsible" style="border-radius: 5px" type='button'>
@@ -2199,11 +2403,11 @@
                     <div class="col-md-2 mt-1">
                         re
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10 mb-1">
                         <input type="text" name="bo47" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo47 }}">
                     </div>
                     </div>
-                    <br>
+
         </div>
 
         <button data-toggle="collapse" data-target="#demo9" class="collapsible" style="border-radius: 5px" type='button'>
@@ -2225,11 +2429,11 @@
                     <div class="col-md-2 mt-1">
                         re
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10 mb-1">
                         <input type="text" name="bo49" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo49 }}">
                     </div>
                     </div>
-                    <br>
+
 
         </div>
 
@@ -2360,12 +2564,12 @@
                             <div class="col-md-2 mt-1">
                                 re
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 mb-1">
                                 <input type="text" name="bo65" class="form-control" style="margin-top: 5px" value="{{ $sessie->bo65 }}">
                             </div>
                         </div>
         </div>
-        <br>
+
 
         <button data-toggle="collapse" data-target="#demo12" class="collapsible" style="border-radius: 5px" type='button'>
             <span>Caudal joints</span>
@@ -2380,48 +2584,128 @@
                 </div>
             </div>
 
-            <div class="col" style="margin-left: 5%; margin-top: 5%">
+            <div class="col" style="margin-top: 5%">
                     <div class="horse">
-            <div class="row" style="margin-left: 10%">
-                <div class="col" style="margin-left: 20px" >
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo" class="collapsible" style="margin-top: 10px"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo1" class="collapsible" style="margin-left: 40px; margin-top: -10px"></button>
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn2" type="button"></button>
+                        <div class="row">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-left: 5%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-left: 9%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo2" type="button" style="margin-top: -25px"></button>
+
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 9%; margin-top: -10px">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo200" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo3" type="button" style="margin-left: -10px"></button>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-left: 9%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo4" type="button" style="margin-left: 10px"></button>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-left: 9%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 9%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-left: 10%">
+                            <div class="col">
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo5" type="button" style="margin-left: 10px"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo8" type="button" style="margin-left: 10px"></button>
+
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn2" type="button"></button>
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo9" type="button" style="margin-left: 10px"></button>
+                                <button class="imgbtn2" type="button"></button>
+
+
+                                <button class="imgbtn" data-toggle="collapse" data-target="#demo12" type="button" style="margin-left: 10px"></button>
+                            </div>
+                        </div>
+
+
+                    {{-- <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo" class="collapsible"></button> --}}
+
+
+                <div class="col">
+                    {{-- <button class="imgbtn2" type="button"></button> --}}
+
+
 
                 </div>
-                <div class="col" style="margin-left: -60px" >
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo200" class="collapsible" style="margin-left: 20px"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo201" class="collapsible" style="margin-left: -10px"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo3" class="collapsible"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo4" class="collapsible"></button>
+                <div class="col">
+                    {{-- <button class="imgbtn2" type="button"></button> --}}
 
 
                 </div>
-                <div class="col" style="margin-left: -50px">
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo5" class="collapsible" ></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo7" class="collapsible" style="margin-left: -20px" ></button>
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn2" type="button" ></button>
+                <div class="col">
+                    {{-- <button class="imgbtn2" type="button"></button> --}}
 
-                </div>
-                <div class="col" style="margin-left: -50px">
-                    <button class="imgbtn2" type="button"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo6" class="collapsible"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo8" class="collapsible"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo9" class="collapsible" style="margin-left: 40px"></button>
-                    <button class="imgbtn" type="button"  data-toggle="collapse" data-target="#demo10" class="collapsible" style="margin-left: 40px"></button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
 
 
 <div class="inputs">
+    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+    <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+    <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
     <input type="text" name="bo1" id="" value="{{ $sessie->bo1 }}">
     <input type="text" name="bo2" id="" value="{{ $sessie->bo2 }}">
     <input type="text" name="bo3" id="" value="{{ $sessie->bo3 }}">
@@ -2536,20 +2820,13 @@
     <input type="text" name="bbl35" id="" value="{{ $sessie->bbl35 }}">
     <input type="text" name="bbl36" id="" value="{{ $sessie->bbl36 }}">
 </div>
-
-
 </div>
 
 <div class="modal-footer">
-
     <button class="btn btn-success" type="submit">
-
         <i class="fas fa-check"></i>
-
         Opslaan
-
     </button>
-
 </div>
 </div>
 </form>
@@ -2564,7 +2841,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Inspectie in Beweging {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Inspectie in Beweging {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -2642,6 +2919,14 @@
                                           <div class="modal-footer">
 
 <div class="inputs">
+    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+    <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+    <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+
     <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
     <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
     <input type="text" name="horse_id" id="" value="{{ $sessie->horse_id }}">
@@ -2811,7 +3096,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Beenbewegingen {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Beenbewegingen {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -3111,7 +3396,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2">li</div>
+                        <div class="col-md-2">re</div>
                         <div class="col-md-10 mb-2">
                             <input type="text" class="form-control" name="bbr16" value="{{ $sessie->bbr16 }}">
                         </div>
@@ -3232,7 +3517,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 mt-1">li</div>
+                <div class="col-md-2 mt-1">re</div>
                 <div class="col-md-10 mb-2">
                     <input type="text" class="form-control"  name="bbr23" value="{{ $sessie->bbr23 }}">
                 </div>
@@ -3438,11 +3723,18 @@
 
                 </div>
                     <div class="col">
-                        <img src="/images/horse_leg.jpg" alt="" style="width: 60%; margin-left: 20%">
+                        <img src="/images/horse_leg.jpg" alt="" style="width: 40%; margin-left: 30%; margin-top: 10%">
                     </div>
 
 
 <div class="inputs">
+    <input type="text" name="iis1" id="" value="{{ $sessie->iis1 }}">
+    <input type="text" name="iis2" id="" value="{{ $sessie->iis2 }}">
+    <input type="text" name="iis3" id="" value="{{ $sessie->iis3 }}">
+    <input type="text" name="iis4" id="" value="{{ $sessie->iis4 }}">
+    <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+    <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
 
     <input type="text" name="datum" id="" value="{{ $sessie->datum }}">
     <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
@@ -3563,7 +3855,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Oefeningen {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Oefeningen {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -3593,18 +3885,18 @@
                     <br>
                     <br>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <input type="radio" style="float: top">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <iframe width="250" height="auto"
                             src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         </iframe>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <input type="radio" style="float: top">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <iframe width="250" height="auto"
                             src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         </iframe>
@@ -3612,18 +3904,18 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <input type="radio" style="float: top">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <iframe width="250" height="auto"
                             src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         </iframe>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <input type="radio" style="float: top">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <iframe width="250" height="auto"
                             src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         </iframe>
@@ -3651,7 +3943,7 @@
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Inspectie in Stand {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+              <h5 class="modal-title" id="exampleModalLabel">Inspectie in Stand {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -3668,7 +3960,7 @@
                             Voorzijde
                         </div>
                         <div class="col-md-10">
-                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                            <textarea type="text" cols="10" rows="3" class="form-control" name="iis1" id="" style="margin-bottom: 5px">{{ $sessie->iis1 }}</textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -3676,7 +3968,7 @@
                             Achterzijde
                         </div>
                         <div class="col-md-10">
-                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="iis2" id="" style="margin-bottom: 5px">{{ $sessie->iis2 }}</textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -3684,7 +3976,7 @@
                             Linkerzijde
                         </div>
                         <div class="col-md-10">
-                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="" style="margin-bottom: 5px">{{ $sessie->inspectie_stand }}</textarea>
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="iis3" id="" style="margin-bottom: 5px">{{ $sessie->iis3 }}</textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -3692,7 +3984,7 @@
                             Rechterzijde
                         </div>
                         <div class="col-md-10">
-                            <textarea type="text"  cols="10" rows="3" class="form-control" name="inspectie_stand" id="">{{ $sessie->inspectie_stand }}</textarea>
+                            <textarea type="text"  cols="10" rows="3" class="form-control" name="iis4" id="">{{ $sessie->iis4 }}</textarea>
                         </div>
                     </div>
 
@@ -3707,6 +3999,13 @@
                     </div>
 
         <div class="inputs">
+
+            <input type="text" name="op1" id="" value="{{ $sessie->op1 }}">
+            <input type="text" name="op2" id="" value="{{ $sessie->op2 }}">
+
+            <input type="text" name="inspectie_stand" id="" value="{{ $sessie->inspectie_stand }}">
+
+
             <input type="text" name="name_horse" id="" value="{{ $sessie->name_horse }}">
             <input type="text" name="behandeling" id="" value="{{ $sessie->behandeling }}">
 
@@ -3894,17 +4193,18 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rapport {{ $sessie->name_horse }} ({{ $sessie->datum }}) </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Rapport {{ $sessie->name_horse }} ({{ $sessie->updated_at->format('d-m-Y') }}) </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <div class="card">
-                <div class="card-body">
+                {{-- <div class="card-body" style="background-image: url('/images/rapport_frame.jpg')"> --}}
 
+                    <div class="card-body">
                     <div></div>
-                    <h5 style="text-align: center">Rapport {{ $sessie->name_horse }} {{ $sessie->datum }}</h5>
+                    <h5 style="text-align: center">Rapport {{ $sessie->name_horse }} {{ $sessie->updated_at->format('d-m-Y') }}</h5>
                     <br>
                     <span style="font-weight: bold;">
                         Algemeen
@@ -3941,7 +4241,7 @@
                                                     <th>
                                                         {{ $sessie->lp1 }}
                                                     </th>
-                                                    <th>
+                                                    <th style="font-weight: lighter">
                                                         {{ $sessie->lp2}}
                                                     </th>
                                                 </tr>
@@ -4277,20 +4577,28 @@
 
 <br>
 <br>
-<span style="font-weight: bold">Behandeling Been (rechts)</span>
+<span style="font-weight: bold">Behandeling Been</span>
+<br>
 <table class="table" style="font-size: 15px">
     <br>
     <tbody>
         <tr>
             <th style="border-top: 2px solid rgb(0, 0, 0)">Front DIJ</th>
             <th style="border-top: 2px solid black">
-                Flexion-extension   <p style="font-weight: initial">{{ $sessie->bbr1 }} </p>
+                Flexion-extension
+                <p style="font-weight: initial">links: {{ $sessie->bbl1 }} </p>
+                <p style="font-weight: initial">rechts: {{ $sessie->bbr1 }} </p>
+
             </th>
             <th style="border-top: 2px solid black">
-                Abduction-addaction <p style="font-weight: initial">{{ $sessie->bbr2 }}</p>
+                Abduction-addaction
+                <p style="font-weight: initial">links: {{ $sessie->bbl2 }}</p>
+                <p style="font-weight: initial">rechts: {{ $sessie->bbr2 }}</p>
             </th>
             <th style="border-top: 2px solid black">
-                Internal/external rotation<p style="font-weight: initial">{{ $sessie->bbr3 }}</p>
+                Internal/external rotation
+                <p style="font-weight: initial">links: {{ $sessie->bbl3 }}</p>
+                <p style="font-weight: initial">rechts: {{ $sessie->bbr3 }}</p>
             </th>
 
         </tr>
@@ -4485,7 +4793,7 @@
     </table>
         <br>
         <br>
-
+{{--
         <span style="font-weight: bold">Behandeling Been (links)</span>
         <table class="table" style="font-size: 15px">
             <br>
@@ -4700,7 +5008,7 @@
 
     </tbody>
 </table>
-
+ --}}
                     </div>
                 </div>
             </div>

@@ -400,6 +400,15 @@ if($request->hasFile('image'))
 'bo66' => request()->bo66,
 'bo67' => request()->bo67,
 
+'iis1'=> request()->iis1,
+'iis2'=> request()->iis2,
+'iis3'=> request()->iis3,
+'iis4'=> request()->iis4,
+
+'op1' => request()->op1,
+'op2' => request()->op2,
+
+
 
 'lp1' => request()->lp1,
 'lp2' => request()->lp2,

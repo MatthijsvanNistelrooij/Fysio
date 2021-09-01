@@ -12,6 +12,8 @@ class Sessie extends Model
     protected $fillable = [
         'datum','name_horse', 'name_owner', 'horse_id', 'behandeling', 'inspectie_stand', 'orienterende_palpatie',
 
+        'iis1', 'iis2', 'iis3', 'iis4', 'op1', 'op2',
+
 'bo1', 'bo2', 'bo3', 'bo4', 'bo5', 'bo6', 'bo7', 'bo8', 'bo9', 'bo10', 'bo11', 'bo12', 'bo13', 'bo14', 'bo15', 'bo16', 'bo17', 'bo18',
 'bo19', 'bo20', 'bo21', 'bo22', 'bo23', 'bo24', 'bo25', 'bo26', 'bo27', 'bo28', 'bo29', 'bo30', 'bo31', 'bo32', 'bo33', 'bo34', 'bo35',
 'bo36', 'bo37', 'bo38', 'bo39', 'bo40', 'bo41', 'bo42', 'bo43', 'bo44', 'bo45', 'bo46', 'bo47', 'bo48', 'bo49', 'bo50', 'bo51', 'bo52',

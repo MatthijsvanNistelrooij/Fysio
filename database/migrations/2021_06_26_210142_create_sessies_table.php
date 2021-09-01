@@ -189,6 +189,15 @@ class CreateSessiesTable extends Migration
             $table->text('bbl34');
             $table->text('bbl35');
             $table->text('bbl36');
+
+            $table->text('iis1');
+            $table->text('iis2');
+            $table->text('iis3');
+            $table->text('iis4');
+
+            $table->text('op1');
+            $table->text('op2');
+
         });
     }
 

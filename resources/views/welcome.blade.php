@@ -186,7 +186,8 @@
 
                                         </div>
                                             <div style="margin-left: 20px; margin-top: 10px">
-                                                {{ $value->name_owner }}
+                                                {{ $value->updated_at->format('d-m-Y') }}
+                                                <br>
                                                 {{ $value->achternaam }}
 
                                             </div>
