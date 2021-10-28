@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SessieController;
+use App\Models\Horse;
+use App\Models\Sessie;
+use App\Models\Dog;
+use App\Models\Consult;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,34 +17,44 @@ use App\Http\Controllers\SessieController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [App\Http\Controllers\HorseController::class, 'welcome'])->name('welcome');
+
+// HORSES
+Route::get('horses.index', [App\Http\Controllers\HorseController::class, 'index'])->name('horse.index');
+Route::get('horses.create', [App\Http\Controllers\HorseController::class, 'create'])->name('horse.create');
+Route::get('horses/{id}', [App\Http\Controllers\HorseController::class, 'show'])->name('horse.show');
+Route::post('horses.store', [App\Http\Controllers\HorseController::class, 'store'])->name('horse.store');
+Route::post('horses/{id}/update', [App\Http\Controllers\HorseController::class, 'update'])->name('horses.update');
+Route::get('horses.delete{id}', [App\Http\Controllers\HorseController::class, 'destroy'])->name('horses.delete');
+
+// SESSIES
+Route::post('horses/{horse}/sessies', [App\Http\Controllers\SessieController::class, 'store'])->name('sessies.store');
+Route::get('sessies/{id}', [App\Http\Controllers\SessieController::class, 'show'])->name('sessie.show');
+Route::get('sessies/rapport/{id}', [App\Http\Controllers\SessieController::class, 'rapport'])->name('sessie.rapport');
+Route::get('sessies.delete{id}', [App\Http\Controllers\SessieController::class, 'destroy'])->name('sessies.delete');
+Route::post('/sessies/{id}', [App\Http\Controllers\SessieController::class, 'update'])->name('sessies.update');
 
 
-Route::get('/horses/index', [App\Http\Controllers\HorseController::class, 'index'])->name('horses/index');
-Route::get('/horses/create', [App\Http\Controllers\HorseController::class, 'create'])->name('horses.create');
-Route::post('/horses/store', [App\Http\Controllers\HorseController::class, 'store'])->name('horses.store');
-Route::get('/horses/{id}/edit', [App\Http\Controllers\HorseController::class, 'edit'])->name('horses.edit');
-Route::get('/horses/{id}/update', [App\Http\Controllers\HorseController::class, 'update'])->name('horses.update');
-Route::get('/horses/{id}', [App\Http\Controllers\HorseController::class, 'show'])->name('horses.show');
-
-// Route::post('/sessies/store', [App\Http\Controllers\SessieController::class, 'store'])->name('sessies.store');
-Route::post('/horses/sessie/{id}', [App\Http\Controllers\HorseController::class, 'sessie'])->name('horses.sessie');
-
-Route::get('/sessies/{id}/edit', [App\Http\Controllers\SessieController::class, 'edit'])->name('sessies.edit');
-
-Route::get('/sessies/{id}/update', [App\Http\Controllers\SessieController::class, 'update'])->name('sessies.update');
-
-Route::get('/sessies/{id}', [App\Http\Controllers\SessieController::class, 'show'])->name('sessies.show');
+// DOGS
 
 
+Route::get('dogs.index', [App\Http\Controllers\DogController::class, 'index'])->name('dog.index');
+Route::get('dogs.create', [App\Http\Controllers\DogController::class, 'create'])->name('dog.create');
+Route::get('dogs/{id}', [App\Http\Controllers\DogController::class, 'show'])->name('dog.show');
+Route::post('dogs.store', [App\Http\Controllers\DogController::class, 'store'])->name('dog.store');
+Route::post('dogs/{id}/update', [App\Http\Controllers\DogController::class, 'update'])->name('dog.update');
+Route::get('dogs.delete{id}', [App\Http\Controllers\DogController::class, 'destroy'])->name('dogs.delete');
 
-
-// Route::resource('sessies', SessieController::class);
+// CONSULT
+Route::post('dogs/{dog}/consults', [App\Http\Controllers\ConsultController::class, 'store'])->name('consults.store');
+Route::get('consults/{id}', [App\Http\Controllers\ConsultController::class, 'show'])->name('consult.show');
+Route::get('consults/rapport/{id}', [App\Http\Controllers\ConsultController::class, 'rapport'])->name('consult.rapport');
+Route::get('consults.delete{id}', [App\Http\Controllers\ConsultController::class, 'destroy'])->name('consult.delete');
+Route::post('/consults/{id}', [App\Http\Controllers\ConsultController::class, 'update'])->name('consults.update');

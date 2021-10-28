@@ -1,0 +1,399 @@
+.tiledog{
+background-color: rgba(244, 254, 255, 0.5);
+overflow: hidden;
+text-align: center;
+height: 50px;
+border: 1px solid rgb(233, 233, 233);
+cursor: pointer;
+border-radius: 5px;
+}
+
+.tiledog:hover{
+    background-color: rgb(216, 233, 245);
+}
+
+/* quick reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  /* relevant styles */
+  .img__wrap {
+    position: relative;
+    height: auto;
+    width: auto;
+  }
+
+  .img__description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.72);
+    color: rgb(114, 114, 114);
+    visibility: hidden;
+    opacity: 0;
+    font-family: 'Lora', serif;
+    font-size: 50px;
+    /* transition effect. not necessary */
+    transition: opacity .3s, visibility .2s;
+    text-align: center;
+    margin-bottom: -50px;
+    object-fit: cover;
+
+  }
+
+  .img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+.welcome_text:hover {
+    color: gray;
+}
+
+
+
+
+.button_cat{
+    width: 100%;
+    color: white;
+    background-color: rgb(0, 150, 0);
+    border-radius: 5px;
+}
+
+
+.montserat{
+    margin-top: -24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    color: gray;
+}
+
+.overzicht{
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    max-height: 50px;
+    border: none;
+
+}
+
+.overzicht:hover {
+    background-color: rgb(237, 237, 237, 0.5);
+
+}
+
+.image_modal{
+    height: 13px;
+    width: 13px;
+    color: rgba(240, 240, 240, 0.2);
+}
+
+
+
+#show_card{
+overflow: hidden;
+}
+
+#show_card:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.color{
+    width: 50px;
+    height: 35px;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: -45px;
+    margin-top: 8px;
+}
+
+.tile{
+    cursor: pointer;
+    text-align: center;
+    width: 75%;
+    text-align: center;
+    height: 60px;
+    border-radius: 5px 5px 20px 5px;
+    color: rgb(218, 218, 218);
+    background-color: white;
+    overflow-y: hidden;
+    padding: 1%;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 20px;
+    box-shadow: 0px 15px 20px -8px rgb(0,0,0, 0.2);
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tile:hover {
+    background-color: rgb(205, 223, 233, 0.5);
+    color: white;
+}
+
+
+body {
+font-family: Arial;
+margin: 0;
+}
+
+* {
+box-sizing: border-box;
+}
+
+img {
+vertical-align: middle;
+}
+
+.container {
+position: relative;
+}
+
+.cursor {
+cursor: pointer;
+}
+
+.prev, .next{
+cursor: pointer;
+position: absolute;
+top: 40%;
+width: auto;
+padding: 16px;
+margin-top: -80px;
+color: rgb(214, 214, 214);
+font-weight: bold;
+font-size: 45px;
+text-decoration: none;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+
+.prev:hover{
+text-decoration: none;
+color: gray;
+background-color: transparent;
+}
+
+.next:hover{
+text-decoration: none;
+color: gray;
+background-color: transparent;
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+.caption-container {
+text-align: center;
+background-color: #222;
+padding: 2px 16px;
+color: white;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Six columns side by side */
+.column {
+float: left;
+width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+opacity: 1;
+}
+
+.collapsible {
+color: rgb(111, 111, 111);
+cursor: pointer;
+padding: 6px;
+width: 100%;
+border: 1px solid rgb(235, 235, 235);
+text-align: left;
+outline: none;
+margin-bottom: 2px;
+height: 40px;
+border-radius: 5px;
+background-color: rgba(232, 232, 232, 0.3);
+font-size: 15px;
+font-weight: bold;
+}
+
+
+
+.inputs{
+    display: none;
+}
+
+
+
+
+.horse {
+    margin-top: -30px;
+    background: url('/images/horse_skelet.png');
+    background-repeat: no-repeat;
+    background-size: 95%;
+    height: 550px;
+    width: auto;
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.img_hover {
+    width: 100%;
+    transition: transform .2s;
+}
+.img_hover:hover {
+    transform: scale(1.2); }
+
+.horse2 {
+    margin-top: -30px;
+    background: url('/images/skull.png');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 100%;
+    width: 90%;
+    margin-left: 15%;
+}
+
+
+.imgbtn {
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255, 17, 17, 0.8);
+    border-radius: 50%;
+    border: none;
+}
+
+.imgbtn:hover {
+
+    background-color: rgba(255, 17, 17, 0.3);
+    border-radius: 50%;
+}
+
+
+
+.imgbtn2 {
+    height: 2px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 2px;
+}
+
+
+
+
+.collapsible2 {
+    color: rgb(167, 167, 167, 0.9);
+    cursor: pointer;
+    padding: 6px;
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    text-align: left;
+    outline: none;
+    margin-bottom: 2px;
+    height: 35px;
+    background-color: rgba(232, 232, 232, 0.3);
+    font-size: 15px;
+    }
+
+.active{
+    background-color: rgb(0, 72, 255);
+    color: rgb(116, 160, 255);
+}
+
+.info {
+    border: 1px solid rgb(221, 221, 221);
+    font-style: italic;
+    color: rgb(133, 133, 133);
+    padding-top: 6px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    margin-top: -10px;
+    border-radius: 5px;
+    font-size: 10px;
+    height: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.collapsible:hover {
+    background-color: #e1eee7;
+    color: #3d6b54;
+}
+
+.content {
+padding: 0 18px;
+display: none;
+overflow: hidden;
+background-color: #f1f1f1;
+}
+
+
+.title1 {
+    font-size: 15px;
+    overflow: hidden;
+    color: rgb(167, 167, 167);
+    margin-top: 15px;
+}
+
+.title {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgb(167, 167, 167);
+}
+
+::-webkit-scrollbar {
+    width:  8px;
+  }
+
+  .input{
+      margin-bottom: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border:none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(221, 221, 221);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(189, 189, 189);
+  }
+
+
