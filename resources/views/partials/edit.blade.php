@@ -34,7 +34,7 @@
 
                         <div class="col-md-12">
                             <h6 for="lateral" class="title1">Leeftijd:</h6>
-                            <input type="number" id="quantity" name="content4" min="1" max="99" class="form-control mt-1" value="{{ $horses->content4 }}">
+                            <input type="number" id="quantity" name="content4" min="0" max="99" class="form-control mt-1" value="{{ $horses->content4 }}">
                         </div>
 
                         <div class="col-md-12">
