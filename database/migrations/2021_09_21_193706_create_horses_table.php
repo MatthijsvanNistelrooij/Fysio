@@ -41,6 +41,14 @@ class CreateHorsesTable extends Migration
             $table->string('image7')->nullable();
             $table->string('image8')->nullable();
 
+            $table->string('image9')->nullable();
+            $table->string('image10')->nullable();
+            $table->string('image11')->nullable();
+            $table->string('image12')->nullable();
+            $table->string('image13')->nullable();
+            $table->string('image14')->nullable();
+            $table->string('image15')->nullable();
+            $table->string('image16')->nullable();
 
         });
     }

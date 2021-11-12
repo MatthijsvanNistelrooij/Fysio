@@ -57,15 +57,23 @@ class HorseController extends Controller
             'content14' => 'nullable',
             'content15' => 'nullable',
 
+            'image' => 'image|nullable|max:1999',
+            'image2' => 'image|nullable|max:1999',
+            'image3' => 'image|nullable|max:1999',
+            'image4' => 'image|nullable|max:1999',
+            'image5' => 'image|nullable|max:1999',
+            'image6' => 'image|nullable|max:1999',
+            'image7' => 'image|nullable|max:1999',
+            'image8' => 'image|nullable|max:1999',
 
-        'image' => 'image|nullable|max:1999',
-        'image2' => 'image|nullable|max:1999',
-        'image3' => 'image|nullable|max:1999',
-        'image4' => 'image|nullable|max:1999',
-        'image5' => 'image|nullable|max:1999',
-        'image6' => 'image|nullable|max:1999',
-        'image7' => 'image|nullable|max:1999',
-        'image8' => 'image|nullable|max:1999',
+            'image9' => 'image|nullable|max:1999',
+            'image10' => 'image|nullable|max:1999',
+            'image11' => 'image|nullable|max:1999',
+            'image12' => 'image|nullable|max:1999',
+            'image13' => 'image|nullable|max:1999',
+            'image14' => 'image|nullable|max:1999',
+            'image15' => 'image|nullable|max:1999',
+            'image16' => 'image|nullable|max:1999',
 
         ]);
 
@@ -149,6 +157,79 @@ class HorseController extends Controller
                                 $fileNameToStore8 = 'no_image.jpg';
                                 }
 
+                                if($request->hasFile('image9')){
+                                    $filenameWithExt = $request->file('image9')->getClientOriginalName();
+                                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                    $extension = $request->file('image9')->getClientOriginalExtension();
+                                    $fileNameToStore9 = $filename.'_'.time().'.'.$extension;
+                                    $path = $request->file('image9')->storeAs('public/images', $fileNameToStore9);
+                                    } else {
+                                    $fileNameToStore9 = 'no_video.mp4';
+                                    }
+                                    if($request->hasFile('image10')){
+                                        $filenameWithExt = $request->file('image10')->getClientOriginalName();
+                                        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                        $extension = $request->file('image10')->getClientOriginalExtension();
+                                        $fileNameToStore10 = $filename.'_'.time().'.'.$extension;
+                                        $path = $request->file('image10')->storeAs('public/images', $fileNameToStore10);
+                                        } else {
+                                        $fileNameToStore10 = 'no_video.mp4';
+                                        }
+                                        if($request->hasFile('image11')){
+                                            $filenameWithExt = $request->file('image11')->getClientOriginalName();
+                                            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                            $extension = $request->file('image11')->getClientOriginalExtension();
+                                            $fileNameToStore11 = $filename.'_'.time().'.'.$extension;
+                                            $path = $request->file('image11')->storeAs('public/images', $fileNameToStore11);
+                                            } else {
+                                                $fileNameToStore11 = 'no_video.mp4';
+                                            }
+                                            if($request->hasFile('image12')){
+                                                $filenameWithExt = $request->file('image12')->getClientOriginalName();
+                                                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                                $extension = $request->file('image12')->getClientOriginalExtension();
+                                                $fileNameToStore12 = $filename.'_'.time().'.'.$extension;
+                                                $path = $request->file('image12')->storeAs('public/images', $fileNameToStore12);
+                                                } else {
+                                                    $fileNameToStore12 = 'no_video.mp4';
+                                                }
+                                                if($request->hasFile('image13')){
+                                                    $filenameWithExt = $request->file('image13')->getClientOriginalName();
+                                                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                                    $extension = $request->file('image13')->getClientOriginalExtension();
+                                                    $fileNameToStore13 = $filename.'_'.time().'.'.$extension;
+                                                    $path = $request->file('image13')->storeAs('public/images', $fileNameToStore13);
+                                                    } else {
+                                                        $fileNameToStore13 = 'no_video.mp4';
+                                                    }
+                                                    if($request->hasFile('image14')){
+                                                        $filenameWithExt = $request->file('image14')->getClientOriginalName();
+                                                        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                                        $extension = $request->file('image14')->getClientOriginalExtension();
+                                                        $fileNameToStore14 = $filename.'_'.time().'.'.$extension;
+                                                        $path = $request->file('image14')->storeAs('public/images', $fileNameToStore14);
+                                                        } else {
+                                                            $fileNameToStore14 = 'no_video.mp4';
+                                                        }
+                                                        if($request->hasFile('image15')){
+                                                            $filenameWithExt = $request->file('image15')->getClientOriginalName();
+                                                            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                                            $extension = $request->file('image15')->getClientOriginalExtension();
+                                                            $fileNameToStore15 = $filename.'_'.time().'.'.$extension;
+                                                            $path = $request->file('image15')->storeAs('public/images', $fileNameToStore15);
+                                                            } else {
+                                                                $fileNameToStore15 = 'no_video.mp4';
+                                                            }
+                                                            if($request->hasFile('image16')){
+                                                                $filenameWithExt = $request->file('image16')->getClientOriginalName();
+                                                                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                                                                $extension = $request->file('image16')->getClientOriginalExtension();
+                                                                $fileNameToStore16 = $filename.'_'.time().'.'.$extension;
+                                                                $path = $request->file('image16')->storeAs('public/images', $fileNameToStore16);
+                                                                } else {
+                                                                    $fileNameToStore16 = 'no_video.mp4';
+                                                                }
+
         $horse = new Horse;
         $horse->content1 = $request->input('content1');
         $horse->content2 = $request->input('content2');
@@ -175,6 +256,14 @@ class HorseController extends Controller
         $horse->image7 = $fileNameToStore7;
         $horse->image8 = $fileNameToStore8;
 
+        $horse->image9 = $fileNameToStore9;
+        $horse->image10 = $fileNameToStore10;
+        $horse->image11 = $fileNameToStore11;
+        $horse->image12 = $fileNameToStore12;
+        $horse->image13 = $fileNameToStore13;
+        $horse->image14 = $fileNameToStore14;
+        $horse->image15 = $fileNameToStore15;
+        $horse->image16 = $fileNameToStore16;
 
         $horse->save();
 

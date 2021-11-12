@@ -9,6 +9,8 @@ class Sessie extends Model
 {
     protected $fillable = [
         'horse_id',
+        'horse_name',
+
         'con1',
         'con2',
         'con3',
@@ -183,6 +185,45 @@ class Sessie extends Model
         'con172',
         'con173',
 
+        'con174',
+        'con175',
+        'con176',
+        'con177',
+        'con178',
+        'con179',
+        'con180',
+        'con181',
+        'con182',
+        'con183',
+        'con184',
+        'con185',
+        'con186',
+        'con187',
+        'con188',
+        'con189',
+        'con190',
+        'con191',
+        'con192',
+        'con193',
+
+        'image',
+        'image2',
+        'image3',
+        'image4',
+        'image5',
+        'image6',
+        'image7',
+        'image8',
+
+        'image9',
+        'image10',
+        'image11',
+        'image12',
+        'image13',
+        'image14',
+        'image15',
+        'image16',
+
     ];
 
     public function owner()
@@ -194,7 +235,7 @@ class Sessie extends Model
     {
         return $this->belongsTo(Horse::class);
     }
-    
+
     public function dogs()
     {
         return $this->belongsTo(Dog::class);

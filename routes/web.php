@@ -58,3 +58,13 @@ Route::get('consults/{id}', [App\Http\Controllers\ConsultController::class, 'sho
 Route::get('consults/rapport/{id}', [App\Http\Controllers\ConsultController::class, 'rapport'])->name('consult.rapport');
 Route::get('consults.delete{id}', [App\Http\Controllers\ConsultController::class, 'destroy'])->name('consult.delete');
 Route::post('/consults/{id}', [App\Http\Controllers\ConsultController::class, 'update'])->name('consults.update');
+
+
+// IMAGES
+
+Route::get('images.index', [App\Http\Controllers\ImageController::class, 'index'])->name('images.index');
+Route::get('images.create', [App\Http\Controllers\ImageController::class, 'create'])->name('images.create');
+Route::get('images/{id}', [App\Http\Controllers\ImageController::class, 'show'])->name('images.show');
+Route::post('images.store', [App\Http\Controllers\ImageController::class, 'store'])->name('images.store');
+Route::post('images/{id}/update', [App\Http\Controllers\ImageController::class, 'update'])->name('images.update');
+Route::get('images.delete{id}', [App\Http\Controllers\ImageController::class, 'destroy'])->name('images.delete');

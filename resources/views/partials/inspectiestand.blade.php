@@ -52,7 +52,11 @@
                         <input type="text" name="con1" id="" value="{{ $sessies->con1 }}">
                         <input type="text" name="con2" id="" value="{{ $sessies->con2 }}">
                         <input type="text" name="con3" id="" value="{{ $sessies->con3 }}">
-
+                        {{-- <input type="text" name="con4" id="" value="{{ $sessies->con4 }}">
+                        <input type="text" name="con5" id="" value="{{ $sessies->con5 }}">
+                        <input type="text" name="con6" id="" value="{{ $sessies->con6 }}">
+                        <input type="text" name="con7" id="" value="{{ $sessies->con7 }}">
+                        <input type="text" name="con8" id="" value="{{ $sessies->con8 }}">--}}
                         <input type="text" name="con9" id="" value="{{ $sessies->con9 }}">
                         <input type="text" name="con10" id="" value="{{ $sessies->con10 }}">
                         <input type="text" name="con11" id="" value="{{ $sessies->con11 }}">
@@ -60,6 +64,7 @@
                         <input type="text" name="con13" id="" value="{{ $sessies->con13 }}">
                         <input type="text" name="con14" id="" value="{{ $sessies->con14 }}">
                         <input type="text" name="con15" id="" value="{{ $sessies->con15 }}">
+
                         <input type="text" name="con16" id="" class="form-control" value="{{ $sessies->con16 }}">
                         <input type="text" name="con17" id="" class="form-control" value="{{ $sessies->con17 }}">
                         <input type="text" name="con18" id="" class="form-control" value="{{ $sessies->con18 }}">
@@ -218,8 +223,47 @@
                         <input type="text" name="con171" id="" class="form-control" value="{{ $sessies->con171 }}">
                         <input type="text" name="con172" id="" class="form-control" value="{{ $sessies->con172 }}">
                         <input type="text" name="con173" id="" class="form-control" value="{{ $sessies->con173 }}">
-                   </div>
 
+                        <input type="text" name="con174" id="" class="form-control" value="{{ $sessies->con174 }}">
+                        <input type="text" name="con175" id="" class="form-control" value="{{ $sessies->con175 }}">
+                        <input type="text" name="con176" id="" class="form-control" value="{{ $sessies->con176 }}">
+                        <input type="text" name="con177" id="" class="form-control" value="{{ $sessies->con177 }}">
+                        <input type="text" name="con178" id="" class="form-control" value="{{ $sessies->con178 }}">
+                        <input type="text" name="con179" id="" class="form-control" value="{{ $sessies->con179 }}">
+                        <input type="text" name="con180" id="" class="form-control" value="{{ $sessies->con180 }}">
+                        <input type="text" name="con181" id="" class="form-control" value="{{ $sessies->con181 }}">
+                        <input type="text" name="con182" id="" class="form-control" value="{{ $sessies->con182 }}">
+                        <input type="text" name="con183" id="" class="form-control" value="{{ $sessies->con183 }}">
+
+                        <input type="text" name="con184" id="" class="form-control" value="{{ $sessies->con184 }}">
+                        <input type="text" name="con185" id="" class="form-control" value="{{ $sessies->con185 }}">
+                        <input type="text" name="con186" id="" class="form-control" value="{{ $sessies->con186 }}">
+                        <input type="text" name="con187" id="" class="form-control" value="{{ $sessies->con187 }}">
+                        <input type="text" name="con188" id="" class="form-control" value="{{ $sessies->con188 }}">
+                        <input type="text" name="con189" id="" class="form-control" value="{{ $sessies->con189 }}">
+                        <input type="text" name="con190" id="" class="form-control" value="{{ $sessies->con190 }}">
+                        <input type="text" name="con191" id="" class="form-control" value="{{ $sessies->con191 }}">
+                        <input type="text" name="con192" id="" class="form-control" value="{{ $sessies->con192 }}">
+                        <input type="text" name="con193" id="" class="form-control" value="{{ $sessies->con193 }}">
+
+                        <input type="file" name="image" id="" class="form-control" value="{{ $sessies->image }}">
+                        <input type="file" name="image2" id="" class="form-control" value="{{ $sessies->image2 }}">
+                        <input type="file" name="image3" id="" class="form-control" value="{{ $sessies->image3 }}">
+                        <input type="file" name="image4" id="" class="form-control" value="{{ $sessies->image4 }}">
+                        <input type="file" name="image5" id="" class="form-control" value="{{ $sessies->image5 }}">
+                        <input type="file" name="image6" id="" class="form-control" value="{{ $sessies->image6 }}">
+                        <input type="file" name="image7" id="" class="form-control" value="{{ $sessies->image7 }}">
+                        <input type="file" name="image8" id="" class="form-control" value="{{ $sessies->image8 }}">
+
+                        <input type="file" name="image9" id="" class="form-control" value="{{ $sessies->image9 }}">
+                        <input type="file" name="image10" id="" class="form-control" value="{{ $sessies->image10 }}">
+                        <input type="file" name="image11" id="" class="form-control" value="{{ $sessies->image11 }}">
+                        <input type="file" name="image12" id="" class="form-control" value="{{ $sessies->image12 }}">
+                        <input type="file" name="image13" id="" class="form-control" value="{{ $sessies->image13 }}">
+                        <input type="file" name="image14" id="" class="form-control" value="{{ $sessies->image14 }}">
+                        <input type="file" name="image15" id="" class="form-control" value="{{ $sessies->image15 }}">
+                        <input type="file" name="image16" id="" class="form-control" value="{{ $sessies->image16 }}">
+                   </div>
                         <div class="modal-footer">
                         <button class="btn btn-info" style="color: white" type="submit">
                             <i class="fas fa-check"></i>

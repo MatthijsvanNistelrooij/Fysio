@@ -13,10 +13,13 @@ class CreateSessiesTable extends Migration
      */
     public function up()
     {
+
         Schema::create('sessies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->integer('horse_id');
+            $table->string('horse_name');
+
             $table->text('con1')->nullable();
             $table->text('con2')->nullable();
             $table->text('con3')->nullable();
@@ -26,8 +29,8 @@ class CreateSessiesTable extends Migration
             $table->text('con7')->nullable();
             $table->text('con8')->nullable();
 
-            $table->string('con9')->nullable();
-            $table->string('con10')->nullable();
+            $table->text('con9')->nullable();
+            $table->text('con10')->nullable();
             $table->text('con11')->nullable();
             $table->text('con12')->nullable();
             $table->text('con13')->nullable();
@@ -116,13 +119,11 @@ class CreateSessiesTable extends Migration
             $table->text('con96')->nullable();
             $table->text('con97')->nullable();
             $table->text('con98')->nullable();
-
             $table->text('con99')->nullable();
             $table->text('con100')->nullable();
             $table->text('con101')->nullable();
             $table->text('con102')->nullable();
             $table->text('con103')->nullable();
-
             $table->text('con104')->nullable();
             $table->text('con105')->nullable();
             $table->text('con106')->nullable();
@@ -193,8 +194,47 @@ class CreateSessiesTable extends Migration
             $table->text('con171')->nullable();
             $table->text('con172')->nullable();
             $table->text('con173')->nullable();
+            $table->text('con174')->nullable();
+            $table->text('con175')->nullable();
+            $table->text('con176')->nullable();
+            $table->text('con177')->nullable();
+            $table->text('con178')->nullable();
+            $table->text('con179')->nullable();
+            $table->text('con180')->nullable();
+            $table->text('con181')->nullable();
+            $table->text('con182')->nullable();
+            $table->text('con183')->nullable();
+            $table->text('con184')->nullable();
+            $table->text('con185')->nullable();
+            $table->text('con186')->nullable();
+            $table->text('con187')->nullable();
+            $table->text('con188')->nullable();
+            $table->text('con189')->nullable();
+            $table->text('con190')->nullable();
+            $table->text('con191')->nullable();
+            $table->text('con192')->nullable();
+            $table->text('con193')->nullable();
 
+            $table->string('image')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
+            $table->string('image5')->nullable();
+            $table->string('image6')->nullable();
+            $table->string('image7')->nullable();
+            $table->string('image8')->nullable();
+
+            $table->string('image9')->nullable();
+            $table->string('image10')->nullable();
+            $table->string('image11')->nullable();
+            $table->string('image12')->nullable();
+            $table->string('image13')->nullable();
+            $table->string('image14')->nullable();
+            $table->string('image15')->nullable();
+            $table->string('image16')->nullable();
         });
+
+
     }
 
     /**

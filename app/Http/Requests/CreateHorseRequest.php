@@ -6,8 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateHorseRequest extends FormRequest
 {
-
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -41,6 +39,7 @@ class CreateHorseRequest extends FormRequest
             'content13' => 'nullable',
             'content14' => 'nullable',
             'content15' => 'nullable',
+            
             'image' => 'nullable',
             'image2' => 'nullable',
             'image3' => 'nullable',
@@ -49,6 +48,15 @@ class CreateHorseRequest extends FormRequest
             'image6' => 'nullable',
             'image7' => 'nullable',
             'image8' => 'nullable',
+
+            'image9' => 'nullable',
+            'image10' => 'nullable',
+            'image11' => 'nullable',
+            'image12' => 'nullable',
+            'image13' => 'nullable',
+            'image14' => 'nullable',
+            'image15' => 'nullable',
+            'image16' => 'nullable',
         ];
     }
 }

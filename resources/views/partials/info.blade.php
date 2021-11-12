@@ -13,7 +13,6 @@
                     <p>Eigenaar:</p>
                     <p>Geslacht:</p>
                     <p>Leeftijd:</p>
-
                     <p>Ras:</p>
                     <p>Kleur:</p>
                     <p>Alternatief adres:</p>

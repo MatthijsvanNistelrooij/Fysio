@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-info mt-2 mr-3" type="submit" style="float: right">
+            <button class="btn btn-info mt-2 mr-3" type="submit" style="float: right; color: white">
                 <i class="fas fa-check"></i>
                 Opslaan</button>
 
@@ -67,6 +67,16 @@
                 <input type="text" name="content13" value="{{ $horses->content13 }}">
                 <input type="text" name="content14" value="{{ $horses->content14 }}">
                 <input type="text" name="content15" value="{{ $horses->content15 }}">
+
+
+                <input type="file" name="video" value="{{ $horses->video }}">
+                <input type="file" name="video2" value="{{ $horses->video2 }}">
+                <input type="file" name="video3" value="{{ $horses->video3 }}">
+                <input type="file" name="video4" value="{{ $horses->video4 }}">
+                <input type="file" name="video5" value="{{ $horses->video5 }}">
+                <input type="file" name="video6" value="{{ $horses->video6 }}">
+                <input type="file" name="video7" value="{{ $horses->video7 }}">
+                <input type="file" name="video8" value="{{ $horses->video8 }}">
             </div>
 
         </form>

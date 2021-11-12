@@ -13,7 +13,7 @@
 
         <div class="modal-body mb-3" style="padding-top: 1%">
             <label for="" class="title1" >Situatie:</label>
-            <div class="info"><h6><i class="far fa-question-circle"></i> Huisvesting & ondergrond / Hoe lang in bezit eigenaar? / Aankoopkeuring? / Voorgeschiedenis ( dracht / hengstigheid)</h6></div>
+            <div class="info"><h6><i class="far fa-question-circle"></i> Huisvesting & ondergrond / Hoe lang in bezit eigenaar? / Aankoopkeuring? / Voorgeschiedenis ( dracht / hengstigheid )</h6></div>
             <textarea name="content13" id="" cols="5" rows="3" class="form-control" placeholder="...">{{ $horses->content13 }}</textarea>
             <label for="" class="title1">Klacht:</label>
             <div class="info"><h6><i class="far fa-question-circle"></i> Verloop / huidige status / ++ / --</h6></div>

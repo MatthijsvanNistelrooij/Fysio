@@ -6,7 +6,7 @@
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
-        <form action="{{ route('sessies.store', $horses->id) }}" method="POST">
+        <form action="{{ route('sessies.store', $horses->id) }}" method="POST"  enctype="multipart/form-data">
             @csrf
 
             <div class="modal-body mb-3" style="padding-bottom: 10%; padding-top: 10%">
@@ -14,13 +14,13 @@
                     <option value="Fysioth. Behandeling">Fysiotherapeutische Behandeling</option>
                     <option value="Laser Behandeling">Laser Behandeling</option>
                 </select>
-                <input type="text" name="con2" id="" class="form-control" placeholder="Info..">
 
+                <input type="text" name="con2" id="" class="form-control mb-2" placeholder="Info..">
+                <input type="date" name="con182" id="" class="form-control mb-2" placeholder="Info..">
 
-                    <button type="submit" class="btn btn-info mt-2" style="color: white; float: right"><i class="fas fa-check"></i>Opslaan</button>
-
-                </form>
-            </div>
+                <button type="submit" class="btn btn-info mt-2" style="color: white; float: right"><i class="fas fa-check"></i> Opslaan</button>
+            </form>
         </div>
     </div>
+</div>
 </div>
