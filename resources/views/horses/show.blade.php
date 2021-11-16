@@ -21,6 +21,19 @@
         </div>
     </a>
     @endif
+    @if ($errors->any())
+    <a href="" onClick="window.location.reload();" style="text-decoration: none">
+
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation"></i>
+            @foreach ($errors->all() as $error)
+                Naam paard is verplicht.
+            @endforeach
+
+    </div>
+    </a>
+    @endif
+
 <div class="card mb-1">
     <div class="card-header d-flex justify-content-center">
         <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal12" type="button" style="width: 25%; border: 1px solid rgb(213, 213, 213);"><i class="fas fa-info"></i></button>
@@ -52,6 +65,7 @@
                     <div class="col-6" style="position: relative">
                         <a href=""  data-toggle="modal" data-target="#exampleModal401">
                             <img src="/storage/images/{{ $horses->image }}" alt="" style="width: 80%; height: auto; float: right; position: absolute; top: 0px; right: 15px;">
+
                         </a>
                     </div>
                     <span style="float: right">

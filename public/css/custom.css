@@ -117,7 +117,7 @@ overflow: hidden;
 .tile{
     cursor: pointer;
     text-align: center;
-    width: 75%;
+    width: 80%;
     text-align: center;
     height: 60px;
     border-radius: 5px 5px 20px 5px;
@@ -214,7 +214,7 @@ display: table;
 clear: both;
 }
 
-/* Six columns side by side */
+Six columns side by side
 .column {
 float: left;
 width: 16.66%;

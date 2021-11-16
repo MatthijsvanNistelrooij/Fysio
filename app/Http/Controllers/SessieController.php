@@ -38,246 +38,6 @@ class SessieController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // public function store(CreateSessieRequest $request, Horse $horse)
-    // {
-
-    //     Sessie::create([
-    //         'horse_id' => $horse->id,
-    //         'horse_name' => $horse->content1,
-
-    //         'image' => $horse->image,
-            // 'image2' => $horse->image2,
-    //         'image3' => $horse->image3,
-    //         'image4' => $horse->image4,
-    //         'image5' => $horse->image5,
-    //         'image6' => $horse->image6,
-    //         'image7' => $horse->image7,
-    //         'image8' => $horse->image8,
-
-    //         'image9' => $horse->image9,
-    //         'image10' => $horse->image10,
-    //         'image11' => $horse->image11,
-    //         'image12' => $horse->image12,
-    //         'image13' => $horse->image13,
-    //         'image14' => $horse->image14,
-    //         'image15' => $horse->image15,
-    //         'image16' => $horse->image16,
-
-            // 'con1' => $request->con1,
-            // 'con2' => $request->con2,
-    //         'con3' => $request->con3,
-    //         'con4' => $request->con4,
-    //         'con5' => $request->con5,
-    //         'con6' => $request->con6,
-    //         'con7' => $request->con7,
-    //         'con8' => $request->con8,
-    //         'con9' => $request->con9,
-    //         'con10' => $request->con10,
-
-    //         'con11' => $request->con11,
-    //         'con12' => $request->con12,
-    //         'con13' => $request->con13,
-    //         'con14' => $request->con14,
-    //         'con15' => $request->con15,
-    //         'con16' => $request->con16,
-    //         'con17' => $request->con17,
-    //         'con18' => $request->con18,
-    //         'con19' => $request->con19,
-    //         'con20' => $request->con20,
-
-    //         'con21' => $request->con21,
-    //         'con22' => $request->con22,
-    //         'con23' => $request->con23,
-    //         'con24' => $request->con24,
-    //         'con25' => $request->con25,
-    //         'con26' => $request->con26,
-    //         'con27' => $request->con27,
-    //         'con28' => $request->con28,
-    //         'con29' => $request->con29,
-    //         'con30' => $request->con30,
-
-    //         'con31' => $request->con31,
-    //         'con32' => $request->con32,
-    //         'con33' => $request->con33,
-    //         'con34' => $request->con34,
-    //         'con35' => $request->con35,
-    //         'con36' => $request->con36,
-    //         'con37' => $request->con37,
-    //         'con38' => $request->con38,
-    //         'con39' => $request->con39,
-    //         'con40' => $request->con40,
-
-    //         'con41' => $request->con41,
-    //         'con42' => $request->con42,
-    //         'con43' => $request->con43,
-    //         'con44' => $request->con44,
-    //         'con45' => $request->con45,
-    //         'con46' => $request->con46,
-    //         'con47' => $request->con47,
-    //         'con48' => $request->con48,
-    //         'con49' => $request->con49,
-    //         'con50' => $request->con50,
-
-    //         'con51' => $request->con51,
-    //         'con52' => $request->con52,
-    //         'con53' => $request->con53,
-    //         'con54' => $request->con54,
-    //         'con55' => $request->con55,
-    //         'con56' => $request->con56,
-    //         'con57' => $request->con57,
-    //         'con58' => $request->con58,
-    //         'con59' => $request->con59,
-    //         'con60' => $request->con60,
-
-    //         'con61' => $request->con61,
-    //         'con62' => $request->con62,
-    //         'con63' => $request->con63,
-    //         'con64' => $request->con64,
-    //         'con65' => $request->con65,
-    //         'con66' => $request->con66,
-    //         'con67' => $request->con67,
-    //         'con68' => $request->con68,
-    //         'con69' => $request->con69,
-    //         'con70' => $request->con70,
-
-    //         'con71' => $request->con71,
-    //         'con72' => $request->con72,
-    //         'con73' => $request->con73,
-    //         'con74' => $request->con74,
-    //         'con75' => $request->con75,
-    //         'con76' => $request->con76,
-    //         'con77' => $request->con77,
-    //         'con78' => $request->con78,
-    //         'con79' => $request->con79,
-    //         'con80' => $request->con80,
-
-    //         'con81' => $request->con81,
-    //         'con82' => $request->con82,
-    //         'con83' => $request->con83,
-    //         'con84' => $request->con84,
-    //         'con85' => $request->con85,
-    //         'con86' => $request->con86,
-    //         'con87' => $request->con87,
-    //         'con88' => $request->con88,
-    //         'con89' => $request->con89,
-    //         'con90' => $request->con90,
-
-    //         'con91' => $request->con91,
-    //         'con92' => $request->con92,
-    //         'con93' => $request->con93,
-    //         'con94' => $request->con94,
-    //         'con95' => $request->con95,
-    //         'con96' => $request->con96,
-    //         'con97' => $request->con97,
-    //         'con98' => $request->con98,
-    //         'con99' => $request->con99,
-    //         'con100' => $request->con100,
-
-    //         'con101' => $request->con101,
-    //         'con102' => $request->con102,
-    //         'con103' => $request->con103,
-    //         'con104' => $request->con104,
-    //         'con105' => $request->con105,
-    //         'con106' => $request->con106,
-    //         'con107' => $request->con107,
-    //         'con108' => $request->con108,
-    //         'con109' => $request->con109,
-    //         'con110' => $request->con110,
-
-    //         'con111' => $request->con111,
-    //         'con112' => $request->con112,
-    //         'con113' => $request->con113,
-    //         'con114' => $request->con114,
-    //         'con115' => $request->con115,
-    //         'con116' => $request->con116,
-    //         'con117' => $request->con117,
-    //         'con118' => $request->con118,
-    //         'con119' => $request->con119,
-    //         'con120' => $request->con120,
-
-    //         'con121' => $request->con121,
-    //         'con122' => $request->con122,
-    //         'con123' => $request->con123,
-    //         'con124' => $request->con124,
-    //         'con125' => $request->con125,
-    //         'con126' => $request->con126,
-    //         'con127' => $request->con127,
-    //         'con128' => $request->con128,
-    //         'con129' => $request->con129,
-    //         'con130' => $request->con130,
-
-    //         'con131' => $request->con131,
-    //         'con132' => $request->con132,
-    //         'con133' => $request->con133,
-    //         'con134' => $request->con134,
-    //         'con135' => $request->con135,
-    //         'con136' => $request->con136,
-    //         'con137' => $request->con137,
-    //         'con138' => $request->con138,
-    //         'con139' => $request->con139,
-    //         'con140' => $request->con143,
-
-    //         'con141' => $request->con141,
-    //         'con142' => $request->con142,
-    //         'con143' => $request->con143,
-    //         'con144' => $request->con144,
-    //         'con145' => $request->con145,
-    //         'con146' => $request->con146,
-    //         'con147' => $request->con147,
-    //         'con148' => $request->con148,
-    //         'con149' => $request->con149,
-    //         'con150' => $request->con150,
-
-    //         'con151' => $request->con151,
-    //         'con152' => $request->con152,
-    //         'con153' => $request->con153,
-    //         'con154' => $request->con154,
-    //         'con155' => $request->con155,
-    //         'con156' => $request->con156,
-    //         'con157' => $request->con157,
-    //         'con158' => $request->con158,
-    //         'con159' => $request->con159,
-    //         'con160' => $request->con160,
-
-    //         'con161' => $request->con161,
-    //         'con162' => $request->con162,
-    //         'con163' => $request->con163,
-    //         'con164' => $request->con164,
-    //         'con165' => $request->con165,
-    //         'con166' => $request->con166,
-    //         'con167' => $request->con167,
-    //         'con168' => $request->con168,
-    //         'con169' => $request->con169,
-    //         'con170' => $request->con170,
-
-    //         'con171' => $request->con171,
-    //         'con172' => $request->con172,
-    //         'con173' => $request->con173,
-    //         'con174' => $request->con174,
-    //         'con175' => $request->con175,
-    //         'con176' => $request->con176,
-    //         'con177' => $request->con177,
-    //         'con178' => $request->con178,
-    //         'con179' => $request->con179,
-    //         'con180' => $request->con180,
-
-    //         'con181' => $request->con181,
-    //         'con182' => $request->con182,
-    //         'con183' => $request->con183,
-    //         'con183' => $request->con183,
-    //         'con184' => $request->con184,
-    //         'con185' => $request->con185,
-    //         'con186' => $request->con186,
-    //         'con187' => $request->con187,
-    //         'con188' => $request->con188,
-    //         'con189' => $request->con189,
-    //         'con190' => $request->con190,
-
-    //         'con191' => $request->con191,
-    //         'con192' => $request->con192,
-    //         'con193' => $request->con193,
-
-
     public function store(CreateSessieRequest $request, Horse $horse)
     {
 
@@ -285,6 +45,7 @@ class SessieController extends Controller
             'con1' => 'nullable',
             'con2' => 'nullable',
             'image' => 'image|nullable|max:1999',
+            
 
         ]);
 
@@ -1359,6 +1120,15 @@ class SessieController extends Controller
         return view('sessies.rapport')->with('sessies', $sessies)->with('horses', Horse::all());
 
     }
+
+    public function laser($id)
+    {
+        $sessies = Sessie::find($id);
+        return view('sessies.laser')->with('sessies', $sessies)->with('horses', Horse::all());
+
+    }
+
+
     public function welcome()
     {
         $sessie=Sessie::orderBy('updated_at', 'asc');

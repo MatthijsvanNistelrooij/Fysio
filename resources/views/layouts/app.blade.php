@@ -107,7 +107,10 @@
         </nav>
 
 
+
         <main class="py-3">
+
+
             @yield('content')
         </div>
     </div>

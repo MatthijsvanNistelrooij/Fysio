@@ -21,12 +21,23 @@
                 </div>
             </a>
             @endif
-    <button class="btn btn-info mb-1" style="width: 100%;">
-        <a href="{{ URL::to('/horses/' . $sessies->horse_id ) }}" style="text-decoration: none; color: rgb(255, 255, 255)">
+            @if ($errors->any())
+            <a href="" onClick="window.location.reload();" style="text-decoration: none">
+
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation"></i>
+                    @foreach ($errors->all() as $error)
+                        Naam paard is verplicht.
+                    @endforeach
+
+            </div>
+            </a>
+            @endif
+
+        <a class="btn btn-info mb-1" style="width: 100%; color: white" href="{{ URL::to('/horses/' . $sessies->horse_id ) }}" style="text-decoration: none; color: rgb(255, 255, 255)">
             <i class="far fa-arrow-alt-circle-left"></i>
             Terug naar Paard ID: {{ $sessies->horse_id}}
         </a>
-    </button>
 
     <div class="card">
         <div class="card-header">
@@ -35,7 +46,7 @@
             <div class="input-group mt-2">
                 <input type="text" class="form-control mr-2" placeholder="Info..." aria-label="" name="con2" aria-describedby="basic-addon2" value="{{ $sessies->con2 }}">
 
-                <input type="date" class="form-control" aria-label="" name="con182" aria-describedby="basic-addon2" value="{{ $sessies->con182 }}">
+                <input type="date" class="form-control" aria-label="" style="min-width: 120px" name="con182" aria-describedby="basic-addon2" value="{{ $sessies->con182 }}">
                 <div class="input-group-append">
                     <button class="btn btn-info" style="width: auto; border-radius: 0 5px 5px 0; color: white" type="submit">
                         <i class="fas fa-check"></i>

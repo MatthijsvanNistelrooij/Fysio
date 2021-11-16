@@ -15,7 +15,7 @@
                   <tr class="overzicht">
                     <td style=" border: none; width: 5%">
                         <a href="/sessies/rapport/{{$sessie->id}}">
-                            <i class="fas fa-file mr-2" style="color: rgb(95, 95, 95);"></i>
+                            <i class="fas fa-file-alt mr-2" style="color: rgb(95, 95, 95);"></i>
                         </a>
                     </td>
                     <td style=" border: none; width: 40%">
@@ -31,6 +31,8 @@
                         <i class="{{ $sessie->con12}} ml-2" style="color: rgb(255, 0, 76); font-size: 10px"></i>
                         <i class="{{ $sessie->con13}} ml-2" style="color: rgb(0, 255, 242); font-size: 10px"></i>
                         <i class="{{ $sessie->con14}} ml-2" style="color: rgb(0, 141, 0); font-size: 10px"></i>
+                        <i class="{{ $sessie->con171}} ml-2" style="color: rgb(144, 201, 144); font-size: 10px"></i>
+                        <i class="{{ $sessie->con175}} ml-2" style="color: rgb(144, 160, 230); font-size: 10px "></i>
                     </td>
                     <td style=" border: none; width: 5%">
                         <a data-dismiss="modal"  data-toggle="modal"  data-target="#exampleModal302" style="cursor: pointer">

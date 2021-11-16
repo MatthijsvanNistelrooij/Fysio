@@ -20,6 +20,18 @@
         </div>
     </a>
     @endif
+    @if ($errors->any())
+    <a href="" onClick="window.location.reload();" style="text-decoration: none">
+
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation"></i>
+            @foreach ($errors->all() as $error)
+                Naam paard is verplicht.
+            @endforeach
+
+    </div>
+    </a>
+    @endif
 <div class="input-group">
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>

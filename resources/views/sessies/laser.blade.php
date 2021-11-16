@@ -1,10 +1,10 @@
-<div class="modal-dialog modal-dialog modal-xl">
-    <form action="{{ route('sessies.update', ['id' => $sessies->id]) }}" method="POST" enctype="multipart/form-data">
-        @csrf
+{{-- @extends('layouts.app')
+@section('content')
+ --}}
 
+{{--
     <div class="modal-content">
           <div class="modal-header">
-            <input type="radio" name="con14" id="" value="fas fa-square" checked="checked" class="mt-2 mr-2">
 
           <h5 class="modal-title" id="exampleModalLongTitle">Laser Behandeling:</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -13,27 +13,189 @@
           </div>
           <div class="modal-body mb-3">
         <div class="modal-body">
-            <div class="card-body" style="text-align:center;">
+            <div class="card-body" style="text-align:center; height: 750px">
+ --}}
 
-                <div class="row">
+{{-- <div class="container">
+    <div class="modal-header">
+        <input type="radio" name="con14" id="" value="fas fa-square" checked="checked" class="mt-2 mr-2">
+
+        <h5 class="modal-title" id="exampleModalLongTitle">Laser Behandeling:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div> --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+
+
+
+<style>
+    .canvas {
+        background-image: url('/images/horse_laser.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center
+    }
+
+
+</style>
+
+
+    <script type="text/javascript">
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 2;
+
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+
+    function color(obj) {
+        switch (obj.id) {
+            case "green":
+                x = "green";
+                break;
+            case "blue":
+                x = "blue";
+                break;
+            case "red":
+                x = "red";
+                break;
+            case "yellow":
+                x = "yellow";
+                break;
+            case "orange":
+                x = "orange";
+                break;
+            case "black":
+                x = "black";
+                break;
+            case "white":
+                x = "white";
+                break;
+        }
+        if (x == "white") y = 14;
+        else y = 2;
+
+    }
+
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = x;
+        ctx.lineWidth = y;
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    function erase() {
+        var m = confirm("Clear?");
+        if (m) {
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+        }
+    }
+
+    function save() {
+        document.getElementById("canvasimg").style.border = "0px solid";
+        var dataURL = canvas.toDataURL();
+        document.getElementById("canvasimg").src = dataURL;
+        document.getElementById("canvasimg").style.display = "inline";
+    }
+
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up' || res == "out") {
+            flag = false;
+        }
+        if (res == 'move') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.offsetLeft;
+                currY = e.clientY - canvas.offsetTop;
+                draw();
+            }
+        }
+    }
+    </script>
+
+    <div class="container">
+
+    <body onload="init()">
+        <canvas id="can" width="500" height="400" style="position:absolute;top:10%;left:20%;border:0px solid" class="canvas"></canvas>
+
+        <!-- <div style="position:absolute;top:12%;left:43%;">Choose Color</div> -->
+        <div style="position:absolute;top:550px;left:580px;width:25px;height:25px;border-radius: 5px; background:green;" id="green" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:610px;width:25px;height:25px;border-radius: 5px; background:blue;" id="blue" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:640px;width:25px;height:25px;border-radius: 5px; background:red;" id="red" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:670px;width:25px;height:25px;border-radius: 5px; background:yellow;" id="yellow" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:700px;width:25px;height:25px;border-radius: 5px; background:orange;" id="orange" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:730px;width:25px;height:25px;border-radius: 5px; background:black;" id="black" onclick="color(this)"></div>
+        <div style="position:absolute;top:550px;left:800px;">Eraser</div>
+        <div style="position:absolute;top:550px;left:850px;width:25px;height:25px;background:white;border: 1px solid; border-radius: 5px" id="white" onclick="color(this)"></div>
+        <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;" class="canvasimg">
+        <input type="button" class="btn btn-light" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:540px;left:400px; border: 1px solid gray">
+        <input type="button" class="btn btn-light" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:540px;left:460px; border: 1px solid gray">
+
+    </div>
+                {{-- <div class="row">
                     <div class="col-md-6">
                         <img src="/images/horse_left.jpg" alt="" style="width: 80%; margin-left: 10%">
                     </div>
                     <div class="col-md-6">
                         <img src="/images/horse_right.jpg" alt="" style="width: 80%; margin-left: 10%">
                     </div>
-                </div>
+                </div> --}}
 
             <br><br>
+
+            <div class="container" style="margin-top: 600px; width: 60%; margin-left: 20%">
+                <form action="{{ route('sessies.update', ['id' => $sessies->id]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
 
                     <input type="date" name="con169" class="form-control" style="margin-bottom: 5px; width: 100%" value="{{ $sessies->con169 }}">
                     <textarea type="text" rows="1" cols="2" class="form-control" style="margin-bottom: 5px; width: 100%" name="con170" placeholder="...">{{ $sessies->con170 }}</textarea>
 
-            </div>
-        </div>
-    </div>
-
-    <div class="inputs">
+    <div class="inputs" style="display: none">
         <input type="text" name="con1" id="" value="{{ $sessies->con1 }}">
         <input type="text" name="con2" id="" value="{{ $sessies->con2 }}">
         <input type="text" name="con3" id="" value="{{ $sessies->con3 }}">
@@ -250,14 +412,22 @@
         <input type="file" name="image16" id="" class="form-control" value="{{ $sessies->image16 }}">
    </div>
 
+   <button class="btn btn-info mb-1" style="width: 100%; color: white">
+    <a href="/sessies/{{$sessies->id}}" style="text-decoration: none; color: rgb(255, 255, 255)">
+        <i class="far fa-arrow-alt-circle-left"></i>
+        Terug naar Consult ID: {{ $sessies->id}}
+    </a>
+</button>
 
-
-    <div class="modal-footer">
-        <button class="btn btn-info" style="color: white" type="submit">
+        <button class="btn btn-info mb-2" style="color: white; width: 10%; float: right" type="submit">
             <i class="fas fa-check"></i>
             Opslaan
         </button>
     </form>
 </div>
 </div>
+
 </div>
+
+{{-- @endsection --}}
+

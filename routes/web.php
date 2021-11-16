@@ -38,6 +38,8 @@ Route::get('horses.delete{id}', [App\Http\Controllers\HorseController::class, 'd
 Route::post('horses/{horse}/sessies', [App\Http\Controllers\SessieController::class, 'store'])->name('sessies.store');
 Route::get('sessies/{id}', [App\Http\Controllers\SessieController::class, 'show'])->name('sessie.show');
 Route::get('sessies/rapport/{id}', [App\Http\Controllers\SessieController::class, 'rapport'])->name('sessie.rapport');
+Route::get('sessies/laser/{id}', [App\Http\Controllers\SessieController::class, 'laser'])->name('sessie.laser');
+
 Route::get('sessies.delete{id}', [App\Http\Controllers\SessieController::class, 'destroy'])->name('sessies.delete');
 Route::post('/sessies/{id}', [App\Http\Controllers\SessieController::class, 'update'])->name('sessies.update');
 

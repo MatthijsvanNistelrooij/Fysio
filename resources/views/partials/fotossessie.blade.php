@@ -14,46 +14,83 @@
                     @csrf
 
 
-                        <div class="row p-4">
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image }}" alt="" style="width: 100%">1
-                                <input type="file" name="image" id="" class="form-control mb-2" value="{{ $sessies->image }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image2 }}" alt="" style="width: 100%">2
-                                <input type="file" name="image2" id="" class="form-control mb-2" value="{{ $sessies->image2 }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image3 }}" alt="" style="width: 100%">3
-                                <input type="file" name="image3" id="" class="form-control mb-2" value="{{ $sessies->image3 }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image4 }}" alt="" style="width: 100%">4
-                                <input type="file" name="image4" id="" class="form-control mb-2" value="{{ $sessies->image4 }}">
-                            </div>
-                        </div>
-                        <div class="row p-4">
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image5 }}" alt="" style="width: 100%">5
-                                <input type="file" name="image5" id="" class="form-control mb-2" value="{{ $sessies->image5 }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image6 }}" alt="" style="width: 100%">6
-                                <input type="file" name="image6" id="" class="form-control mb-2" value="{{ $sessies->image6 }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image7 }}" alt="" style="width: 100%">7
-                                <input type="file" name="image7" id="" class="form-control mb-2" value="{{ $sessies->image7 }}">
-                            </div>
-                            <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image8 }}" alt="" style="width: 100%">8
-                                <input type="file" name="image8" id="" class="form-control mb-2" value="{{ $sessies->image8 }}">
-                            </div>
-                        </div>
 
+                        <table class="table">
+                            <thead style="border: 1px solid white">
+                                <tr style="border:1px solid white">
+                                    <th scope="col" style="border: 1px solid white; text-align: center"><i class="fas fa-hashtag"
+                                        style="color: gray; border: 1px solid rgb(255, 255, 255); border-radius: 50%; padding: 15px"></i></th>
+                                        <th scope="col" style="border: 1px solid white; text-align: left"><i class="far fa-image"
+                                    style="color: gray; border: 1px solid rgb(255, 255, 255); border-radius: 50%; padding: 15px;  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);"></i></th>
+                                    <th scope="col" style="border: 1px solid white; text-align: center"><i class="fas fa-search"
+                                    style="color: gray; border: 1px solid rgb(255, 255, 255); border-radius: 50%; padding: 15px;  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);"></i></th>
+                                    <th scope="col" style="border: 1px solid white; text-align: center"><i class="far fa-file"
+                                        style="color: gray; border: 1px solid rgb(255, 255, 255); border-radius: 50%; margin-left: 18px; padding: 15px;  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border:1px solid white">
 
-            </div>
-        </div>
+                                    <td style="color: gray; text-align: center">1</td>
+                                    <td style="width: 80%"><input type="file" name="image" id="" class="form-control mb-2" value="{{ $sessies->image }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con183" value="1" class="form-check-input ml-1" ></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">2</td>
+                                    <td style="width: 80%"><input type="file" name="image2" id="" class="form-control mb-2" value="{{ $sessies->image2 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image2 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con184" value="1" class="form-check-input ml-1" ></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">3</td>
+                                    <td style="width: 80%"><input type="file" name="image3" id="" class="form-control mb-2" value="{{ $sessies->image3 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image3 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con185" value="1" class="form-check-input ml-1"></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">4</td>
+                                    <td style="width: 80%"><input type="file" name="image4" id="" class="form-control mb-2" value="{{ $sessies->image4 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image4 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con186" value="1" class="form-check-input ml-1" ></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">5</td>
+                                    <td style="width: 80%"><input type="file" name="image5" id="" class="form-control mb-2" value="{{ $sessies->image5 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image5 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con187" value="1" class="form-check-input ml-1"></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">6</td>
+                                    <td style="width: 80%"><input type="file" name="image6" id="" class="form-control mb-2" value="{{ $sessies->image6 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image6 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con188" value="1" class="form-check-input ml-1"></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">7</td>
+                                    <td style="width: 80%"><input type="file" name="image7" id="" class="form-control mb-2" value="{{ $sessies->image7 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image7 }}" alt="" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con189" value="1" class="form-check-input ml-1" ></span></p></td>
+                                </tr>
+
+                                <tr style="border:1px solid white">
+                                    <td style="color: gray; text-align: center">8</td>
+                                    <td style="width: 80%"><input type="file" name="image8" id="" class="form-control mb-2" value="{{ $sessies->image8 }}"></td>
+                                    <td><img src="/storage/images/{{ $sessies->image8 }}" alt="" id="imgBtn" style="width: 150%"></td>
+                                    <td><p style="text-align: center"><input type="checkbox" name="con190" value="1" class="form-check-input ml-1" ></span></p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
         <div class="modal-footer">
             <button class="btn btn-info mt-2 mr-3" type="submit" style="float: right; color: white">
                 <i class="fas fa-check"></i>
@@ -74,6 +111,7 @@
                     <input type="text" name="con12" id="" value="{{ $sessies->con12 }}">
                     <input type="text" name="con13" id="" value="{{ $sessies->con13 }}">
                     <input type="text" name="con14" id="" value="{{ $sessies->con14 }}">
+                    <input type="text" name="con15" id="" value="{{ $sessies->con15 }}">
 
                     <input type="text" name="con16" id="" class="form-control" value="{{ $sessies->con16 }}">
                     <input type="text" name="con17" id="" class="form-control" value="{{ $sessies->con17 }}">
@@ -243,15 +281,16 @@
                     <input type="text" name="con180" id="" class="form-control" value="{{ $sessies->con180 }}">
                     <input type="text" name="con181" id="" class="form-control" value="{{ $sessies->con181 }}">
                     <input type="text" name="con182" id="" class="form-control" value="{{ $sessies->con182 }}">
-                    <input type="text" name="con183" id="" class="form-control" value="{{ $sessies->con183 }}">
 
+                    {{-- <input type="text" name="con183" id="" class="form-control" value="{{ $sessies->con183 }}">
                     <input type="text" name="con184" id="" class="form-control" value="{{ $sessies->con184 }}">
                     <input type="text" name="con185" id="" class="form-control" value="{{ $sessies->con185 }}">
                     <input type="text" name="con186" id="" class="form-control" value="{{ $sessies->con186 }}">
                     <input type="text" name="con187" id="" class="form-control" value="{{ $sessies->con187 }}">
                     <input type="text" name="con188" id="" class="form-control" value="{{ $sessies->con188 }}">
                     <input type="text" name="con189" id="" class="form-control" value="{{ $sessies->con189 }}">
-                    <input type="text" name="con190" id="" class="form-control" value="{{ $sessies->con190 }}">
+                    <input type="text" name="con190" id="" class="form-control" value="{{ $sessies->con190 }}"> --}}
+
                     <input type="text" name="con191" id="" class="form-control" value="{{ $sessies->con191 }}">
                     <input type="text" name="con192" id="" class="form-control" value="{{ $sessies->con192 }}">
                     <input type="text" name="con193" id="" class="form-control" value="{{ $sessies->con193 }}">

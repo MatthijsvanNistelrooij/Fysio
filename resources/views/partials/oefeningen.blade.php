@@ -1,3 +1,4 @@
+
 <div class="modal-dialog modal-dialog modal-xl">
     <form action="{{ route('sessies.update', ['id' => $sessies->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -14,51 +15,55 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image }}" alt="" style="width: 100%" class="zoom">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image2 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image2 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
 
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image3 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image3 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image4 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image4 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image5 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image5 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image6 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image6 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image7 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image7 }}" alt="" style="width: 100%"  class="zoom">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="col-sm">
-                                <img src="/storage/images/{{ $sessies->image8 }}" alt="" style="width: 100%">
+                                <img src="/storage/images/{{ $sessies->image8 }}" alt="" style="width: 100%"  class="zoom">
+
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -66,3 +71,9 @@
         </div>
     </div>
 </div>
+
+<div id="myModal2" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>

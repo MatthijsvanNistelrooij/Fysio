@@ -41,7 +41,7 @@ class HorseController extends Controller
     {
 
         $this->validate($request, [
-            'content1' => 'nullable',
+            'content1' => 'required',
             'content2' => 'nullable',
             'content3' => 'nullable',
             'content4' => 'nullable',
