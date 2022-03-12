@@ -1,30 +1,4 @@
-{{-- @extends('layouts.app')
-@section('content')
- --}}
 
-{{--
-    <div class="modal-content">
-          <div class="modal-header">
-
-          <h5 class="modal-title" id="exampleModalLongTitle">Laser Behandeling:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <div class="modal-body mb-3">
-        <div class="modal-body">
-            <div class="card-body" style="text-align:center; height: 750px">
- --}}
-
-{{-- <div class="container">
-    <div class="modal-header">
-        <input type="radio" name="con14" id="" value="fas fa-square" checked="checked" class="mt-2 mr-2">
-
-        <h5 class="modal-title" id="exampleModalLongTitle">Laser Behandeling:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div> --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
 
 
@@ -32,11 +6,17 @@
 <style>
     .canvas {
         background-image: url('/images/horse_laser.png');
+        opacity: 0.5;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center
     }
 
+
+
+    .img {
+        opacity: 0.5;
+    }
 
 </style>
 
@@ -177,14 +157,8 @@
         <input type="button" class="btn btn-light" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:540px;left:460px; border: 1px solid gray">
 
     </div>
-                {{-- <div class="row">
-                    <div class="col-md-6">
-                        <img src="/images/horse_left.jpg" alt="" style="width: 80%; margin-left: 10%">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="/images/horse_right.jpg" alt="" style="width: 80%; margin-left: 10%">
-                    </div>
-                </div> --}}
+
+
 
             <br><br>
 

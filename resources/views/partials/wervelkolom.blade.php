@@ -485,7 +485,21 @@
 
      <div class="col">
         <div class="col">
-            <img src="/images/horse_skelet.png" alt="" style="width: 90%; transform: scaleX(-1);">
+            <div class="containerskelet">
+                <img src="/images/horse_skelet.png" style="width:100%;">
+                <div class="c0" data-toggle="collapse" data-target="#demo2">C0</div>
+                <div class="c1" data-toggle="collapse" data-target="#demo3">C1</div>
+                <div class="c2" data-toggle="collapse" data-target="#demo4">C2</div>
+                <div class="t3" data-toggle="collapse" data-target="#demo5">T3</div>
+                <div class="t10" data-toggle="collapse" data-target="#demo6">T10</div>
+                <div class="ribs" data-toggle="collapse" data-target="#demo7">Ribs</div>
+                <div class="l1" data-toggle="collapse" data-target="#demo8">L1</div>
+                <div class="l4" data-toggle="collapse" data-target="#demo9">L4</div>
+                <div class="t18" data-toggle="collapse" data-target="#demo10">T18</div>
+                <div class="pelvic" data-toggle="collapse" data-target="#demo11">Pelvic</div>
+                <div class="caudal" data-toggle="collapse" data-target="#demo12">Caudal</div>
+
+              </div>
         </div>
     </div>
 

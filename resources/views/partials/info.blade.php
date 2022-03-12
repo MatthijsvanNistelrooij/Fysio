@@ -21,6 +21,8 @@
                     <p style="min-height: 24px;">{{ $horses->content1 }}</p>
                     <p style="min-height: 24px;">{{ $horses->content2 }}</p>
                     <p style="min-height: 24px;">{{ $horses->content3 }}</p>
+                    <p style="min-height: 24px;">{{ $horses->content4 }}</p>
+
                     <p style="min-height: 24px;">{{ $horses->content5 }}</p>
                     <p style="min-height: 24px;">{{ $horses->content6 }}</p>
                     <p style="min-height: 24px;">{{ $horses->content7 }}</p>

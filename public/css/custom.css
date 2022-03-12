@@ -57,8 +57,6 @@ border-radius: 5px;
 }
 
 
-
-
 .button_cat{
     width: 100%;
     color: white;
@@ -68,10 +66,11 @@ border-radius: 5px;
 
 
 .montserat{
-    margin-top: -24px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:bold;
+    margin-top: -30px;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-weight:bold; */
     color: gray;
+    margin-left: 5%;
 }
 
 .overzicht{
@@ -117,26 +116,248 @@ overflow: hidden;
 .tile{
     cursor: pointer;
     text-align: center;
-    width: 80%;
-    text-align: center;
-    height: 60px;
+    width: 100%;
+    text-align: left;
+    height: 40px;
     border-radius: 5px 5px 20px 5px;
     color: rgb(218, 218, 218);
-    background-color: white;
+
+    background-color: rgb(205, 223, 233, 0.2);
     overflow-y: hidden;
-    padding: 1%;
+    padding: 0%;
     font-weight: bold;
-    margin-top: 1%;
-    margin-bottom: 20px;
-    box-shadow: 0px 15px 20px -8px rgb(0,0,0, 0.2);
-
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 1.5%;
+    /* box-shadow: 0px 15px 20px -8px rgb(0,0,0, 0.2); */
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
-
 .tile:hover {
-    background-color: rgb(205, 223, 233, 0.5);
+    background-color: #c3d8d7;
     color: white;
 }
+
+
+
+.containerskelet {
+    position: relative;
+    text-align: center;
+    transform: scaleX(-1);
+    opacity: 0.5;
+
+
+  }
+
+  .c0 {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+    transform: scaleX(-1);
+    color: red;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+
+  }
+
+  .c0:hover {
+    border: 1px solid red;
+
+    font-weight: bold;
+    border-radius: 50%;
+
+  }
+
+  .c1 {
+    position: absolute;
+    top: 12%;
+    right: 25%;
+    transform: scaleX(-1);
+    color: red;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+
+}
+
+
+.c1:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+}
+  .c2 {
+    position: absolute;
+    top: 24%;
+    right: 28%;
+    transform: scaleX(-1);
+    color: red;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+
+  }
+
+
+  .c2:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+
+  }
+
+  .t3 {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 25%;
+    right: 40%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+
+  }
+
+  .t3:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+
+  }
+
+
+  .t10 {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 25%;
+    right: 50%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .t10:hover {
+    border-radius: 50%;
+    border: 1px solid red;
+    font-weight: bold;
+  }
+
+
+  .ribs {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .ribs:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  .l1 {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 23%;
+    right: 72%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .l1:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  .l4 {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 25%;
+    right: 82%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .l4:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  .t18 {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 24%;
+    right: 62%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .t18:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  .pelvic {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 35%;
+    right: 75%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .pelvic:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+
+  .caudal {
+    transform: scaleX(-1);
+    color: red;
+    position: absolute;
+    top: 35%;
+    right: 90%;
+    padding: 15px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+  }
+
+  .caudal:hover {
+    border: 1px solid red;
+    border-radius: 50%;
+    font-weight: bold;
+
+  }
+
+
 
 
 body {
@@ -396,4 +617,13 @@ background-color: #f1f1f1;
     background: rgb(189, 189, 189);
   }
 
+
+  .show_image_hover{
+    width: 90%;
+    height: auto;
+    float: right;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+  }
 
