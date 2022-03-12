@@ -6,7 +6,7 @@
             <div class="col-md-2">
                 <a href="{{ route('horse.index') }}" class="btn btn-light mb-1"
                     style="width: 25%; border: 1px solid rgb(213, 213, 213); width: 100%">Index</a>
-                <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal17" type="button"
+                <button class="btn btn-light mb-1" data-toggle="modal" data-target="#exampleModal17" type="button"
                     style="width: 25%; border: 1px solid rgb(213, 213, 213); width: 100%"><i
                         class="fas fa-external-link-alt"></i></button>
             </div>
