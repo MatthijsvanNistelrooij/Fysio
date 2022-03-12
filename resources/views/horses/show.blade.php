@@ -11,7 +11,6 @@
                         class="fas fa-external-link-alt"></i></button>
             </div>
 
-
             <div class="col-md-10">
                 @if (session()->has('success'))
                     <a href="" onClick="window.location.reload();" style="text-decoration: none">
@@ -24,7 +23,6 @@
                 @endif
                 @if ($errors->any())
                     <a href="" onClick="window.location.reload();" style="text-decoration: none">
-
                         <div class="alert alert-danger" style="border: none">
                             <i class="fas fa-exclamation"></i>
                             @foreach ($errors->all() as $error)
@@ -36,7 +34,7 @@
 
                 <div class="d-flex justify-content-center mb-1">
                     <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal12" type="button"
-                        style="width: 25%; border: 1px solid rgb(213, 213, 213);"><i class="fas fa-info"></i></button>
+                        style="width: 26%; border: 1px solid rgb(213, 213, 213);"><i class="fas fa-info"></i></button>
                     <button class="btn btn-light ml-1" data-toggle="modal" data-target="#exampleModal13" type="button"
                         style="width: 25%; border: 1px solid rgb(213, 213, 213);"><i class="fas fa-phone"></i></button>
                     <button class="btn btn-light ml-1" data-toggle="modal" data-target="#exampleModal14" type="button"
@@ -77,7 +75,7 @@
                                     </div>
                                     <span style="float: right">
                                         <i class="far fa-image" data-toggle="modal" data-target="#exampleModal16" style="font-size: 35px; cursor: pointer; color: rgb(230, 230, 230); position: absolute;
-                                            right: 15px; bottom: 10px">
+                                                right: 15px; bottom: 10px">
                                         </i>
                                     </span>
                                 </div>
