@@ -17,7 +17,7 @@
             <input type="text" name="con2" id="" class="form-control" placeholder="Info..">
 
 
-                <button type="submit" class="btn btn-success mt-2" style="color: white; float: right"><i class="fas fa-check"></i>Opslaan</button>
+                <button type="submit" class="btn btn-outlnie-success mt-2" style="float: right"><i class="fas fa-check"></i>Opslaan</button>
 
             </form>
         </div>

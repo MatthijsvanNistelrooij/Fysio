@@ -24,7 +24,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-info" style="color: white"  data-dismiss="modal">
+                <button type="submit" class="btn btn-outline-success" data-dismiss="modal">
                     <i class="fas fa-check"></i>
                     Opslaan
                 </button>
@@ -33,4 +33,4 @@
     </div>
 </div>
 </div>
-</div> 
+</div>

@@ -85,7 +85,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <button class="btn btn-light mb-1" type="button"
-                        style="width: 25%; border: 1px solid rgb(213, 213, 213); width: 100%" data-toggle="modal"
+                        style="width: 25%; border: 1px solid rgb(213, 213, 213); width: 100%; color: gray" data-toggle="modal"
                         data-target="#exampleModal">
                         <i class="fas fa-chevron-circle-right"></i>
                         Start Consult

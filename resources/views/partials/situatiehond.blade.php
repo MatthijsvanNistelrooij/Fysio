@@ -40,7 +40,7 @@
     </div>
 
     <div class="modal-footer">
-        <button type="submit" class="btn btn-info" style="color: white">
+        <button type="submit" class="btnbtn-outline-success">
             <i class="fas fa-check"></i>
             Opslaan
         </button>

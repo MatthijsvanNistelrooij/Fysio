@@ -18,7 +18,7 @@
                 <input type="text" name="con2" id="" class="form-control mb-2" placeholder="Info..">
                 <input type="date" name="con182" id="" class="form-control mb-2" placeholder="Info..">
 
-                <button type="submit" class="btn btn-info mt-2" style="color: white; float: right"><i class="fas fa-check"></i> Opslaan</button>
+                <button type="submit" class="btn btn-outline-success mt-2" style="float: right"><i class="fas fa-check"></i> Opslaan</button>
             </form>
         </div>
     </div>

@@ -91,7 +91,7 @@
             <input type="text" name="content14" value="{{ $dogs->content14 }}">
             <input type="text" name="content15" value="{{ $dogs->content15 }}">
         </div>
-            <button type="submit" class="btn btn-success" style="color: white; float: right">
+            <button type="submit" class="btn btn-outline-success" style="float: right">
                 <i class="fas fa-check"></i>
                 Opslaan
             </button>

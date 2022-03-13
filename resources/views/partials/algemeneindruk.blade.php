@@ -239,7 +239,7 @@
             <input type="file" name="image16" id="" class="form-control" value="{{ $sessies->image16 }}">
        </div>
         <div class="modal-footer">
-            <button class="btn btn-info" style="color: white" type="submit">
+            <button class="btn btn-outline-success" type="submit">
                 <i class="fas fa-check"></i>
 
                 Opslaan

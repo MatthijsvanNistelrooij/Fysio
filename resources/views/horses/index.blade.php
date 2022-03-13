@@ -47,26 +47,8 @@
                 </div>
 
                 @if ($horses->count() > 0)
-                    <div class="row pt-5 pl-3 pr-3">
-                        <div class="col">
-                            <strong>
-                                Naam
-                            </strong>
-                        </div>
-                        <div class="col">
-                            <strong>
-                                Eigenaar
-                            </strong>
-                        </div>
-                        <div class="col">
-                            <strong>
-                                Consulten
-                            </strong>
-                        </div>
-                        <div class="col">
-                        </div>
-                    </div>
-                    <hr size="sm">
+                <br>
+                <br>
                 @else
                     <div class="mt-5">
                         <p style="text-align: center; margin-top: 2%">
@@ -77,7 +59,6 @@
                                 type="button" style="width: 30%; color: white">
                                 <i class="fas fa-external-link-alt"></i>&nbsp; Nieuwe Invoer</button>
                         </div>
-
                     </div>
                 @endif
 
@@ -94,13 +75,11 @@
                         </div>
                         <div class="col">
                             {{ $horse->sessies->count() }}
-                        </div>
-                        <div class="col">
-                            <i class="fas fa-trash mt-1" style="color: red; float: right; cursor: pointer"
+                            <i class="fas fa-trash mt-1" style="color:rgb(255, 17, 17); float: right; cursor: pointer"
                             data-toggle="modal" data-target="#exampleModal300"></i>
                         </div>
                     </div>
-                    <hr size="sm" class="m-1">
+                    <hr size="sm" class="m-1" style="color: gray">
                 @endforeach
 
             </div>

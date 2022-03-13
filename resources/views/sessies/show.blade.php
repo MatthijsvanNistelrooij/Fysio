@@ -47,17 +47,11 @@
                         <form action="{{ route('sessies.update', ['id' => $sessies->id]) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
-                            <div class="input-group mt-2">
-                                <input type="text" class="form-control mr-2" placeholder="Info..." aria-label="" name="con2"
-                                    aria-describedby="basic-addon2" value="{{ $sessies->con2 }}">
 
+                            <div class="input-group ">
                                 <input type="date" class="form-control" aria-label="" style="min-width: 120px"
                                     name="con182" aria-describedby="basic-addon2" value="{{ $sessies->con182 }}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-info"
-                                        style="width: auto; border-radius: 0 5px 5px 0; color: white" type="submit">
-                                        <i class="fas fa-check"></i>
-                                    </button>
+
 
                                     <button class="btn btn-light ml-2"
                                         style="width: auto; border-radius: 0 5px 5px 0; color: white" data-toggle="modal"
@@ -71,8 +65,17 @@
                                         <i class="far fa-image" style="color: rgb(201, 201, 201); font-size: 15px"></i>
                                     </button>
                                 </div>
-                            </div>
 
+                            <div class="input-group mt-1">
+                            <input type="text" class="form-control" placeholder="Info..." aria-label="" name="con2"
+                            aria-describedby="basic-addon2" value="{{ $sessies->con2 }}">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success"
+                                    style="width: auto; border-radius: 0 5px 5px 0; color: green" type="submit">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
                             {{-- INPUTS --}}
                             <div class="inputs">
                                 <input type="text" name="con1" id="" value="{{ $sessies->con1 }}">

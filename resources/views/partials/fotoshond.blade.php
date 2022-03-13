@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-success mt-2 mr-3" type="submit" style="float: right">
+            <button class="btn btn-outline-success mt-2 mr-3" type="submit" style="float: right">
                 <i class="fas fa-check"></i>
                 Opslaan</button>
 
